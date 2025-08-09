@@ -2,14 +2,14 @@ import type { SiteContent } from './content-types';
 
 export const siteContent: SiteContent = {
   hero: {
-    title: "Unify All AI Models in One App",
-    subtitle: "Access ChatGPT, Claude, Gemini, and more",
-    headline: "Unify All AI Models in One App",
-    description: "Switch between the world's best AI models seamlessly. No vendor lock-in, complete privacy, and the power to choose the right AI for every task.",
-    primaryCTA: "Try for Free",
+    title: "The Future of AI Conversations",
+    subtitle: "All AI Models. One Platform.",
+    headline: "The Future of AI Conversations",
+    description: "Access ChatGPT, Claude, Gemini, and Llama in one unified interface. Switch models instantly, preserve context, and maintain complete privacy.",
+    primaryCTA: "Start Free Trial",
     secondaryCTA: "Watch Demo",
-    trustCount: "9000+",
-    trustMessage: "businesses worldwide"
+    trustCount: "50,000+",
+    trustMessage: "users worldwide"
   },
   models: [
     {

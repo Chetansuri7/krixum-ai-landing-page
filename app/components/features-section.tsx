@@ -1,86 +1,145 @@
 import { SectionHeader } from "~/components/ui/section-header";
+import { MessageSquare, FileText, Shield, Lightbulb, Users, BarChart3, Zap, ArrowRight, CheckCircle } from "lucide-react";
 
 export function FeaturesSection() {
-  const features = [
+  const mainFeatures = [
     {
       title: "Unified Chat Interface",
       description: "Access all AI models through one clean, intuitive interface. No need to switch between different platforms.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      )
+      icon: MessageSquare,
+      color: "from-blue-500 to-cyan-500",
+      benefits: ["Single login", "Consistent UI", "No context switching"]
     },
     {
       title: "Context Preservation",
       description: "Switch between models without losing your conversation context. Your chat history stays intact.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      )
+      icon: FileText,
+      color: "from-purple-500 to-pink-500",
+      benefits: ["Seamless switching", "History intact", "No data loss"]
     },
     {
       title: "Privacy First",
       description: "Your conversations are private and secure. We don't store or analyze your personal data.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-      )
-    },
+      icon: Shield,
+      color: "from-green-500 to-emerald-500",
+      benefits: ["End-to-end encryption", "No data mining", "GDPR compliant"]
+    }
+  ];
+
+  const additionalFeatures = [
     {
       title: "Smart Model Selection",
-      description: "Get recommendations on which model to use based on your specific task and requirements.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-      )
+      description: "Get AI-powered recommendations on which model to use for your specific task.",
+      icon: Lightbulb,
+      stats: "95% accuracy"
     },
     {
       title: "Real-time Collaboration",
-      description: "Share conversations and collaborate with your team in real-time across different AI models.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
+      description: "Share conversations and collaborate with your team across different AI models.",
+      icon: Users,
+      stats: "Team sync"
     },
     {
       title: "Advanced Analytics",
-      description: "Track your usage, costs, and performance across different models to optimize your AI workflow.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      )
+      description: "Track usage, costs, and performance to optimize your AI workflow.",
+      icon: BarChart3,
+      stats: "Deep insights"
     }
-  ]
+  ];
 
   return (
     <section id="features" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-16">
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-12 w-full">
         <SectionHeader
           badge="Features"
           title="Everything you need in one place"
           description="Powerful features designed to enhance your AI experience, streamline workflows, and boost productivity — all in a beautifully unified interface."
         />
         
-        <div className="grid gap-6 pt-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div key={feature.title} className="relative flex flex-col p-6 sm:p-8 rounded-3xl border border-zinc-200 bg-background transition-all duration-300 hover:border-zinc-300 hover:shadow-lg">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground">
-                  {feature.icon}
+        {/* Main Features - Hero Cards */}
+        <div className="grid gap-8 grid-cols-1 lg:grid-cols-3">
+          {mainFeatures.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div 
+                key={feature.title}
+                className="group relative bg-card border border-border rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
+                
+                {/* Icon */}
+                <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <IconComponent className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-lg text-foreground">{feature.title}</h3>
+
+                {/* Content */}
+                <div className="relative space-y-4">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+
+                  {/* Benefits List */}
+                  <div className="space-y-2 pt-2">
+                    {feature.benefits.map((benefit) => (
+                      <div key={benefit} className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Learn More Link */}
+                  <div className="pt-4">
+                    <button className="group/btn flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium">
+                      Learn more
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Hover Effect Border */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary/20 transition-colors duration-300"></div>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Additional Features - Compact Cards */}
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+          {additionalFeatures.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div 
+                key={feature.title}
+                className="group relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+                style={{ animationDelay: `${(index + 3) * 150}ms` }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <IconComponent className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {feature.title}
+                      </h4>
+                      <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                        {feature.stats}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
