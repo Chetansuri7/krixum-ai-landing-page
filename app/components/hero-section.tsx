@@ -94,10 +94,21 @@ export function HeroSection() {
                 />
               </svg>
             </Link>
-
-            <button className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group">
+            <button
+              onClick={() => {
+                const element = document.getElementById('pricing');
+                if (element) {
+                  element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
+              }}
+              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group"
+            >
+              View Pricing
               <svg
-                className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform"
+                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -106,11 +117,11 @@ export function HeroSection() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-9 5a9 9 0 1118 0 9 9 0 01-18 0z"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-              Watch Demo
             </button>
+
           </div>
 
           {/* Trust Indicators */}

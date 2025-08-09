@@ -220,23 +220,23 @@ export const pricingPlans = [
     popular: false,
     badge: null
   },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    yearlyPrice: "Custom",
-    period: "contact us",
-    description: "For large organizations",
-    icon: "🚀",
-    features: [
-      "Higher limits",
-      "Priority support",
-      "SLAs",
-      "Success manager (CSM)",
-      "Custom integrations",
-      "Advanced security"
-    ],
-    cta: "Contact us",
-    popular: false,
-    badge: null
-  }
+  // {
+  //   name: "Enterprise",
+  //   price: "Custom",
+  //   yearlyPrice: "Custom",
+  //   period: "contact us",
+  //   description: "For large organizations",
+  //   icon: "🚀",
+  //   features: [
+  //     "Higher limits",
+  //     "Priority support",
+  //     "SLAs",
+  //     "Success manager (CSM)",
+  //     "Custom integrations",
+  //     "Advanced security"
+  //   ],
+  //   cta: "Contact us",
+  //   popular: false,
+  //   badge: null
+  // }
 ];

@@ -56,14 +56,6 @@ export function CtaSection() {
               >
                 <Link to="/auth/signup">Start Free Trial</Link>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-3 text-lg h-12 rounded-xl backdrop-blur-sm"
-              >
-                <Link to="/demo">Watch Demo</Link>
-              </Button>
             </div>
 
             <div className="flex items-center gap-4 text-white/80 text-sm">

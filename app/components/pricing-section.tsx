@@ -22,21 +22,21 @@ export function PricingSection() {
         : plan.price,
     period:
       billingPeriod === "yearly" &&
-      plan.period !== "forever" &&
-      plan.period !== "contact us"
+        plan.period !== "forever" &&
+        plan.period !== "contact us"
         ? "month"
         : plan.period,
     savings:
       billingPeriod === "yearly" &&
-      (plan as any).yearlyPrice &&
-      plan.price !== "Custom" &&
-      plan.price !== "$0"
+        (plan as any).yearlyPrice &&
+        plan.price !== "Custom" &&
+        plan.price !== "$0"
         ? Math.round(
-            ((parseInt(plan.price.replace("$", "")) -
-              parseInt((plan as any).yearlyPrice.replace("$", ""))) /
-              parseInt(plan.price.replace("$", ""))) *
-              100
-          )
+          ((parseInt(plan.price.replace("$", "")) -
+            parseInt((plan as any).yearlyPrice.replace("$", ""))) /
+            parseInt(plan.price.replace("$", ""))) *
+          100
+        )
         : 0,
   }));
 
@@ -72,36 +72,36 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <React.Fragment key={plan.name}>
               <Card
-                className={`relative flex flex-1 flex-col justify-between rounded-3xl p-0 shadow-none lg:border-none ${
-                  plan.popular
+                className={`relative flex flex-1 flex-col justify-between rounded-3xl p-0 shadow-none lg:border-none ${plan.popular
                     ? "mt-6 rounded-t-none lg:mt-0 lg:rounded-t-3xl border-2 border-primary/20"
                     : "border"
-                }`}
+                  }`}
               >
                 <div className="relative h-full">
-                  <div className="flex flex-col gap-6">
+                  {plan.popular && (
+                    <Badge className="absolute -top-7 right-0 ml-1 h-7 w-full rounded-xl rounded-b-none px-2 py-1 text-center font-semibold text-xs bg-primary text-primary-foreground border-transparent">
+                      Popular
+                    </Badge>
+                  )}
+
+                  <div className="flex flex-col gap-4">
                     {/* Card Header */}
-                    <CardHeader className="flex flex-col space-y-1.5 p-6">
-                      <CardTitle className="text-lg leading-none tracking-tight flex flex-row items-center justify-start gap-2 font-medium">
-                        <span className="text-xl">{(plan as any).icon}</span>
-                        <p className="font-semibold text-lg">{plan.name}</p>
-                        {plan.popular && (
-                          <Badge className="absolute -top-7 right-0 ml-1 h-7 w-full rounded-xl rounded-b-none px-2 py-1 text-center font-semibold text-xs bg-primary text-primary-foreground border-transparent">
-                            Popular
-                          </Badge>
-                        )}
+                    <CardHeader className="flex flex-col space-y-1 p-5 pb-2">
+                      <CardTitle className="text-base leading-none tracking-tight flex flex-row items-center justify-start gap-2 font-medium">
+                        <span className="text-lg">{(plan as any).icon}</span>
+                        <p className="font-semibold text-base">{plan.name}</p>
                       </CardTitle>
                     </CardHeader>
 
                     {/* Card Content */}
-                    <CardContent className="flex flex-col gap-6 p-0">
+                    <CardContent className="flex flex-col gap-4 p-0">
                       {/* Pricing */}
-                      <div className="flex w-full flex-col items-start justify-between gap-4 px-6 lg:h-[150px]">
-                        <div className="mb-6 flex flex-col gap-2">
+                      <div className="flex w-full flex-col items-start justify-between gap-3 px-5">
+                        <div className="flex flex-col gap-1">
                           <div className="flex flex-row items-center gap-2 overflow-hidden">
-                            <span className="flex font-normal text-4xl tabular-nums leading-none tracking-[-0.15rem]">
+                            <span className="flex font-semibold text-3xl tabular-nums leading-none tracking-tight">
                               {plan.price === "Custom" ? (
-                                <span>Let's Talk</span>
+                                <span className="text-2xl">Let's Talk</span>
                               ) : (
                                 <>
                                   $
@@ -133,20 +133,17 @@ export function PricingSection() {
 
                         {/* CTA Button */}
                         {plan.popular ? (
-                          <div className="relative mb-2 inline-block h-12 w-full">
-                            <div className="absolute bottom-2 h-4 w-full translate-y-full rounded-b-lg bg-gradient-to-r from-[#FB923C] via-[#F472B6] to-[#E879F9]"></div>
-                            <Button
-                              asChild
-                              className="relative px-6 text-base bg-primary text-white hover:bg-primary h-12 w-full shadow-inner-sm rounded-md py-2 font-medium"
-                            >
-                              <Link to="/auth/signup">{plan.cta}</Link>
-                            </Button>
-                          </div>
+                          <Button
+                            asChild
+                            className="w-full h-10 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary to-purple-600 rounded-lg hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+                          >
+                            <Link to="/auth/signup">{plan.cta}</Link>
+                          </Button>
                         ) : (
                           <Button
                             asChild
                             variant="outline"
-                            className="w-full h-12 px-5 py-3 rounded-lg border bg-transparent shadow-inner-sm hover:bg-accent hover:text-accent-foreground"
+                            className="w-full h-10 px-4 py-2 rounded-lg border bg-transparent shadow-inner-sm hover:bg-accent hover:text-accent-foreground text-sm"
                           >
                             <Link
                               to={
@@ -162,31 +159,31 @@ export function PricingSection() {
                       </div>
 
                       {/* Separator */}
-                      <Separator className="mt-2 bg-secondary" />
+                      <Separator className="bg-secondary" />
 
                       {/* Features */}
-                      <ul className="mt-4 flex flex-col gap-4 px-6 pb-8 font-medium text-sm">
+                      <ul className="flex flex-col gap-3 px-5 pb-6 font-medium text-sm">
                         {index > 0 && (
-                          <span className="flex items-center gap-1 font-medium text-sm">
+                          <span className="flex items-center gap-1 font-medium text-xs text-muted-foreground">
                             Everything in {plans[index - 1].name} +
                           </span>
                         )}
                         {plan.features.map((feature) => (
                           <li
                             key={feature}
-                            className="flex flex-row items-start gap-3 font-normal text-sm"
+                            className="flex flex-row items-start gap-2 font-normal text-sm"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
+                              width="16"
+                              height="16"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              className="lucide lucide-check size-5 shrink-0"
+                              className="lucide lucide-check size-4 shrink-0 mt-0.5"
                               aria-hidden="true"
                             >
                               <path d="M20 6 9 17l-5-5"></path>
@@ -195,7 +192,7 @@ export function PricingSection() {
                           </li>
                         ))}
                         {plan.name === "Free" && (
-                          <p className="text-muted-foreground text-xs">
+                          <p className="text-muted-foreground text-xs mt-2">
                             AI agents get deleted after 14 days of inactivity on
                             the free plan.
                           </p>
