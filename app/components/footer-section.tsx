@@ -71,7 +71,12 @@ export function FooterSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-flex items-center space-x-2 mb-4 group">
+              <img 
+                src="/krixum-logo-cosmic.svg" 
+                alt="Krixum AI" 
+                className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
+              />
               <span className="text-2xl font-bold tracking-tight text-foreground">
                 Krixum <span className="font-light">AI</span>
               </span>

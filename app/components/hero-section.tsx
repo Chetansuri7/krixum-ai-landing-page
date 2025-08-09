@@ -268,7 +268,10 @@ export function HeroSection() {
                     </button>
 
                     {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-xl shadow-xl z-10 overflow-hidden">
+                    <div
+                      className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-xl shadow-xl z-10 overflow-hidden max-h-[calc(100vh-200px)] overflow-y-auto"
+                      role="listbox"
+                    >
                       {/* GPT-5 */}
                       <div className="flex items-center gap-3 p-2.5 hover:bg-accent transition-colors cursor-pointer border-l-2 border-primary">
                         <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
@@ -395,13 +398,13 @@ export function HeroSection() {
                     Quick start:
                   </p>
                   <div className="flex gap-2 justify-center">
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors">
+                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors" aria-label="Quick start: Write code">
                       Write code
                     </button>
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors">
+                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors" aria-label="Quick start: Analyze data">
                       Analyze data
                     </button>
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors">
+                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors" aria-label="Quick start: Creative writing">
                       Creative writing
                     </button>
                   </div>

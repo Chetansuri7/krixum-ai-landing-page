@@ -1,0 +1,30 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="phoenixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b6b" />
+      <stop offset="50%" stop-color="#ffa726" />
+      <stop offset="100%" stop-color="#ffcc02" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Phoenix body -->
+  <path d="M16 28 C12 26 10 22 12 18 C14 14 18 12 20 16 C22 20 20 24 16 28 Z" 
+        fill="url(#phoenixGradient)" opacity="0.8" />
+  
+  <!-- Phoenix wing -->
+  <path d="M20 16 C24 14 28 16 26 20 C24 24 20 22 20 16 Z" 
+        fill="url(#phoenixGradient)" opacity="0.6" />
+  
+  <!-- Phoenix head/beak -->
+  <circle cx="16" cy="12" r="3" fill="url(#phoenixGradient)" />
+  <path d="M16 9 L18 7 L16 11 Z" fill="rgba(255,255,255,0.8)" />
+  
+  <!-- Flame trails -->
+  <path d="M12 18 C8 16 6 20 8 22 C10 20 12 18 12 18 Z" 
+        fill="rgba(255,107,107,0.4)" />
+  <path d="M14 24 C10 22 8 26 10 28 C12 26 14 24 14 24 Z" 
+        fill="rgba(255,167,38,0.4)" />
+  
+  <!-- Eye -->
+  <circle cx="17" cy="11" r="0.8" fill="white" />
+</svg>

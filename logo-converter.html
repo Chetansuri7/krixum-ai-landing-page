@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Krixum Logo Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .logo-preview { margin: 20px 0; }
+        .logo-preview img { width: 64px; height: 64px; margin-right: 10px; }
+        button { padding: 10px 20px; margin: 5px; background: #6366f1; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #4f46e5; }
+        .sizes { margin: 10px 0; }
+        .sizes label { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <h1>Krixum Logo Converter</h1>
+    <p>Convert your SVG logos to PNG at different sizes</p>
+    
+    <div class="sizes">
+        <label><input type="radio" name="size" value="32" checked> 32x32 (favicon)</label>
+        <label><input type="radio" name="size" value="64"> 64x64 (small)</label>
+        <label><input type="radio" name="size" value="128"> 128x128 (medium)</label>
+        <label><input type="radio" name="size" value="256"> 256x256 (large)</label>
+        <label><input type="radio" name="size" value="512"> 512x512 (app icon)</label>
+    </div>
+
+    <div class="logo-preview">
+        <h3>Cosmic Logo</h3>
+        <img src="krixum-logo-cosmic.svg" alt="Cosmic">
+        <button onclick="convertToPNG('krixum-logo-cosmic.svg', 'cosmic')">Download PNG</button>
+    </div>
+
+    <div class="logo-preview">
+        <h3>Neural Network Logo</h3>
+        <img src="krixum-logo-neural.svg" alt="Neural">
+        <button onclick="convertToPNG('krixum-logo-neural.svg', 'neural')">Download PNG</button>
+    </div>
+
+    <div class="logo-preview">
+        <h3>Phoenix Logo</h3>
+        <img src="krixum-logo-phoenix.svg" alt="Phoenix">
+        <button onclick="convertToPNG('krixum-logo-phoenix.svg', 'phoenix')">Download PNG</button>
+    </div>
+
+    <div class="logo-preview">
+        <h3>Quantum Logo</h3>
+        <img src="krixum-logo-quantum.svg" alt="Quantum">
+        <button onclick="convertToPNG('krixum-logo-quantum.svg', 'quantum')">Download PNG</button>
+    </div>
+
+    <div class="logo-preview">
+        <h3>Minimal K Logo</h3>
+        <img src="krixum-logo-minimal.svg" alt="Minimal">
+        <button onclick="convertToPNG('krixum-logo-minimal.svg', 'minimal')">Download PNG</button>
+    </div>
+
+    <script>
+        function convertToPNG(svgPath, name) {
+            const size = document.querySelector('input[name="size"]:checked').value;
+            
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `krixum-logo-${name}-${size}x${size}.png`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                });
+            };
+            img.src = svgPath;
+        }
+    </script>
+</body>
+</html>
