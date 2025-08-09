@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Button } from "~/components/ui/button";
-import { Link } from "react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Badge } from "~/components/ui/badge";
 import { Separator } from "~/components/ui/separator";
@@ -133,28 +131,23 @@ export function PricingSection() {
 
                         {/* CTA Button */}
                         {plan.popular ? (
-                          <Button
-                            asChild
-                            className="w-full h-10 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary to-purple-600 rounded-lg hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+                          <a
+                            href="https://chat.krixum.com/auth/signup"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary to-purple-600 rounded-lg hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
                           >
-                            <Link to="/auth/signup">{plan.cta}</Link>
-                          </Button>
+                            {plan.cta}
+                          </a>
                         ) : (
-                          <Button
-                            asChild
-                            variant="outline"
-                            className="w-full h-10 px-4 py-2 rounded-lg border bg-transparent shadow-inner-sm hover:bg-accent hover:text-accent-foreground text-sm"
+                          <a
+                            href={`https://chat.krixum.com/${plan.name === 'Enterprise' ? 'contact' : 'auth/signup'}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center w-full h-10 px-4 py-2 rounded-lg border bg-transparent shadow-inner-sm hover:bg-accent hover:text-accent-foreground text-sm cursor-pointer transition-colors"
                           >
-                            <Link
-                              to={
-                                plan.name === "Enterprise"
-                                  ? "/contact"
-                                  : "/auth/signup"
-                              }
-                            >
-                              {plan.cta}
-                            </Link>
-                          </Button>
+                            {plan.cta}
+                          </a>
                         )}
                       </div>
 

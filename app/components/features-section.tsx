@@ -95,7 +95,7 @@ export function FeaturesSection() {
 
                   {/* Learn More Link */}
                   <div className="pt-4">
-                    <button className="group/btn flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium">
+                    <button className="group/btn flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium cursor-pointer">
                       Learn more
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>

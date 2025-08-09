@@ -1,6 +1,5 @@
 import { Card } from "~/components/ui/card";
 import { SectionHeader } from "~/components/ui/section-header";
-import { Button } from "~/components/ui/button";
 
 const faqData = [
   {
@@ -69,7 +68,7 @@ export function FAQSection() {
         {faqData.map((faq) => (
           <Card
             key={faq.id}
-            className="group bg-background rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full"
+            className="group bg-background rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full cursor-pointer"
           >
             <div className="p-6 sm:p-8 flex flex-col h-full">
               <h3 className="text-lg font-semibold leading-tight text-foreground group-hover:text-primary transition-colors mb-4">
@@ -83,7 +82,7 @@ export function FAQSection() {
         ))}
 
         {/* Special Contact Block */}
-        <Card className="group bg-background rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full">
+        <Card className="group bg-background rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full cursor-pointer">
           <div className="p-6 sm:p-8 flex flex-col h-full">
             <div className="flex items-center gap-3 mb-4">
               <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
@@ -110,20 +109,14 @@ export function FAQSection() {
               prefer a private conversation, feel free to email us directly.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Button asChild size="lg" className="rounded-xl">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://forum.cursor.com/"
-                >
-                  Our Forum
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-xl">
-                <a href="mailto:hi@cursor.com">
-                  Contact Us
-                </a>
-              </Button>
+              <a
+                href="https://chat.krixum.com/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-xl text-sm font-medium bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 cursor-pointer transition-colors"
+              >
+                Contact Us
+              </a>
             </div>
           </div>
         </Card>

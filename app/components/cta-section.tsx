@@ -1,5 +1,4 @@
-import { Button } from "~/components/ui/button";
-import { Link } from "react-router";
+
 
 export function CtaSection() {
   return (
@@ -49,13 +48,14 @@ export function CtaSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center mb-6">
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-[#FB923C] hover:bg-white/90 font-semibold px-8 py-3 text-lg h-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              <a
+                href="https://chat.krixum.com/auth/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#FB923C] hover:bg-white/90 font-semibold px-8 py-3 text-lg h-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
               >
-                <Link to="/auth/signup">Start Free Trial</Link>
-              </Button>
+                Start Free Trial
+              </a>
             </div>
 
             <div className="flex items-center gap-4 text-white/80 text-sm">

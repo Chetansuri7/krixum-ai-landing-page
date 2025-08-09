@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+
 
 export function HeroSection() {
   return (
@@ -75,9 +75,11 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link
-              to="/auth/signup"
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-purple-600 rounded-xl hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105 group"
+            <a
+              href="https://chat.krixum.com/auth/signup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-purple-600 rounded-xl hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105 group cursor-pointer"
             >
               Start Free Trial
               <svg
@@ -93,7 +95,7 @@ export function HeroSection() {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </Link>
+            </a>
             <button
               onClick={() => {
                 const element = document.getElementById('pricing');
@@ -104,7 +106,7 @@ export function HeroSection() {
                   });
                 }
               }}
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group"
+              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group cursor-pointer"
             >
               View Pricing
               <svg
@@ -231,7 +233,7 @@ export function HeroSection() {
 
                   {/* Model Dropdown */}
                   <div className="relative">
-                    <button className="w-full flex items-center justify-between p-2.5 sm:p-3 bg-background border border-border rounded-lg sm:rounded-xl hover:bg-accent/50 transition-colors">
+                    <button className="w-full flex items-center justify-between p-2.5 sm:p-3 bg-background border border-border rounded-lg sm:rounded-xl hover:bg-accent/50 transition-colors cursor-pointer">
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary rounded-full flex items-center justify-center">
                           <svg
@@ -398,13 +400,13 @@ export function HeroSection() {
                     Quick start:
                   </p>
                   <div className="flex gap-2 justify-center">
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors" aria-label="Quick start: Write code">
+                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors cursor-pointer" aria-label="Quick start: Write code">
                       Write code
                     </button>
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors" aria-label="Quick start: Analyze data">
+                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors cursor-pointer" aria-label="Quick start: Analyze data">
                       Analyze data
                     </button>
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors" aria-label="Quick start: Creative writing">
+                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors cursor-pointer" aria-label="Quick start: Creative writing">
                       Creative writing
                     </button>
                   </div>

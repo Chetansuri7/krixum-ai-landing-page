@@ -198,6 +198,32 @@ body {
   }
 }
 
+/* Cursor styles for interactive elements */
+button,
+[role="button"],
+.cursor-pointer,
+a,
+[data-clickable="true"] {
+  cursor: pointer !important;
+}
+
+button:disabled,
+[role="button"]:disabled {
+  cursor: not-allowed !important;
+}
+
+/* Ensure all clickable elements show pointer cursor */
+.group:hover,
+.group-hover\:scale-105:hover,
+.hover\:scale-105:hover,
+.hover\:bg-accent:hover,
+.hover\:text-foreground:hover,
+.transition-all,
+.transition-colors,
+.transition-transform {
+  cursor: pointer;
+}
+
 /* Hero Section Animations */
 @keyframes float {
   0%, 100% {

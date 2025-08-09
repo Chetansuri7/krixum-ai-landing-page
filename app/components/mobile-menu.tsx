@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Menu } from "lucide-react"
-import { Link } from "react-router"
 import { Button } from "~/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet"
+import { redirectToChat } from "~/lib/utils"
 
 export function MobileMenuButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,9 +24,15 @@ export function MobileMenuButton() {
         <div className="flex flex-col h-full p-6">
           {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b">
-            <Link to="/" className="text-xl font-bold" onClick={() => setIsOpen(false)}>
+            <button 
+              onClick={() => {
+                window.location.href = '/';
+                setIsOpen(false);
+              }}
+              className="text-xl font-bold cursor-pointer"
+            >
               Krixum <span className="font-light">AI</span>
-            </Link>
+            </button>
           </div>
 
           {/* Navigation Links */}
@@ -39,12 +45,10 @@ export function MobileMenuButton() {
               { label: "Pricing", targetId: "pricing" },
               { label: "FAQ", targetId: "faq" }
             ].map((link) => (
-              <a 
+              <button 
                 key={link.label}
-                href={`#${link.targetId}`}
-                className="text-lg font-medium text-foreground hover:text-foreground/80 hover:bg-muted/50 transition-colors py-3 px-3 rounded-md"
-                onClick={(e) => {
-                  e.preventDefault();
+                className="text-lg font-medium text-foreground hover:text-foreground/80 hover:bg-muted/50 transition-colors py-3 px-3 rounded-md text-left cursor-pointer"
+                onClick={() => {
                   document.getElementById(link.targetId)?.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
@@ -53,31 +57,17 @@ export function MobileMenuButton() {
                 }}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* Auth Buttons */}
           <div className="flex flex-col gap-3 pt-6 border-t">
-            <Button variant="outline" asChild className="w-full h-12">
-              <a
-                href="https://chat.krixum.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-              >
-                Sign in
-              </a>
+            <Button variant="outline" className="w-full h-12" onClick={() => { redirectToChat('auth/signin'); setIsOpen(false); }}>
+              Sign in
             </Button>
-            <Button asChild className="w-full h-12">
-              <a
-                href="https://chat.krixum.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-              >
-                Try for Free
-              </a>
+            <Button className="w-full h-12" onClick={() => { redirectToChat('auth/signup'); setIsOpen(false); }}>
+              Try for Free
             </Button>
           </div>
         </div>
