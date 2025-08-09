@@ -1,6 +1,5 @@
 import { SectionHeader } from "~/components/ui/section-header";
-import { Badge } from "~/components/ui/badge";
-import { Sparkles, Crown, Rocket, ChevronRight } from "lucide-react";
+import { Sparkles, Crown, Rocket } from "lucide-react";
 
 // Company Logo Components
 function OpenAILogo({ className = "w-8 h-8" }: { className?: string }) {
@@ -63,23 +62,7 @@ function QwenLogo({ className = "w-8 h-8" }: { className?: string }) {
   );
 }
 
-function GenericLogo({
-  className = "w-8 h-8",
-  name,
-}: {
-  className?: string;
-  name: string;
-}) {
-  return (
-    <div
-      className={`${className} bg-muted border border-border rounded-lg flex items-center justify-center`}
-    >
-      <span className="text-muted-foreground font-bold text-sm">
-        {name.charAt(0)}
-      </span>
-    </div>
-  );
-}
+
 
 export function ModelsSection() {
   const companies = [

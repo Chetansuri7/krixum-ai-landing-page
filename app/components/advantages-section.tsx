@@ -1,69 +1,218 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Badge } from "./ui/badge";
-import { SectionHeader } from "./ui/section-header";
-import { Rocket, Lock, TrendingUp, Zap } from "lucide-react";
+import { SectionHeader } from "~/components/ui/section-header";
 
 export function AdvantagesSection() {
   const advantages = [
     {
-      icon: <Lock className="w-6 h-6 text-orange-500" />,
-      title: "No Vendor Lock-in",
+      title: "Freedom",
+      subtitle: "No Vendor Lock-in",
       description:
-        "Switch between AI models freely without being tied to a single provider. Your data and conversations remain portable.",
-      badge: "100% Freedom",
-      badgeColor: "bg-orange-100 text-orange-600",
+        "Switch between AI models freely without being tied to a single provider. Your data and conversations remain portable across all platforms.",
+      metric: "100%",
+      metricLabel: "Freedom",
+      color: "from-blue-500 to-cyan-500",
+      bgColor:
+        "from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20",
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+          />
+        </svg>
+      ),
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-amber-500" />,
-      title: "Cost Optimization",
+      title: "Savings",
+      subtitle: "Cost Optimization",
       description:
-        "Use the most cost-effective model for each task. Save up to 70% on AI costs by choosing the right model.",
-      badge: "Up to 70% Savings",
-      badgeColor: "bg-amber-100 text-amber-600",
+        "Use the most cost-effective model for each task. Smart routing ensures you get the best value while maintaining quality.",
+      metric: "70%",
+      metricLabel: "Cost Reduction",
+      color: "from-emerald-500 to-teal-500",
+      bgColor:
+        "from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20",
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+          />
+        </svg>
+      ),
     },
     {
-      icon: <Zap className="w-6 h-6 text-pink-500" />,
-      title: "Peak Performance",
+      title: "Performance",
+      subtitle: "Peak Efficiency",
       description:
-        "Get optimal results by leveraging each model’s strengths.",
-      badge: "Peak Performance",
-      badgeColor: "bg-pink-100 text-pink-600",
+        "Get optimal results by leveraging each model's unique strengths. Our intelligent routing ensures peak performance for every query.",
+      metric: "10x",
+      metricLabel: "Faster Results",
+      color: "from-purple-500 to-pink-500",
+      bgColor:
+        "from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20",
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
+        </svg>
+      ),
     },
     {
-      icon: <Rocket className="w-6 h-6 text-red-500" />,
-      title: "Always Updated",
+      title: "Innovation",
+      subtitle: "Always Current",
       description:
-        "Stay ahead with the latest AI capabilities without changing platforms.",
-      badge: "Always Updated",
-      badgeColor: "bg-red-100 text-red-600",
+        "Stay ahead with the latest AI capabilities without changing platforms. Automatic updates bring you the newest models instantly.",
+      metric: "24/7",
+      metricLabel: "Updates",
+      color: "from-orange-500 to-red-500",
+      bgColor:
+        "from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20",
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+          />
+        </svg>
+      ),
     },
   ];
 
   return (
-    <section id="advantages" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
+    <section
+      id="advantages"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8"
+    >
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
           badge="Advantages"
           title="Why choose Krixum AI?"
           description="Experience the freedom and flexibility of a truly unified AI platform."
         />
-        
-        <div className="grid gap-6 pt-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {advantages.map((adv, idx) => (
-            <Card
-              key={idx}
-              className="hover:shadow-lg transition-all duration-300 rounded-3xl h-full"
+
+        {/* Main Advantages Grid - 4 in a row for web */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+          {advantages.map((advantage, index) => (
+            <div
+              key={advantage.title}
+              className="group relative overflow-hidden rounded-3xl bg-card border border-border hover:border-primary/20 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <CardHeader className="flex flex-col items-start space-y-3 p-6">
-                <div className="p-3 rounded-full bg-muted">{adv.icon}</div>
-                <CardTitle className="text-lg font-semibold">{adv.title}</CardTitle>
-                <Badge className={adv.badgeColor}>{adv.badge}</Badge>
-              </CardHeader>
-              <CardContent className="flex-grow p-6 pt-0">
-                <p className="text-muted-foreground leading-relaxed">{adv.description}</p>
-              </CardContent>
-            </Card>
+              <div className="p-6 lg:p-8">
+                {/* Icon */}
+                <div
+                  className={`inline-flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-gradient-to-br ${advantage.color} text-white mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                >
+                  {advantage.icon}
+                </div>
+
+                {/* Content */}
+                <div className="space-y-3 lg:space-y-4">
+                  <div>
+                    <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-1 lg:mb-2 group-hover:text-primary transition-colors">
+                      {advantage.title}
+                    </h3>
+                    <p className="text-sm lg:text-base font-medium text-muted-foreground">
+                      {advantage.subtitle}
+                    </p>
+                  </div>
+
+                  <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                    {advantage.description}
+                  </p>
+
+                  {/* Metric */}
+                  <div className="flex items-baseline gap-2 pt-2 lg:pt-4">
+                    <span
+                      className={`text-2xl lg:text-3xl font-bold bg-gradient-to-r ${advantage.color} bg-clip-text text-transparent`}
+                    >
+                      {advantage.metric}
+                    </span>
+                    <span className="text-xs lg:text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                      {advantage.metricLabel}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* Bottom CTA Section */}
+        <div className="text-center">
+          <div className="inline-flex items-center gap-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="font-semibold text-foreground">
+                  Ready to experience the difference?
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Join thousands of satisfied users
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden sm:block w-px h-12 bg-border"></div>
+
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>No setup required</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                ></div>
+                <span>Start in seconds</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

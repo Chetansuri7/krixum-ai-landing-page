@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Button } from "~/components/ui/button";
 import { Link } from "react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
@@ -7,11 +7,12 @@ import { Separator } from "~/components/ui/separator";
 import { AnimatedTabs } from "~/components/ui/animated-tabs";
 import { SectionHeader } from "~/components/ui/section-header";
 import { pricingPlans } from "~/lib/content-data";
+import React from "react";
 
 export function PricingSection() {
-  const [billingPeriod, setBillingPeriod] = React.useState<
-    "monthly" | "yearly"
-  >("monthly");
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">(
+    "monthly"
+  );
 
   const plans = pricingPlans.map((plan) => ({
     ...plan,
@@ -58,7 +59,7 @@ export function PricingSection() {
               { id: "monthly", label: "Monthly" },
               {
                 id: "yearly",
-                label: `Yearly (Save 20%)`
+                label: `Yearly (Save 20%)`,
               },
             ]}
             activeTab={billingPeriod}

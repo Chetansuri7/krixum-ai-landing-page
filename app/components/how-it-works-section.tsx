@@ -122,10 +122,42 @@ export function HowItWorksSection() {
               <div className="absolute inset-0 flex aspect-[0.939] w-full items-center justify-center">
                 <div className="aspect-[0.939] w-full rounded-2xl p-3">
                   <div className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">
-                    <div
-                      className="aspect-[0.939] w-full rounded-3xl bg-gradient-to-br from-orange-400 via-pink-400 to-fuchsia-400 flex items-center justify-center"
-                    >
-                      <span className="text-white font-semibold text-base lg:text-lg">Gradient Placeholder (Video)</span>
+                    <div className="aspect-[0.939] w-full rounded-3xl bg-gradient-to-br from-orange-400 via-pink-400 to-fuchsia-400 flex items-center justify-center relative overflow-hidden">
+                      {/* Background Pattern */}
+                      <div className="absolute inset-0 opacity-20">
+                        <svg className="w-full h-full" viewBox="0 0 100 100">
+                          <defs>
+                            <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+                              <circle cx="5" cy="5" r="1" fill="white" opacity="0.3"/>
+                            </pattern>
+                          </defs>
+                          <rect width="100" height="100" fill="url(#dots)" />
+                        </svg>
+                      </div>
+                      {/* Mock Interface */}
+                      <div className="relative z-10 w-full h-full p-8 flex flex-col">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+                            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+                            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+                          </div>
+                          <div className="space-y-2">
+                            <div className="h-2 bg-white/40 rounded w-3/4"></div>
+                            <div className="h-2 bg-white/40 rounded w-1/2"></div>
+                          </div>
+                        </div>
+                        <div className="flex-1 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mb-3 mx-auto">
+                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                            </div>
+                            <span className="text-white font-semibold text-sm">Step {activeStep} Demo</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <button
                       type="button"
@@ -173,10 +205,40 @@ export function HowItWorksSection() {
                 >
                   <div className="aspect-[0.939] w-full rounded-3xl bg-background p-3 sm:p-4">
                     <div className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">
-                      <div
-                        className="aspect-[0.939] w-full rounded-3xl bg-gradient-to-br from-orange-400 via-pink-400 to-fuchsia-400 flex items-center justify-center"
-                      >
-                        <span className="text-white font-semibold text-sm sm:text-base lg:text-lg">Gradient Placeholder (Video)</span>
+                      <div className="aspect-[0.939] w-full rounded-3xl bg-gradient-to-br from-orange-400 via-pink-400 to-fuchsia-400 flex items-center justify-center relative overflow-hidden">
+                        {/* Background Pattern */}
+                        <div className="absolute inset-0 opacity-20">
+                          <svg className="w-full h-full" viewBox="0 0 100 100">
+                            <defs>
+                              <pattern id={`dots-${step.id}`} width="8" height="8" patternUnits="userSpaceOnUse">
+                                <circle cx="4" cy="4" r="0.8" fill="white" opacity="0.4"/>
+                              </pattern>
+                            </defs>
+                            <rect width="100" height="100" fill={`url(#dots-${step.id})`} />
+                          </svg>
+                        </div>
+                        {/* Mock Interface */}
+                        <div className="relative z-10 w-full h-full p-4 sm:p-6 flex flex-col">
+                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 mb-3">
+                            <div className="flex items-center gap-1.5 mb-2">
+                              <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                              <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                              <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                            </div>
+                            <div className="space-y-1.5">
+                              <div className="h-1.5 bg-white/40 rounded w-3/4"></div>
+                              <div className="h-1.5 bg-white/40 rounded w-1/2"></div>
+                            </div>
+                          </div>
+                          <div className="flex-1 flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mb-2 mx-auto">
+                                <span className="text-white font-bold text-lg">{step.id}</span>
+                              </div>
+                              <span className="text-white font-medium text-xs sm:text-sm">Demo Video</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <button
                         type="button"

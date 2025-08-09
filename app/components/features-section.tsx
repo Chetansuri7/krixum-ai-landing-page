@@ -1,5 +1,5 @@
 import { SectionHeader } from "~/components/ui/section-header";
-import { MessageSquare, FileText, Shield, Lightbulb, Users, BarChart3, Zap, ArrowRight, CheckCircle } from "lucide-react";
+import { MessageSquare, FileText, Shield, Lightbulb, Users, BarChart3, ArrowRight, CheckCircle } from "lucide-react";
 
 export function FeaturesSection() {
   const mainFeatures = [
