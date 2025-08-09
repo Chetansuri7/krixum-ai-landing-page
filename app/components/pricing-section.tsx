@@ -56,16 +56,14 @@ export function PricingSection() {
           <AnimatedTabs
             tabs={[
               { id: "monthly", label: "Monthly" },
-              { id: "yearly", label: "Yearly" },
+              {
+                id: "yearly",
+                label: `Yearly (Save 20%)`
+              },
             ]}
             activeTab={billingPeriod}
             onTabChange={(tab) => setBillingPeriod(tab as "monthly" | "yearly")}
           />
-          {billingPeriod === "yearly" && (
-            <div className="text-sm text-green-600 font-medium animate-in fade-in-0 duration-200">
-              💰 Save up to 20% with yearly billing
-            </div>
-          )}
         </div>
 
         {/* Pricing Cards */}

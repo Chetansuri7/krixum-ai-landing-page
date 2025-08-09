@@ -55,7 +55,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Sign In / Try for Free
+              Sign In
             </a>
           </Button>
         </div>

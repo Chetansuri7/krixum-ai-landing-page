@@ -1,4 +1,4 @@
-import { CreditCard } from "lucide-react";
+ import { CreditCard } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { useHeroContent } from "~/lib/content-context";
 
@@ -26,7 +26,7 @@ export function HeroSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Sign In / Try for Free
+                    Try Krixum
                   </a>
                 </Button>
               </div>
