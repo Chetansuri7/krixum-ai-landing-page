@@ -57,7 +57,7 @@ const faqData = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-16">
+    <section id="faq" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-8">
         <SectionHeader
           badge="FAQ"
           title="Frequently Asked Questions"

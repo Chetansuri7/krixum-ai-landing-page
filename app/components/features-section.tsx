@@ -48,7 +48,7 @@ export function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-16">
+    <section id="features" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex flex-col gap-12 w-full">
         <SectionHeader
           badge="Features"

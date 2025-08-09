@@ -60,7 +60,7 @@ export function HowItWorksSection() {
   const [isPlaying, setIsPlaying] = useState(true);
 
   return (
-    <section className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-16">
+    <section className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
           badge="How it works"

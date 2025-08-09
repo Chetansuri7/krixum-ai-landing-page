@@ -37,7 +37,7 @@ import { SectionHeader } from "~/components/ui/section-header";
 
 export function SecuritySection() {
   return (
-    <section id="security" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-16">
+    <section id="security" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex flex-col gap-4 w-full">
         <div className="flex flex-col items-start gap-6 lg:flex-row">
           <div className="flex w-full flex-1 flex-col items-start gap-4">

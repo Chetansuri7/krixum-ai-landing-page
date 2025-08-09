@@ -160,7 +160,7 @@ export function ModelsSection() {
   return (
     <section
       id="models"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-16"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8"
     >
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
