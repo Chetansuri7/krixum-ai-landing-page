@@ -14,7 +14,7 @@ export function HeroSection() {
 
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
-          <svg className="w-full h-full" viewBox="0 0 100 100">
+          <svg className="w-full h-full" viewBox="0 0 100 100" aria-hidden="true">
             <defs>
               <pattern
                 id="hero-grid"
@@ -46,6 +46,7 @@ export function HeroSection() {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -76,7 +77,7 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <a
-              href="https://chat.krixum.com/auth/signup"
+              href="https://chat.krixum.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-purple-600 rounded-xl hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105 group cursor-pointer"
@@ -87,6 +88,7 @@ export function HeroSection() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -114,6 +116,7 @@ export function HeroSection() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -134,6 +137,7 @@ export function HeroSection() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"

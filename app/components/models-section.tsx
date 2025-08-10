@@ -165,7 +165,7 @@ export function ModelsSection() {
                 {/* Company Header */}
                 <div className="p-6 border-b border-border bg-muted/20">
                   <div className="flex items-center gap-4">
-                    <LogoComponent className="w-12 h-12" />
+                    <LogoComponent className="w-12 h-12" aria-hidden="true" />
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-foreground">
                         {company.name}
@@ -205,7 +205,7 @@ export function ModelsSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="text-center md:text-left space-y-2">
               <div className="flex items-center justify-center md:justify-start gap-2">
-                <Rocket className="w-6 h-6 text-primary" />
+                <Rocket className="w-6 h-6 text-primary" aria-hidden="true" />
                 <span className="text-2xl font-bold text-foreground">75+</span>
               </div>
               <p className="text-muted-foreground">AI Models Available</p>
@@ -213,7 +213,7 @@ export function ModelsSection() {
 
             <div className="text-center space-y-2">
               <div className="flex items-center justify-center gap-2">
-                <Sparkles className="w-6 h-6 text-primary" />
+                <Sparkles className="w-6 h-6 text-primary" aria-hidden="true" />
                 <span className="text-2xl font-bold text-foreground">
                   Instant
                 </span>
@@ -223,7 +223,7 @@ export function ModelsSection() {
 
             <div className="text-center md:text-right space-y-2">
               <div className="flex items-center justify-center md:justify-end gap-2">
-                <Crown className="w-6 h-6 text-primary" />
+                <Crown className="w-6 h-6 text-primary" aria-hidden="true" />
                 <span className="text-2xl font-bold text-foreground">Zero</span>
               </div>
               <p className="text-muted-foreground">Vendor Lock-in</p>

@@ -39,6 +39,7 @@ export function Header() {
                   src="/krixum-logo-cosmic.svg"
                   alt="Krixum AI"
                   className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
+                  aria-hidden="true"
                 />
                 <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
@@ -63,7 +64,7 @@ export function Header() {
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
               <a
-                href="https://chat.krixum.com/auth/signin"
+                href="https://chat.krixum.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
@@ -71,7 +72,7 @@ export function Header() {
                 Sign In
               </a>
               <a
-                href="https://chat.krixum.com/auth/signup"
+                href="https://chat.krixum.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary to-purple-600 rounded-lg hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
@@ -96,6 +97,7 @@ export function Header() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 {isMobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -132,7 +134,7 @@ export function Header() {
               {/* Mobile CTA Buttons */}
               <div className="mt-6 space-y-3">
                 <a
-                  href="https://chat.krixum.com/auth/signin"
+                  href="https://chat.krixum.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -141,7 +143,7 @@ export function Header() {
                   Sign In
                 </a>
                 <a
-                  href="https://chat.krixum.com/auth/signup"
+                  href="https://chat.krixum.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}

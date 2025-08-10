@@ -60,7 +60,7 @@ export function FooterSection() {
 
     return (
       <a 
-        href={`https://chat.krixum.com${link.href}`}
+        href="https://chat.krixum.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"

@@ -6,6 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function redirectToChat(path: string = '') {
-  const chatUrl = new URL(path, 'https://chat.krixum.com');
+  const chatUrl = new URL('/', 'https://chat.krixum.com');
   window.open(chatUrl.href, '_blank', 'noopener,noreferrer');
 }
