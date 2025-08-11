@@ -6,11 +6,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import { ConsentBanner } from "./components/ConsentBanner";
-
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -27,66 +27,29 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-        {/* Google Analytics Consent Mode */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              // Set default consent to denied for all types
-              gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'analytics_storage': 'denied'
-              });
-            `,
-          }}
-        />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHFZ8BKND8"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-RHFZ8BKND8', {
-                anonymize_ip: true
-              });
-              // On page load, check consent state and update gtag consent if accepted
-              (function() {
-                try {
-                  var consent = localStorage.getItem('analyticsConsent');
-                  if (consent === 'accepted') {
-                    gtag('consent', 'update', {
-                      'ad_storage': 'granted',
-                      'ad_user_data': 'granted',
-                      'ad_personalization': 'granted',
-                      'analytics_storage': 'granted'
-                    });
-                  }
-                } catch(e) {
-                    console.warn('Analytics consent check failed:', e);
-                  }
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body>
-        {children}
-        {/* Consent Banner as React component */}
-        <ConsentBanner />
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
+    <HelmetProvider>
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Helmet>
+            <title>Krixum AI</title>
+            <meta
+              name="description"
+              content="Krixum AI is a cutting-edge platform for AI-powered solutions."
+            />
+          </Helmet>
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          {children}
+          <ConsentBanner />
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </html>
+    </HelmetProvider>
   );
 }
 
