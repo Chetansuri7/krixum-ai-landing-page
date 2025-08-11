@@ -6,7 +6,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -27,29 +26,25 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <HelmetProvider>
-      <html lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <Helmet>
-            <title>Krixum AI</title>
-            <meta
-              name="description"
-              content="Krixum AI is a cutting-edge platform for AI-powered solutions."
-            />
-          </Helmet>
-          <Meta />
-          <Links />
-        </head>
-        <body>
-          {children}
-          <ConsentBanner />
-          <ScrollRestoration />
-          <Scripts />
-        </body>
-      </html>
-    </HelmetProvider>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Krixum AI</title>
+        <meta
+          name="description"
+          content="Krixum AI is a cutting-edge platform for AI-powered solutions."
+        />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {children}
+        <ConsentBanner />
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
   );
 }
 
