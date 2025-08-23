@@ -65,78 +65,36 @@ function QwenLogo({ className = "w-8 h-8" }: { className?: string }) {
 
 
 export function ModelsSection() {
-  const companies = [
+  const providers = [
     {
       name: "OpenAI",
       logo: OpenAILogo,
-      description: "Leading AI research company",
-      models: [
-        "GPT-5, 5-mini, 5-nano",
-        "GPT-4.1, 4.1-mini",
-        "GPT-4o, 4o-mini",
-        "o3, o3-mini, o1-pro",
-      ],
-      hasMore: true,
-    },
-    {
-      name: "Google",
-      logo: GoogleLogo,
-      description: "Advanced multimodal AI models",
-      models: [
-        "Gemini 2.5 Pro, Flash",
-        "Gemini 2.0 Flash, Flash-Lite",
-        "Gemini 1.5 Pro, Flash, Flash-8B",
-        "Gemini Live, Native Audio",
-      ],
-      hasMore: true,
+      color: "from-green-500 to-emerald-500"
     },
     {
       name: "Anthropic",
       logo: AnthropicLogo,
-      description: "Constitutional AI and safety-focused models",
-      models: [
-        "Claude Sonnet 4.0, 3.5",
-        "Claude Haiku 3.5, 3.0",
-        "Claude Opus 3.5, 3.0",
-        "Claude Computer Use",
-      ],
-      hasMore: true,
+      color: "from-orange-500 to-red-500"
     },
     {
-      name: "DeepSeek",
-      logo: DeepSeekLogo,
-      description: "Advanced reasoning and coding models",
-      models: [
-        "DeepSeek V3, R1",
-        "DeepSeek Coder V2, V1",
-        "DeepSeek Math, Reasoning",
-        "DeepSeek Chat, API",
-      ],
-      hasMore: true,
-    },
-    {
-      name: "Qwen",
-      logo: QwenLogo,
-      description: "Multilingual and reasoning-focused models",
-      models: [
-        "Qwen3 235B, 30B, 7B",
-        "Qwen3 Coder 480B, 32B",
-        "Qwen3 Thinking, Instruct",
-        "Qwen3 0.6B, Mini",
-      ],
-      hasMore: true,
+      name: "Google",
+      logo: GoogleLogo,
+      color: "from-blue-500 to-purple-500"
     },
     {
       name: "Meta",
       logo: MetaLogo,
-      description: "Open-source AI models",
-      models: [
-        "Llama 3.3, 3.1, 3.0",
-        "Llama Guard 3, 2",
-        "Llama Code, Instruct",
-        "Llama Vision, Multimodal",
-      ],
-      hasMore: true,
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      name: "DeepSeek",
+      logo: DeepSeekLogo,
+      color: "from-gray-600 to-gray-800"
+    },
+    {
+      name: "Qwen",
+      logo: QwenLogo,
+      color: "from-pink-500 to-purple-600"
     },
   ];
 
@@ -147,88 +105,36 @@ export function ModelsSection() {
     >
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          badge="AI Models"
-          title="Access all leading AI models"
-          description="Switch between the best AI models seamlessly. No vendor lock-in, just the power of choice."
+          badge="AI Providers"
+          title="Top AI providers in one app"
+          description="Access the world's leading AI models without switching platforms. One interface, endless possibilities."
         />
 
-        {/* Company Model Grid - 3 per row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {companies.map((company, index) => {
-            const LogoComponent = company.logo;
+        {/* Minimal Provider Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {providers.map((provider, index) => {
+            const LogoComponent = provider.logo;
             return (
               <div
-                key={company.name}
-                className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
-                style={{ animationDelay: `${index * 100}ms` }}
+                key={provider.name}
+                className="group bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center"
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Company Header */}
-                <div className="p-6 border-b border-border bg-muted/20">
-                  <div className="flex items-center gap-4">
-                    <LogoComponent className="w-12 h-12" aria-hidden="true" />
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground">
-                        {company.name}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {company.description}
-                      </p>
+                <div className="space-y-3">
+                  <div className="flex justify-center">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${provider.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <LogoComponent className="w-6 h-6" aria-hidden="true" />
                     </div>
                   </div>
-                </div>
-
-                {/* Simple Model List */}
-                <div className="p-6">
-                  <div className="space-y-2">
-                    {company.models.map((model) => (
-                      <div
-                        key={model}
-                        className="text-sm text-foreground hover:text-primary transition-colors cursor-pointer py-1"
-                      >
-                        {model}
-                      </div>
-                    ))}
-                    {company.hasMore && (
-                      <div className="text-sm text-muted-foreground italic pt-1">
-                        ...and more
-                      </div>
-                    )}
+                  <div>
+                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {provider.name}
+                    </h3>
                   </div>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom Stats Card */}
-        <div className="bg-card border border-border rounded-2xl p-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div className="text-center md:text-left space-y-2">
-              <div className="flex items-center justify-center md:justify-start gap-2">
-                <Rocket className="w-6 h-6 text-primary" aria-hidden="true" />
-                <span className="text-2xl font-bold text-foreground">75+</span>
-              </div>
-              <p className="text-muted-foreground">AI Models Available</p>
-            </div>
-
-            <div className="text-center space-y-2">
-              <div className="flex items-center justify-center gap-2">
-                <Sparkles className="w-6 h-6 text-primary" aria-hidden="true" />
-                <span className="text-2xl font-bold text-foreground">
-                  Instant
-                </span>
-              </div>
-              <p className="text-muted-foreground">Model Switching</p>
-            </div>
-
-            <div className="text-center md:text-right space-y-2">
-              <div className="flex items-center justify-center md:justify-end gap-2">
-                <Crown className="w-6 h-6 text-primary" aria-hidden="true" />
-                <span className="text-2xl font-bold text-foreground">Zero</span>
-              </div>
-              <p className="text-muted-foreground">Vendor Lock-in</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

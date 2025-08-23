@@ -80,26 +80,25 @@ export function FeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="group relative bg-card border border-border rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="group relative bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Background Gradient */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-3 rounded-3xl transition-opacity duration-300`}
                 ></div>
-
-                {/* Icon */}
-                <div
-                  className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <IconComponent className="w-8 h-8 text-white" aria-hidden="true" />
-                </div>
 
                 {/* Content */}
                 <div className="relative space-y-4">
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
+                  {/* Title with inline icon */}
+                  <div className="flex items-center gap-3">
+                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
+                      <IconComponent className="w-4 h-4 text-white" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
+                  </div>
                   <p className="text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
@@ -140,26 +139,27 @@ export function FeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="group relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+                className="group relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${(index + 3) * 150}ms` }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <IconComponent className="w-6 h-6 text-primary" aria-hidden="true" />
-                  </div>
-                  <div className="flex-1 space-y-2">
-                    <div className="flex items-center justify-between">
+                <div className="space-y-3">
+                  {/* Title with inline icon and stats */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <IconComponent className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                      </div>
                       <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                         {feature.title}
                       </h4>
-                      <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                        {feature.stats}
-                      </span>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
+                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                      {feature.stats}
+                    </span>
                   </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             );
