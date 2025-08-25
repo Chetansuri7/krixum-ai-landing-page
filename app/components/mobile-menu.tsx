@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Menu } from "lucide-react"
 import { Button } from "~/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet"
-import { redirectToChat } from "~/lib/utils"
 
 export function MobileMenuButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -63,10 +62,23 @@ export function MobileMenuButton() {
 
           {/* Auth Buttons */}
           <div className="flex flex-col gap-3 pt-6 border-t">
-            <Button variant="outline" className="w-full h-12" onClick={() => { redirectToChat('auth/signin'); setIsOpen(false); }}>
+            <Button 
+              variant="outline" 
+              className="w-full h-12" 
+              onClick={() => { 
+                window.open('https://chat.krixum.com/auth/signin', '_blank');
+                setIsOpen(false); 
+              }}
+            >
               Sign in
             </Button>
-            <Button className="w-full h-12" onClick={() => { redirectToChat('auth/signup'); setIsOpen(false); }}>
+            <Button 
+              className="w-full h-12" 
+              onClick={() => { 
+                window.open('https://chat.krixum.com/auth/signup', '_blank');
+                setIsOpen(false); 
+              }}
+            >
               Try for Free
             </Button>
           </div>

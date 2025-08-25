@@ -1,5 +1,4 @@
 
-
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20">
@@ -36,128 +35,129 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
-        <div className="text-center">
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-8">
-            The Future of
-            <br />
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              AI Conversations
-            </span>
-          </h1>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left">
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-8">
+              The Future of
+              <br />
+              <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                AI Conversations
+              </span>
+            </h1>
 
-          {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-12">
-            Access ChatGPT, Claude, Gemini, and Llama in one unified interface.
-            <br className="hidden sm:block" />
-            Switch models instantly, preserve context, and maintain complete
-            privacy.
-          </p>
+            {/* Subtitle */}
+            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed mb-12">
+              Access ChatGPT, Claude, Gemini, and Llama in one unified interface.
+              <br className="hidden sm:block" />
+              Switch models instantly, preserve context, and maintain complete
+              privacy.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a
-              href="https://chat.krixum.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-purple-600 rounded-xl hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105 group cursor-pointer"
-            >
-              Start Free Trial
-              <svg
-                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-4 mb-16">
+              <a
+                href="https://chat.krixum.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-purple-600 rounded-xl hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105 group cursor-pointer"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </a>
-            <button
-              onClick={() => {
-                const element = document.getElementById('pricing');
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
-                }
-              }}
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group cursor-pointer"
-            >
-              View Pricing
-              <svg
-                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+                Start Free Trial
+                <svg
+                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('pricing');
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }
+                }}
+                className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group cursor-pointer"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </button>
-
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <svg
-                className="w-4 h-4 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>No credit card required</span>
+                View Pricing
+                <svg
+                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </button>
             </div>
-            <div className="flex items-center gap-2">
-              <svg
-                className="w-4 h-4 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-              <span>Enterprise-grade security</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full border-2 border-background"></div>
-                <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-2 border-background"></div>
-                <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-background"></div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-4 h-4 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>No credit card required</span>
               </div>
-              <span>50,000+ users worldwide</span>
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-4 h-4 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
+                <span>Enterprise-grade security</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full border-2 border-background"></div>
+                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-2 border-background"></div>
+                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-background"></div>
+                </div>
+                <span>50,000+ users worldwide</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Product Preview */}
-        <div className="mt-20">
-          <div className="relative mx-auto max-w-5xl">
+          {/* Right Column - Product Preview */}
+          <div className="relative">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
             {/* Browser Window */}
             <div className="bg-card border border-border rounded-2xl shadow-2xl overflow-hidden">
               {/* Browser Header */}
@@ -175,9 +175,9 @@ export function HeroSection() {
               </div>
 
               {/* Chat Interface Preview */}
-              <div className="aspect-[4/3] sm:aspect-[16/10] bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 flex flex-col justify-start items-center pt-6 sm:pt-8">
+              <div className="aspect-[4/3] sm:aspect-[5/4] lg:aspect-[3/3] bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 flex flex-col justify-center items-center min-h-[500px] sm:min-h-[600px]">
                 {/* Title */}
-                <div className="text-center space-y-1 sm:space-y-2 mb-4 sm:mb-6">
+                <div className="text-center space-y-1 mb-4">
                   <h3 className="text-base sm:text-lg font-semibold text-foreground">
                     Choose your AI model
                   </h3>
@@ -187,7 +187,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Model Selector Interface */}
-                <div className="w-full max-w-xs sm:max-w-sm space-y-3 sm:space-y-4 px-2 sm:px-0">
+                <div className="w-full max-w-xs sm:max-w-sm space-y-3 px-2 sm:px-0">
                   {/* Input Field */}
                   <div className="relative">
                     <input
@@ -379,7 +379,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="mt-6 space-y-2">
+                <div className="mt-4 space-y-1">
                   <p className="text-xs text-muted-foreground text-center">
                     Quick start:
                   </p>
@@ -396,6 +396,7 @@ export function HeroSection() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
