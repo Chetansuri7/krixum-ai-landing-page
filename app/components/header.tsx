@@ -36,7 +36,7 @@ export function Header() {
             <Link to="/" className="flex items-center space-x-2 group cursor-pointer">
               <div className="relative">
                 <img
-                  src="/krixum-logo-cosmic.svg"
+                  src="/logo.svg"
                   alt="Krixum AI"
                   className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
                   aria-hidden="true"

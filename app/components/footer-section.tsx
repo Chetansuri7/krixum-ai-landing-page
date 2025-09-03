@@ -78,7 +78,7 @@ export function FooterSection() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center space-x-2 mb-4 group cursor-pointer">
               <img 
-                src="/krixum-logo-cosmic.svg" 
+                src="/logo.svg"
                 alt="Krixum AI" 
                 className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
               />
