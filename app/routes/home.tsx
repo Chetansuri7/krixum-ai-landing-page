@@ -42,7 +42,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <ContentProvider>
-      <div className="relative flex min-h-[86.1vh] flex-col justify-between overflow-x-clip scroll-smooth bg-background md:overflow-y-visible">
+      <div className="relative flex min-h-[86.1vh] flex-col justify-between overflow-x-hidden scroll-smooth bg-background md:overflow-y-visible">
         <Header />
         <main className="isolate flex flex-col gap-8 bg-primary-foreground">
           <HeroSection />

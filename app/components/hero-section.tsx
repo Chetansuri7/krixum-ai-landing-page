@@ -175,7 +175,7 @@ export function HeroSection() {
               </div>
 
               {/* Chat Interface Preview */}
-              <div className="aspect-[4/3] sm:aspect-[5/4] lg:aspect-[3/3] bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 flex flex-col justify-center items-center min-h-[500px] sm:min-h-[600px]">
+              <div className="w-full aspect-auto sm:aspect-[5/4] lg:aspect-[3/3] bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 flex flex-col justify-start lg:justify-center items-center min-h-[500px] sm:min-h-[600px]">
                 {/* Title */}
                 <div className="text-center space-y-1 mb-4">
                   <h3 className="text-base sm:text-lg font-semibold text-foreground">
@@ -255,7 +255,7 @@ export function HeroSection() {
 
                     {/* Dropdown Menu */}
                     <div
-                      className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-xl shadow-xl z-10 overflow-hidden max-h-[calc(100vh-200px)] overflow-y-auto"
+                      className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-xl shadow-xl z-10 overflow-hidden max-h-[60vh] sm:max-h-[calc(100vh-200px)] overflow-y-auto"
                       role="listbox"
                     >
                       {/* GPT-5 */}
