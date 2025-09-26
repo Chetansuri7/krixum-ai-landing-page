@@ -1,44 +1,62 @@
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+
+type FooterLink = {
+  name: string;
+  available: boolean;
+  kind: "section" | "page" | "external";
+  href: string;
+};
 
 export function FooterSection() {
-  const handleSmoothScroll = (targetId: string) => {
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const goToSection = (sectionId: string) => {
+    if (typeof window === "undefined") {
+      return;
     }
+
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        requestAnimationFrame(() =>
+          element.scrollIntoView({ behavior: "smooth", block: "start" }),
+        );
+        return;
+      }
+    }
+
+    navigate({ pathname: "/", search: `?section=${sectionId}` });
   };
 
-  const footerLinks = {
+  const footerLinks: Record<string, FooterLink[]> = {
     product: [
-      { name: "Features", href: "#features", available: true },
-      { name: "Models", href: "#models", available: true },
-      { name: "Pricing", href: "#pricing", available: true },
-      { name: "Security", href: "/security", available: false },
+      { name: "Features overview", href: "features", available: true, kind: "section" },
+      { name: "Model showcase", href: "models", available: true, kind: "section" },
+      { name: "Pricing overview", href: "pricing", available: true, kind: "section" },
+      { name: "Platform deep dive", href: "/features", available: true, kind: "page" },
     ],
     resources: [
-      { name: "Highlights", href: "#highlights", available: true },
-      { name: "Advantages", href: "#advantages", available: true },
-      { name: "FAQ", href: "#faq", available: true },
-      { name: "Documentation", href: "/docs", available: false },
+      { name: "Highlights", href: "highlights", available: true, kind: "section" },
+      { name: "Advantage report", href: "/advantages", available: true, kind: "page" },
+      { name: "Model catalog", href: "/models", available: true, kind: "page" },
+      { name: "Documentation", href: "https://docs.krixum.ai", available: false, kind: "external" },
     ],
     company: [
-      { name: "About", href: "/about", available: false },
-      { name: "Careers", href: "/careers", available: false },
-      { name: "Contact", href: "/contact", available: false },
-      { name: "Press", href: "/press", available: false },
+      { name: "About", href: "/about", available: false, kind: "page" },
+      { name: "Careers", href: "/careers", available: false, kind: "page" },
+      { name: "Contact", href: "/contact", available: true, kind: "page" },
+      { name: "Press", href: "/press", available: false, kind: "page" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy", available: false },
-      { name: "Terms of Service", href: "/terms", available: false },
-      { name: "Cookie Policy", href: "/cookies", available: false },
-      { name: "GDPR", href: "/gdpr", available: false },
+      { name: "Privacy Policy", href: "/privacy", available: false, kind: "page" },
+      { name: "Terms of Service", href: "/terms", available: false, kind: "page" },
+      { name: "Cookie Policy", href: "/cookies", available: false, kind: "page" },
+      { name: "GDPR", href: "/gdpr", available: false, kind: "page" },
     ],
-  }
+  };
 
-  const renderLink = (link: { name: string; href: string; available: boolean }) => {
+  const renderLink = (link: FooterLink) => {
     if (!link.available) {
       return (
         <span className="text-sm text-muted-foreground/50 cursor-not-allowed">
@@ -47,10 +65,10 @@ export function FooterSection() {
       );
     }
 
-    if (link.href.startsWith('#')) {
+    if (link.kind === "section") {
       return (
         <button
-          onClick={() => handleSmoothScroll(link.href.substring(1))}
+          onClick={() => goToSection(link.href)}
           className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left cursor-pointer"
         >
           {link.name}
@@ -58,12 +76,23 @@ export function FooterSection() {
       );
     }
 
+    if (link.kind === "page") {
+      return (
+        <Link
+          to={link.href}
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {link.name}
+        </Link>
+      );
+    }
+
     return (
-      <a 
-        href="https://chat.krixum.com/"
+      <a
+        href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
       >
         {link.name}
       </a>
@@ -71,7 +100,7 @@ export function FooterSection() {
   };
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer id="footer" className="bg-background border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Section */}
@@ -83,7 +112,7 @@ export function FooterSection() {
                 className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
               />
               <span className="text-2xl font-bold tracking-tight text-foreground">
-                Krixum <span className="font-light">AI</span>
+                Krixum AI
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">

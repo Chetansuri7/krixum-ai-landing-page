@@ -1,29 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { marketingSections } from "~/lib/site-metadata";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: "Features", href: "#features" },
-    { name: "Models", href: "#models" },
-    { name: "Advantages", href: "#advantages" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "FAQ", href: "#faq" },
-  ];
-
-  const handleSmoothScroll = (targetId: string) => {
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerHeight = 64; // Account for fixed header
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    }
-    setIsMobileMenuOpen(false);
-  };
+  const navOrder = [
+    "features",
+    "advantages",
+    "models",
+    "pricing",
+    "faq",
+  ] as const;
+  const navigation = navOrder
+    .map((id) => marketingSections.find((section) => section.id === id))
+    .filter((section): section is (typeof marketingSections)[number] => Boolean(section));
 
   return (
     <>
@@ -51,13 +41,14 @@ export function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {navigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleSmoothScroll(item.href.substring(1))}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 cursor-pointer"
+                <Link
+                  key={item.id}
+                  to={{ pathname: "/", search: item.sectionId ? `?section=${item.sectionId}` : "" }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-2 text-sm font-medium text-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
                 >
-                  {item.name}
-                </button>
+                  {item.title}
+                </Link>
               ))}
             </nav>
 
@@ -121,13 +112,14 @@ export function Header() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
               <nav className="space-y-1">
                 {navigation.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => handleSmoothScroll(item.href.substring(1))}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors cursor-pointer"
+                  <Link
+                    key={item.id}
+                    to={{ pathname: "/", search: item.sectionId ? `?section=${item.sectionId}` : "" }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                   >
-                    {item.name}
-                  </button>
+                    {item.title}
+                  </Link>
                 ))}
               </nav>
               

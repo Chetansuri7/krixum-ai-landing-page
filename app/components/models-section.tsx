@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { SectionHeader } from "~/components/ui/section-header";
 import { Badge } from "~/components/ui/badge";
 import { Sparkles, Crown, Rocket, Zap, Globe, Users } from "lucide-react";
@@ -159,7 +161,7 @@ export function ModelsSection() {
               </div>
               
               {/* CTA Button */}
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <a
                   href="https://chat.krixum.com/"
                   target="_blank"
@@ -182,6 +184,12 @@ export function ModelsSection() {
                     />
                   </svg>
                 </a>
+                <Link
+                  to="/models"
+                  className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
+                >
+                  View supported models
+                </Link>
               </div>
             </div>
           </div>

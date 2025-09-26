@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { SectionHeader } from "~/components/ui/section-header";
 
 export function AdvantagesSection() {
@@ -175,7 +177,7 @@ export function AdvantagesSection() {
 
         {/* Bottom CTA Section */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-8">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 sm:gap-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                 <svg
@@ -203,20 +205,19 @@ export function AdvantagesSection() {
               </div>
             </div>
 
-            <div className="hidden sm:block w-px h-12 bg-border"></div>
-
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>No setup required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div
-                  className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"
-                  style={{ animationDelay: "0.5s" }}
-                ></div>
-                <span>Start in seconds</span>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <Link
+                to="/advantages"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+              >
+                View full advantage report
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
+              >
+                Talk to our team
+              </Link>
             </div>
           </div>
         </div>

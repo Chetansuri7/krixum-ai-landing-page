@@ -1,4 +1,6 @@
 import type { Route } from "./+types/home";
+import { useSearchParams } from "react-router";
+
 import { Header } from "~/components/header";
 import { HeroSection } from "~/components/hero-section";
 import { HighlightsSection } from "~/components/highlights-section";
@@ -10,36 +12,60 @@ import { CtaSection } from "~/components/cta-section";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
 import { FAQSection } from "~/components/faq-section";
+import { useScrollToSection } from "~/hooks/use-scroll-to-section";
+import { siteMeta } from "~/lib/site-metadata";
 
-export function meta({}: Route.MetaArgs) {
+export function meta(args: Route.MetaArgs) {
+  const pathname = args.location?.pathname ?? "/";
+  const canonicalUrl = new URL(pathname || "/", siteMeta.siteUrl).toString();
+  const socialImage = new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString();
+
   return [
-    { title: "Krixum AI - Unify ChatGPT, Claude, Gemini in One App" },
-    { name: "description", content: "Access all top AI models in one unified chat interface. Switch between OpenAI, Anthropic, Google, Meta, and more without losing context. Your data stays private." },
-    { name: "keywords", content: "AI chat, ChatGPT, Claude, Gemini, unified AI, multi-model chat, privacy-focused AI, no vendor lock-in" },
-    { name: "author", content: "Krixum AI" },
-    { name: "robots", content: "index, follow" },
-    
-    // Open Graph tags
-    { property: "og:title", content: "Krixum AI - Unify All AI Models in One App" },
-    { property: "og:description", content: "Access ChatGPT, Claude, Gemini, Llama, and more in one unified, privacy-focused chat interface. No vendor lock-in, total privacy." },
+    { title: siteMeta.title },
+    { name: "description", content: siteMeta.description },
+    { name: "keywords", content: siteMeta.keywords.join(", ") },
+    { name: "author", content: siteMeta.name },
+    {
+      name: "robots",
+      content:
+        "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    },
+    { name: "application-name", content: siteMeta.name },
+    { property: "og:title", content: siteMeta.title },
+    { property: "og:description", content: siteMeta.description },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://krixum.ai" },
-    { property: "og:image", content: "https://krixum.ai/og-image.png" },
-    { property: "og:site_name", content: "Krixum AI" },
-    
-    // Twitter Card tags
+    { property: "og:url", content: canonicalUrl },
+    { property: "og:image", content: socialImage },
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "Krixum AI - Unify All AI Models in One App" },
-    { name: "twitter:description", content: "Access ChatGPT, Claude, Gemini, Llama, and more in one unified, privacy-focused chat interface." },
-    { name: "twitter:image", content: "https://krixum.ai/twitter-image.png" },
-    
-    // Additional SEO tags
-    { name: "theme-color", content: "#000000" },
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "twitter:title", content: siteMeta.title },
+    { name: "twitter:description", content: siteMeta.description },
+    { name: "twitter:image", content: socialImage },
+    { name: "twitter:creator", content: siteMeta.twitterHandle },
+    { name: "theme-color", content: "#050816" },
   ];
 }
 
-export default function Home() {
+export const links: Route.LinksFunction = (args) => {
+  const pathname = args?.location?.pathname ?? "/";
+  const canonicalUrl = new URL(pathname || "/", siteMeta.siteUrl).toString();
+
+  return [
+    { rel: "canonical", href: canonicalUrl },
+    { rel: "alternate", href: canonicalUrl, hrefLang: "x-default" },
+  ];
+};
+
+type HomePageProps = {
+  focusSectionId?: string;
+};
+
+export function HomePage({ focusSectionId }: HomePageProps) {
+  const [searchParams] = useSearchParams();
+  const sectionFromQuery = searchParams.get("section") ?? undefined;
+  const targetSection = focusSectionId ?? sectionFromQuery;
+
+  useScrollToSection(targetSection);
+
   return (
     <ContentProvider>
       <div className="relative flex min-h-[86.1vh] flex-col justify-between overflow-x-hidden scroll-smooth bg-background md:overflow-y-visible">
@@ -62,4 +88,8 @@ export default function Home() {
       </div>
     </ContentProvider>
   );
+}
+
+export default function Home() {
+  return <HomePage />;
 }

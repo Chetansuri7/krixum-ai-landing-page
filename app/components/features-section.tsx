@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { SectionHeader } from "~/components/ui/section-header";
 import {
   MessageSquare,
@@ -164,6 +166,21 @@ export function FeaturesSection() {
               </div>
             );
           })}
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 pt-6">
+          <Link
+            to="/features"
+            className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+          >
+            Explore all platform features
+          </Link>
+          <Link
+            to="/advantages"
+            className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
+          >
+            See business outcomes
+          </Link>
         </div>
       </div>
     </section>

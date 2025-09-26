@@ -10,6 +10,8 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { ConsentBanner } from "./components/ConsentBanner";
+import { StructuredData } from "./components/structured-data";
+import { siteMeta } from "./lib/site-metadata";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,13 +32,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Krixum AI</title>
-        <meta
-          name="description"
-          content="Krixum AI is a cutting-edge platform for AI-powered solutions."
-        />
+        <title>{siteMeta.title}</title>
+        <meta name="description" content={siteMeta.description} />
+        <meta name="keywords" content={siteMeta.keywords.join(", ")} />
+        <meta property="og:site_name" content={siteMeta.name} />
+        <meta property="og:locale" content={siteMeta.locale} />
+        <meta name="twitter:site" content={siteMeta.twitterHandle} />
+        <link rel="icon" href="/favicon.ico" />
         <Meta />
         <Links />
+        <StructuredData />
       </head>
       <body>
         {children}

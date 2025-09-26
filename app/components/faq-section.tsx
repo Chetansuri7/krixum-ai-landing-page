@@ -1,58 +1,8 @@
+import { Link } from "react-router";
+
 import { Card } from "~/components/ui/card";
 import { SectionHeader } from "~/components/ui/section-header";
-
-const faqData = [
-  {
-    id: "q1",
-    question: "What is Krixum AI?",
-    answer:
-      "A unified chat interface to interact with multiple top AI models like OpenAI GPT, Google Gemini, and Anthropic Claude — all in one place.",
-  },
-  {
-    id: "q2",
-    question:
-      "How is Krixum AI different from using ChatGPT or Gemini directly?",
-    answer:
-      "Unlike using ChatGPT or Gemini directly, Krixum AI lets you switch models instantly, compare responses side-by-side, and keep all chats in one unified history.",
-  },
-  {
-    id: "q3",
-    question: "Which AI models can I access through Krixum AI?",
-    answer:
-      "Access leading models like GPT‑4o, GPT‑4 Turbo, Gemini 1.5 Pro, Claude 3 Opus & Sonnet — with more added regularly.",
-  },
-  {
-    id: "q4",
-    question: "How do I choose or switch between models in Krixum AI?",
-    answer:
-      "Use the model selector in the chat interface to choose or switch AI models anytime during a conversation.",
-  },
-  {
-    id: "q5",
-    question: "Is Krixum AI free to use?",
-    answer:
-      "Yes. We offer a free tier with limited usage, plus paid plans for higher limits and premium models. See our Pricing page for details.",
-  },
-  {
-    id: "q6",
-    question:
-      "How is my conversation data handled by Krixum AI? Is it private?",
-    answer:
-      "Your prompts are sent securely to the AI provider you choose. We store your chat history only for your account and never use it to train models.",
-  },
-  {
-    id: "q7",
-    question: "Can I compare responses from different models in Krixum AI?",
-    answer:
-      "Yes. You can send a prompt to multiple models at once and compare their responses side‑by‑side.",
-  },
-  {
-    id: "q8",
-    question: "What should I do if I encounter an error with Krixum AI?",
-    answer:
-      "Refresh the page or try another model. If issues persist, check our status page or contact support with details.",
-  },
-];
+import { faqData } from "~/lib/faq-data";
 
 export function FAQSection() {
   return (
@@ -62,6 +12,21 @@ export function FAQSection() {
           title="Frequently Asked Questions"
           description="Everything you need to know about Krixum AI"
         />
+
+      <div className="flex flex-col sm:flex-row gap-3 pt-6">
+        <Link
+          to="/faq"
+          className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+        >
+          Browse all FAQs
+        </Link>
+        <Link
+          to="/contact"
+          className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
+        >
+          Ask something else
+        </Link>
+      </div>
 
       {/* FAQ Grid */}
       <div className="grid gap-6 pt-8 md:grid-cols-2 lg:grid-cols-3">

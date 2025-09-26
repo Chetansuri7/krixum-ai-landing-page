@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"><url><loc>https://www.krixum.com/</loc><lastmod>2025-08-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority><image:image><image:loc>https://www.krixum.com/krixum-logo.svg</image:loc></image:image></url><url><loc>https://www.krixum.com/home</loc><lastmod>2025-08-11</lastmod><changefreq>daily</changefreq><priority>0.9</priority><image:image><image:loc>https://www.krixum.com/krixum-logo.svg</image:loc></image:image></url><url><loc>https://www.krixum.com/pricing</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://www.krixum.com/krixum-logo-minimal.svg</image:loc></image:image></url><url><loc>https://www.krixum.com/features</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><image:image><image:loc>https://www.krixum.com/krixum-logo-neural.svg</image:loc></image:image></url><url><loc>https://www.krixum.com/contact</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url><loc>https://www.krixum.com/privacy</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://www.krixum.com/terms</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://www.krixum.com/about</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://www.krixum.com/blog</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url><loc>https://www.krixum.com/support</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://krixum.ai/</loc>
+  </url>
+  <url>
+    <loc>https://krixum.ai/features</loc>
+  </url>
+  <url>
+    <loc>https://krixum.ai/models</loc>
+  </url>
+  <url>
+    <loc>https://krixum.ai/pricing</loc>
+  </url>
+  <url>
+    <loc>https://krixum.ai/advantages</loc>
+  </url>
+  <url>
+    <loc>https://krixum.ai/faq</loc>
+  </url>
+  <url>
+    <loc>https://krixum.ai/contact</loc>
+  </url>
+</urlset>
