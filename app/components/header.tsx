@@ -68,7 +68,7 @@ export function Header() {
                 <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <span className="text-xl font-bold tracking-tight text-foreground">
-                Krixum <span className="font-light text-muted-foreground">AI</span>
+                Krixum AI
               </span>
             </Link>
 

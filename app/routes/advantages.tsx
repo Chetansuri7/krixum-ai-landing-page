@@ -1,11 +1,10 @@
 import type { Route } from "./+types/advantages";
-import { Link } from "react-router";
 
 import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
+import { AdvantagesSection } from "~/components/advantages-section";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
-import { SectionHeader } from "~/components/ui/section-header";
 
 const pageDetails = marketingSections.find((section) => section.id === "advantages");
 
@@ -101,113 +100,8 @@ export default function AdvantagesPage() {
     <ContentProvider>
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1">
-          <section className="bg-primary-foreground border-b border-border/40">
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 py-20 space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-primary/80 font-semibold">Why Krixum</p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
-                Deliver AI outcomes with confidence
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                Krixum AI is more than a chat interface. It is a platform for orchestrating cross-functional AI programs with measurable ROI, airtight governance, and transparent analytics.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <Link
-                  to={{ pathname: "/", search: "?section=advantages" }}
-                  preventScrollReset
-                  className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                >
-                  Explore homepage advantages
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted/70"
-                >
-                  Request a business case
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16 space-y-10">
-            <SectionHeader
-              badge="Outcomes"
-              title="Results teams see after standardizing on Krixum"
-              description="These are the most common improvements reported by our customers across industries."
-            />
-            <div className="grid gap-6 md:grid-cols-3">
-              {outcomes.map((item) => (
-                <article key={item.title} className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="bg-muted/60">
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 space-y-10">
-              <SectionHeader
-                badge="Centers of Excellence"
-                title="Build a sustainable AI operating model"
-                description="Give every stakeholder visibility into performance, risks, and opportunities."
-              />
-              <div className="grid gap-6 md:grid-cols-3">
-                {metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-3xl border border-border bg-background p-6 shadow-sm">
-                    <h3 className="text-lg font-semibold text-foreground">{metric.label}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{metric.body}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="mx-auto max-w-4xl px-4 sm:px-6 py-16 space-y-6">
-            <SectionHeader
-              badge="Customer Stories"
-              title="Trusted by teams shipping mission-critical AI experiences"
-              description="Hear how organizations use Krixum AI to scale responsibly."
-            />
-            <div className="space-y-6">
-              {caseStudies.map((study) => (
-                <figure key={study.company} className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm">
-                  <blockquote className="text-lg text-foreground leading-relaxed">{study.quote}</blockquote>
-                  <figcaption className="mt-4 text-sm text-muted-foreground">
-                    <span className="font-semibold text-foreground">{study.company}</span>
-                    <span className="mx-2 text-muted-foreground/60">•</span>
-                    {study.result}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-
-          <section className="bg-primary-foreground">
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16">
-              <div className="rounded-3xl border border-border/60 bg-background/90 p-10 shadow-xl">
-                <SectionHeader
-                  badge="Next Steps"
-                  title="Ready to align your AI roadmap?"
-                  description="We'll help you measure ROI, set success metrics, and train every team on responsible usage."
-                />
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/pricing"
-                    className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                  >
-                    Review plan comparisons
-                  </Link>
-                  <Link
-                    to="/features"
-                    className="inline-flex items-center justify-center rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted/70"
-                  >
-                    Explore platform features
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
+        <main className="flex-1 bg-primary-foreground">
+          <AdvantagesSection />
         </main>
         <FooterSection />
       </div>

@@ -1,12 +1,11 @@
 import type { Route } from "./+types/faq";
-import { Link } from "react-router";
 
 import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
-import { faqData } from "~/lib/faq-data";
+import { FAQSection } from "~/components/faq-section";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
-import { SectionHeader } from "~/components/ui/section-header";
+import { faqData, type FaqItem } from "~/lib/faq-data";
 
 const pageDetails = marketingSections.find((section) => section.id === "faq");
 
@@ -109,90 +108,8 @@ export default function FAQPage() {
     <ContentProvider>
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <FaqStructuredData />
-        <main className="flex-1">
-          <section className="bg-primary-foreground border-b border-border/40">
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 py-20 space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-primary/80 font-semibold">FAQ</p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
-                Answers to everything teams ask about Krixum AI
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                We gathered the most common questions from product, engineering, and security leaders evaluating Krixum AI. Still curious? Reach out and we will help immediately.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <Link
-                  to={{ pathname: "/", search: "?section=faq" }}
-                  preventScrollReset
-                  className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                >
-                  View quick answers on the homepage
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted/70"
-                >
-                  Contact support
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          <section className="mx-auto max-w-5xl px-4 sm:px-6 py-16 space-y-8">
-            <SectionHeader
-              badge="Top Questions"
-              title="General"
-              description="Straightforward answers for decision-makers comparing AI platforms."
-            />
-            <div className="space-y-6">
-              {faqData.map((item) => (
-                <article key={item.id} className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm">
-                  <h2 className="text-lg font-semibold text-foreground">{item.question}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.answer}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="bg-muted/60">
-            <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 space-y-8">
-              <SectionHeader
-                badge="Onboarding"
-                title="Launch timeline"
-                description="What it looks like to go live with Krixum AI."
-              />
-              <div className="grid gap-6 md:grid-cols-3">
-                {onboardingSteps.map((step) => (
-                  <div key={step.title} className="rounded-3xl border border-border bg-background p-6 shadow-sm">
-                    <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="mx-auto max-w-4xl px-4 sm:px-6 py-16 space-y-8">
-            <SectionHeader
-              badge="Support"
-              title="We're here when you need us"
-              description="Different support options for every plan level."
-            />
-            <div className="grid gap-6 md:grid-cols-3">
-              {supportChannels.map((channel) => (
-                <div key={channel.label} className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-foreground">{channel.label}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{channel.description}</p>
-                  <Link
-                    to={channel.action.href}
-                    className="mt-4 inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-                  >
-                    {channel.action.label}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
+        <main className="flex-1 bg-primary-foreground">
+          <FAQSection />
         </main>
         <FooterSection />
       </div>
