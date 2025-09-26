@@ -114,6 +114,7 @@ export default function AdvantagesPage() {
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link
                   to={{ pathname: "/", search: "?section=advantages" }}
+                  preventScrollReset
                   className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
                 >
                   Explore homepage advantages

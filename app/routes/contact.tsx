@@ -1,5 +1,6 @@
 import type { Route } from "./+types/contact";
-import { FormEvent, useState } from "react";
+import type { FormEvent } from "react";
+import { useState } from "react";
 
 import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";

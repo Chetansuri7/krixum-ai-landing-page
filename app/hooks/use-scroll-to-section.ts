@@ -9,12 +9,16 @@ export function useScrollToSection(sectionId?: string) {
       return;
     }
 
-    const element = document.getElementById(sectionId);
+    const frame = window.requestAnimationFrame(() => {
+      const element = document.getElementById(sectionId);
 
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, [sectionId, location.key]);
 }

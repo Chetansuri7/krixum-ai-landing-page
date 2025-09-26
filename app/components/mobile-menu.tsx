@@ -41,7 +41,7 @@ export function MobileMenuButton() {
       }
     }
 
-    navigate({ pathname: "/", search: `?section=${sectionId}` });
+    navigate({ pathname: "/", search: `?section=${sectionId}` }, { preventScrollReset: true });
   };
 
   return (

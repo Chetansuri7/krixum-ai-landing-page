@@ -48,6 +48,11 @@ const graph = [
       availability: "https://schema.org/InStock",
       price: "0",
       priceCurrency: "USD",
+      priceValidUntil: new Date(new Date().getFullYear() + 1, 11, 31).toISOString().split('T')[0],
+      seller: {
+        "@type": "Organization",
+        "@id": `${siteMeta.siteUrl}/#organization`
+      }
     },
     image: absoluteUrl(siteMeta.socialImagePath),
     description: siteMeta.description,

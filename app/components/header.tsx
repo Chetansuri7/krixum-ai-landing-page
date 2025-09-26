@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { marketingSections } from "~/lib/site-metadata";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on the homepage
+  const isHomepage = location.pathname === "/";
   const navOrder = [
     "features",
     "advantages",
@@ -14,6 +18,36 @@ export function Header() {
   const navigation = navOrder
     .map((id) => marketingSections.find((section) => section.id === id))
     .filter((section): section is (typeof marketingSections)[number] => Boolean(section));
+
+  // Smart navigation function
+  const getNavigationProps = (item: typeof navigation[0]) => {
+    if (isHomepage) {
+      // On homepage: scroll to section
+      return {
+        to: { pathname: "/", search: item.sectionId ? `?section=${item.sectionId}` : "" },
+        preventScrollReset: true,
+      };
+    } else {
+      // On dedicated page: navigate to dedicated page or homepage section
+      const currentPageSection = location.pathname.replace("/", "");
+      if (currentPageSection === item.id) {
+        // Already on this page, scroll to top
+        return {
+          to: location.pathname,
+          preventScrollReset: true,
+          onClick: (e: React.MouseEvent) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        };
+      } else {
+        // Navigate to dedicated page if it exists, otherwise homepage section
+        return {
+          to: item.path
+        };
+      }
+    }
+  };
 
   return (
     <>
@@ -40,16 +74,18 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.id}
-                  to={{ pathname: "/", search: item.sectionId ? `?section=${item.sectionId}` : "" }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-2 text-sm font-medium text-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
-                >
-                  {item.title}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const navProps = getNavigationProps(item);
+                return (
+                  <Link
+                    key={item.id}
+                    {...navProps}
+                    className="px-4 py-2 text-sm font-medium text-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                  >
+                    {item.title}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Desktop CTA Buttons */}
@@ -111,16 +147,22 @@ export function Header() {
           <div className="bg-background/95 backdrop-blur-xl border-t border-border/50">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
               <nav className="space-y-1">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.id}
-                    to={{ pathname: "/", search: item.sectionId ? `?section=${item.sectionId}` : "" }}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const navProps = getNavigationProps(item);
+                  return (
+                    <Link
+                      key={item.id}
+                      {...navProps}
+                      onClick={(e) => {
+                        if (navProps.onClick) navProps.onClick(e);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                    >
+                      {item.title}
+                    </Link>
+                  );
+                })}
               </nav>
               
               {/* Mobile CTA Buttons */}

@@ -45,9 +45,8 @@ export function meta(args: Route.MetaArgs) {
   ];
 }
 
-export const links: Route.LinksFunction = (args) => {
-  const pathname = args?.location?.pathname ?? "/";
-  const canonicalUrl = new URL(pathname || "/", siteMeta.siteUrl).toString();
+export const links: Route.LinksFunction = () => {
+  const canonicalUrl = new URL("/", siteMeta.siteUrl).toString();
 
   return [
     { rel: "canonical", href: canonicalUrl },

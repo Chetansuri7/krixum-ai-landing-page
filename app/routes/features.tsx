@@ -17,6 +17,8 @@ const pageTitle = pageDetails
 const pageDescription =
   "Explore every workflow that Krixum AI unlocks: collaborative chat workspaces, reusable prompt libraries, and governance controls that let enterprises move fast without sacrificing safety.";
 
+const featuresData = siteContent?.features ?? [];
+
 export function meta({}: Route.MetaArgs) {
   const canonicalUrl = new URL("/features", siteMeta.siteUrl).toString();
 
@@ -102,6 +104,7 @@ export default function FeaturesPage() {
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link
                   to={{ pathname: "/", search: "?section=features" }}
+                  preventScrollReset
                   className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
                 >
                   Preview the home experience
@@ -123,30 +126,37 @@ export default function FeaturesPage() {
               description="Ship production-ready assistants, copilots, and automations with the same platform that powers your experiments."
             />
             <div className="grid gap-6 md:grid-cols-2">
-              {siteContent.features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <span className="text-3xl" aria-hidden>
-                    {feature.icon}
-                  </span>
-                  <h3 className="mt-4 text-xl font-semibold text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-muted-foreground/90">
-                    {feature.benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-2">
-                        <span aria-hidden className="mt-1 h-2 w-2 rounded-full bg-primary" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              {featuresData.map((feature) => {
+                const benefits = Array.isArray((feature as any).benefits)
+                  ? (feature as any).benefits
+                  : [];
+                return (
+                  <div
+                    key={feature.title}
+                    className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  >
+                    <span className="text-3xl" aria-hidden>
+                      {feature.icon}
+                    </span>
+                    <h3 className="mt-4 text-xl font-semibold text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-2 text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                    {benefits.length > 0 ? (
+                      <ul className="mt-4 space-y-2 text-sm text-muted-foreground/90">
+                        {benefits.map((benefit: string) => (
+                          <li key={benefit} className="flex items-start gap-2">
+                            <span aria-hidden className="mt-1 h-2 w-2 rounded-full bg-primary" />
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
           </section>
 

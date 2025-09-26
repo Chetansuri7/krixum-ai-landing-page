@@ -26,7 +26,7 @@ export function FooterSection() {
       }
     }
 
-    navigate({ pathname: "/", search: `?section=${sectionId}` });
+    navigate({ pathname: "/", search: `?section=${sectionId}` }, { preventScrollReset: true });
   };
 
   const footerLinks: Record<string, FooterLink[]> = {

@@ -113,6 +113,7 @@ export default function ModelsPage() {
                 </Link>
                 <Link
                   to={{ pathname: "/", search: "?section=models" }}
+                  preventScrollReset
                   className="inline-flex items-center justify-center rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted/70"
                 >
                   Preview the home showcase
