@@ -94,13 +94,42 @@ const structuredData = {
   "@graph": graph,
 };
 
-export function StructuredData() {
+interface BreadcrumbStructuredDataProps {
+  items?: Array<{ name: string; url: string }>;
+}
+
+function BreadcrumbStructuredData({ items = [] }: BreadcrumbStructuredDataProps) {
+  if (items.length === 0) return null;
+  
+  const breadcrumbList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData),
-      }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
     />
+  );
+}
+
+export function StructuredData({ breadcrumbs }: { breadcrumbs?: Array<{ name: string; url: string }> }) {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <BreadcrumbStructuredData items={breadcrumbs} />
+    </>
   );
 }

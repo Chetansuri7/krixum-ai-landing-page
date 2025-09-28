@@ -65,12 +65,12 @@ const supportChannels = [
   {
     label: "Help Center",
     description: "Browse product tutorials, API references, and troubleshooting guides maintained by our documentation team.",
-    action: { label: "Visit docs", href: "https://docs.krixum.ai" },
+    action: { label: "Visit docs", href: "https://docs.krixum.com" },
   },
   {
     label: "Community Forum",
     description: "Share feedback, vote on feature requests, and learn from other builders shipping with Krixum AI.",
-    action: { label: "Join the community", href: "https://community.krixum.ai" },
+    action: { label: "Join the community", href: "https://community.krixum.com" },
   },
   {
     label: "Priority Support",

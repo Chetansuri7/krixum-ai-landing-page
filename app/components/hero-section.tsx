@@ -169,7 +169,7 @@ export function HeroSection() {
                 </div>
                 <div className="flex-1 mx-4">
                   <div className="bg-background/50 rounded-lg px-3 py-1 text-xs text-muted-foreground">
-                    krixum.ai/chat
+                    krixum.com
                   </div>
                 </div>
               </div>

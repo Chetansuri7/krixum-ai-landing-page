@@ -38,6 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:site_name" content={siteMeta.name} />
         <meta property="og:locale" content={siteMeta.locale} />
         <meta name="twitter:site" content={siteMeta.twitterHandle} />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="icon" href="/favicon.ico" />
         <Meta />
         <Links />

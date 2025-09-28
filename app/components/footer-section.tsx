@@ -40,7 +40,7 @@ export function FooterSection() {
       { name: "Highlights", href: "highlights", available: true, kind: "section" },
       { name: "Advantage report", href: "/advantages", available: true, kind: "page" },
       { name: "Model catalog", href: "/models", available: true, kind: "page" },
-      { name: "Documentation", href: "https://docs.krixum.ai", available: false, kind: "external" },
+      { name: "Documentation", href: "https://docs.krixum.com", available: false, kind: "external" },
     ],
     company: [
       { name: "About", href: "/about", available: false, kind: "page" },

@@ -1,4 +1,4 @@
-export const SITE_URL = "https://krixum.ai" as const;
+export const SITE_URL = "https://krixum.com" as const;
 
 export const siteMeta = {
   name: "Krixum AI",
@@ -18,7 +18,7 @@ export const siteMeta = {
   siteUrl: SITE_URL,
   locale: "en_US",
   twitterHandle: "@krixumai",
-  contactEmail: "hello@krixum.ai",
+  contactEmail: "hello@krixum.com",
   logoPath: "/logo.svg",
   socialImagePath: "/og-image.png",
 } as const;

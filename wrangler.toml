@@ -1,0 +1,21 @@
+[env.production]
+routes = [
+  { pattern = "krixum.ai/*", custom_domain = true }
+]
+
+[[redirects]]
+from = "https://krixum.ai/*"
+to = "https://krixum.com/:splat"
+status = 301
+
+[[redirects]]
+from = "https://www.krixum.com/*"
+to = "https://krixum.com/:splat"
+status = 301
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"

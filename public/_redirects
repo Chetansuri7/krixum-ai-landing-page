@@ -1,0 +1,8 @@
+# Domain canonicalization
+https://krixum.ai/* https://krixum.com/:splat 301!
+https://www.krixum.com/* https://krixum.com/:splat 301!
+http://krixum.com/* https://krixum.com/:splat 301!
+http://www.krixum.com/* https://krixum.com/:splat 301!
+
+# Remove trailing slashes
+/*/ /:splat 301!
