@@ -16,7 +16,13 @@ export function FooterSection() {
       return;
     }
 
+    const targetHash = `#${sectionId}`;
+
     if (location.pathname === "/") {
+      if (location.hash !== targetHash) {
+        navigate({ hash: targetHash }, { preventScrollReset: true });
+      }
+
       const element = document.getElementById(sectionId);
       if (element) {
         requestAnimationFrame(() =>
@@ -26,7 +32,7 @@ export function FooterSection() {
       }
     }
 
-    navigate({ pathname: "/", search: `?section=${sectionId}` }, { preventScrollReset: true });
+    navigate({ pathname: "/", hash: targetHash }, { preventScrollReset: true });
   };
 
   const footerLinks: Record<string, FooterLink[]> = {

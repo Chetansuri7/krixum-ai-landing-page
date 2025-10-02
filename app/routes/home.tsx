@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { useSearchParams } from "react-router";
+import { useLocation } from "react-router";
 
 import { Header } from "~/components/header";
 import { HeroSection } from "~/components/hero-section";
@@ -59,9 +59,10 @@ type HomePageProps = {
 };
 
 export function HomePage({ focusSectionId }: HomePageProps) {
-  const [searchParams] = useSearchParams();
-  const sectionFromQuery = searchParams.get("section") ?? undefined;
-  const targetSection = focusSectionId ?? sectionFromQuery;
+  const location = useLocation();
+  const rawHash = location.hash?.replace(/^#/, "");
+  const sectionFromHash = rawHash ? rawHash : undefined;
+  const targetSection = focusSectionId ?? sectionFromHash;
 
   useScrollToSection(targetSection);
 

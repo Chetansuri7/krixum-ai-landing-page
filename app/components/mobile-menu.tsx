@@ -30,7 +30,13 @@ export function MobileMenuButton() {
       return;
     }
 
+    const targetHash = `#${sectionId}`;
+
     if (location.pathname === "/") {
+      if (location.hash !== targetHash) {
+        navigate({ hash: targetHash }, { preventScrollReset: true });
+      }
+
       const element = document.getElementById(sectionId);
 
       if (element) {
@@ -41,7 +47,7 @@ export function MobileMenuButton() {
       }
     }
 
-    navigate({ pathname: "/", search: `?section=${sectionId}` }, { preventScrollReset: true });
+    navigate({ pathname: "/", hash: targetHash }, { preventScrollReset: true });
   };
 
   return (

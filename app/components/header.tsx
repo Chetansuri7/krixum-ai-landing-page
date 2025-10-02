@@ -1,10 +1,12 @@
+import type { MouseEvent } from "react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { marketingSections } from "~/lib/site-metadata";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   
   // Check if we're on the homepage
   const isHomepage = location.pathname === "/";
@@ -21,11 +23,34 @@ export function Header() {
 
   // Smart navigation function
   const getNavigationProps = (item: typeof navigation[0]) => {
+    const targetHash = item.sectionId ? `#${item.sectionId}` : "";
+
     if (isHomepage) {
       // On homepage: scroll to section
       return {
-        to: { pathname: "/", search: item.sectionId ? `?section=${item.sectionId}` : "" },
+        to: { pathname: "/", hash: targetHash },
         preventScrollReset: true,
+        onClick: (event: MouseEvent<HTMLAnchorElement>) => {
+          const sectionId = item.sectionId;
+
+          if (!sectionId) {
+            return;
+          }
+
+          event.preventDefault();
+
+          if (location.hash !== targetHash) {
+            navigate({ hash: targetHash }, { preventScrollReset: true });
+          }
+
+          requestAnimationFrame(() => {
+            const element = document.getElementById(sectionId);
+
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        },
       };
     } else {
       // On dedicated page: navigate to dedicated page or homepage section
@@ -35,8 +60,8 @@ export function Header() {
         return {
           to: location.pathname,
           preventScrollReset: true,
-          onClick: (e: React.MouseEvent) => {
-            e.preventDefault();
+          onClick: (event: MouseEvent<HTMLAnchorElement>) => {
+            event.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }
         };
