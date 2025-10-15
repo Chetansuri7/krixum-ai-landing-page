@@ -21,6 +21,8 @@ export const siteMeta = {
   contactEmail: "hello@krixum.com",
   logoPath: "/logo.svg",
   socialImagePath: "/og-image.png",
+  // Used for Google Sitelinks Search Box; must accept a "q" param
+  siteSearchPath: "/search?q=",
 } as const;
 
 export type MarketingSection = {

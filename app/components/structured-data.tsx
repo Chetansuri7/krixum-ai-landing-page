@@ -36,6 +36,15 @@ const graph = [
     inLanguage: siteMeta.locale,
     description: siteMeta.description,
     publisher: { "@id": `${siteMeta.siteUrl}/#organization` },
+    ...(siteMeta.siteSearchPath
+      ? {
+          potentialAction: {
+            "@type": "SearchAction",
+            target: `${siteMeta.siteUrl.replace(/\/$/, "")}${siteMeta.siteSearchPath}{search_term_string}`,
+            "query-input": "required name=search_term_string",
+          },
+        }
+      : {}),
   },
   {
     "@type": "SoftwareApplication",
