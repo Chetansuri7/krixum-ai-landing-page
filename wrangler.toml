@@ -1,17 +1,8 @@
 [env.production]
 routes = [
+  { pattern = "krixum.com/*", custom_domain = true },
   { pattern = "krixum.ai/*", custom_domain = true }
 ]
-
-[[redirects]]
-from = "https://krixum.ai/*"
-to = "https://krixum.com/:splat"
-status = 301
-
-[[redirects]]
-from = "https://www.krixum.com/*"
-to = "https://krixum.com/:splat"
-status = 301
 
 [[headers]]
 for = "/*"
