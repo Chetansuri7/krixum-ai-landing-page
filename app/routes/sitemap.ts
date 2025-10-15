@@ -22,6 +22,19 @@ export async function loader({}: LoaderFunctionArgs) {
       priority: "1.0",
       image: socialImage,
     },
+    // Legal pages: low priority but indexable
+    {
+      loc: new URL("/privacy", siteMeta.siteUrl).toString(),
+      changefreq: "monthly",
+      priority: "0.3",
+      image: socialImage,
+    },
+    {
+      loc: new URL("/terms", siteMeta.siteUrl).toString(),
+      changefreq: "monthly",
+      priority: "0.3",
+      image: socialImage,
+    },
     ...marketingSections.map((section) => {
       const meta = priorityBySection[section.id] ?? {
         priority: "0.6",

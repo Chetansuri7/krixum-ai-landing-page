@@ -4,6 +4,8 @@ export default [
   index("routes/home.tsx"),
   route("sitemap.xml", "routes/sitemap.ts"),
   route("robots.txt", "routes/robots.ts"),
+  route("privacy", "routes/privacy.tsx"),
+  route("terms", "routes/terms.tsx"),
   route("features", "routes/features.tsx"),
   route("models", "routes/models.tsx"),
   route("pricing", "routes/pricing.tsx"),

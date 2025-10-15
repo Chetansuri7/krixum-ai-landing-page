@@ -10,6 +10,32 @@ export default async function handleRequest(
   routerContext: EntryContext,
   _loadContext: AppLoadContext,
 ) {
+  // Normalize marketing section query param to dedicated routes for canonical consistency
+  try {
+    const url = new URL(request.url);
+    const section = url.searchParams.get("section");
+    if (url.pathname === "/" && section) {
+      const normalized = section.toLowerCase();
+      const sectionToPath: Record<string, string> = {
+        features: "/features",
+        advantages: "/advantages",
+        models: "/models",
+        pricing: "/pricing",
+        faq: "/faq",
+        contact: "/contact",
+      };
+      const target = sectionToPath[normalized];
+      if (target) {
+        url.pathname = target;
+        url.search = "";
+        return new Response(null, {
+          status: 301,
+          headers: { Location: url.toString() },
+        });
+      }
+    }
+  } catch {}
+
   let shellRendered = false;
   const userAgent = request.headers.get("user-agent");
 
