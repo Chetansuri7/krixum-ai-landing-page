@@ -23,7 +23,7 @@ export const siteMeta = {
   twitterHandle: "@krixumai",
   contactEmail: "hello@krixum.com",
   logoPath: "/logo.svg",
-  socialImagePath: "/og-image.png",
+  socialImagePath: "/logo.svg", // Using existing logo until og-image.png is created
   // Used for Google Sitelinks Search Box; must accept a "q" param
   siteSearchPath: "/search?q=",
 } as const;
