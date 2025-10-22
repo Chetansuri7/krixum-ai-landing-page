@@ -14,6 +14,7 @@ import { ContentProvider } from "~/lib/content-context";
 import { FAQSection } from "~/components/faq-section";
 import { useScrollToSection } from "~/hooks/use-scroll-to-section";
 import { siteMeta } from "~/lib/site-metadata";
+import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 
 export function meta(args: Route.MetaArgs) {
   const pathname = args.location?.pathname ?? "/";
@@ -68,6 +69,50 @@ export function HomePage({ focusSectionId }: HomePageProps) {
 
   return (
     <ContentProvider>
+      <EnhancedSEO
+        title={siteMeta.title}
+        description={siteMeta.description}
+        canonical={siteMeta.siteUrl}
+        keywords={[...siteMeta.keywords]}
+        pageType="home"
+        openGraph={{
+          title: siteMeta.title,
+          description: siteMeta.description,
+          type: "website",
+          images: [
+            {
+              url: siteMeta.socialImagePath,
+              width: 1200,
+              height: 630,
+              alt: `${siteMeta.name} - ${siteMeta.tagline}`,
+            },
+          ],
+        }}
+        additionalJsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What AI models does Krixum support?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Krixum supports ChatGPT, Claude, Google Gemini, Llama, and other leading AI models in one unified platform."
+                }
+              },
+              {
+                "@type": "Question", 
+                name: "Is Krixum free to use?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, Krixum offers a free plan with basic features. We also have paid plans for teams and enterprises with advanced features."
+                }
+              }
+            ]
+          }
+        ]}
+      />
       <div className="relative flex min-h-[86.1vh] flex-col justify-between overflow-x-hidden scroll-smooth bg-background md:overflow-y-visible">
         <Header />
         <main className="isolate flex flex-col gap-8 bg-primary-foreground">
