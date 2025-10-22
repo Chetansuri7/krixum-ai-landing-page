@@ -1,5 +1,7 @@
 import { siteMeta } from '~/lib/site-metadata';
 
+// Pure React Router SEO - No external dependencies
+
 interface EnhancedSEOProps {
   title?: string;
   description?: string;
