@@ -6,6 +6,7 @@ import { ContentProvider } from "~/lib/content-context";
 import { FAQSection } from "~/components/faq-section";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
 import { faqData, type FaqItem } from "~/lib/faq-data";
+import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 
 const pageDetails = marketingSections.find((section) => section.id === "faq");
 
@@ -14,34 +15,6 @@ const pageTitle = pageDetails ? `${pageDetails.title} – ${siteMeta.name}` : `F
 const pageDescription =
   "Answers to the most common questions about Krixum AI. Learn how data is handled, which models we support, how pricing works, and how to onboard your team.";
 
-export function meta({}: Route.MetaArgs) {
-  const canonicalUrl = new URL("/faq", siteMeta.siteUrl).toString();
-
-  return [
-    { title: pageTitle },
-    { name: "description", content: pageDescription },
-    { name: "robots", content: "index, follow" },
-    { name: "keywords", content: "krixum faq, ai platform questions, ai chat privacy" },
-    { property: "og:title", content: pageTitle },
-    { property: "og:description", content: pageDescription },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: canonicalUrl },
-    { property: "og:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: pageTitle },
-    { name: "twitter:description", content: pageDescription },
-    { name: "twitter:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-  ];
-}
-
-export const links: Route.LinksFunction = () => {
-  const canonicalUrl = new URL("/faq", siteMeta.siteUrl).toString();
-
-  return [
-    { rel: "canonical", href: canonicalUrl },
-    { rel: "alternate", href: canonicalUrl, hrefLang: "x-default" },
-  ];
-};
 
 const onboardingSteps = [
   {
@@ -104,8 +77,40 @@ function FaqStructuredData() {
 }
 
 export default function FAQPage() {
+  const faqStructuredData = faqData.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }));
+
   return (
     <ContentProvider>
+      <EnhancedSEO
+        title={pageTitle}
+        description={pageDescription}
+        canonical={new URL("/faq", siteMeta.siteUrl).toString()}
+        keywords={["krixum faq", "ai platform questions", "ai chat privacy", "ai workspace support"]}
+        pageType="about"
+        breadcrumbs={[
+          { name: "Home", url: siteMeta.siteUrl },
+          { name: "FAQ", url: `${siteMeta.siteUrl}/faq` }
+        ]}
+        openGraph={{
+          title: pageTitle,
+          description: pageDescription,
+          type: "website",
+        }}
+        additionalJsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqStructuredData,
+          },
+        ]}
+      />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
         <main className="flex-1 bg-primary-foreground">

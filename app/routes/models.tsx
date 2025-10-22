@@ -5,6 +5,7 @@ import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
 import { ModelsSection } from "~/components/models-section";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
+import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 
 const pageDetails = marketingSections.find((section) => section.id === "models");
 
@@ -15,34 +16,6 @@ const pageTitle = pageDetails
 const pageDescription =
   "Switch between ChatGPT, Claude, Gemini, and Llama without losing context. Learn how Krixum AI keeps conversations grounded while giving teams access to the best model for every task.";
 
-export function meta({}: Route.MetaArgs) {
-  const canonicalUrl = new URL("/models", siteMeta.siteUrl).toString();
-
-  return [
-    { title: pageTitle },
-    { name: "description", content: pageDescription },
-    { name: "robots", content: "index, follow" },
-    { name: "keywords", content: "multi model ai, chatgpt claude gemini, llama workspace" },
-    { property: "og:title", content: pageTitle },
-    { property: "og:description", content: pageDescription },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: canonicalUrl },
-    { property: "og:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: pageTitle },
-    { name: "twitter:description", content: pageDescription },
-    { name: "twitter:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-  ];
-}
-
-export const links: Route.LinksFunction = () => {
-  const canonicalUrl = new URL("/models", siteMeta.siteUrl).toString();
-
-  return [
-    { rel: "canonical", href: canonicalUrl },
-    { rel: "alternate", href: canonicalUrl, hrefLang: "x-default" },
-  ];
-};
 
 const evaluationMetrics = [
   {
@@ -88,6 +61,22 @@ const deploymentPatterns = [
 export default function ModelsPage() {
   return (
     <ContentProvider>
+      <EnhancedSEO
+        title={pageTitle}
+        description={pageDescription}
+        canonical={new URL("/models", siteMeta.siteUrl).toString()}
+        keywords={["multi model ai", "chatgpt claude gemini", "llama workspace", "ai model switching"]}
+        pageType="service"
+        breadcrumbs={[
+          { name: "Home", url: siteMeta.siteUrl },
+          { name: "AI Models", url: `${siteMeta.siteUrl}/models` }
+        ]}
+        openGraph={{
+          title: pageTitle,
+          description: pageDescription,
+          type: "website",
+        }}
+      />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
         <main className="flex-1 bg-primary-foreground">

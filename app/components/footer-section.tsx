@@ -192,8 +192,36 @@ export function FooterSection() {
           </div>
         </div>
 
+        {/* Popular Pages Section - Critical for Sitelinks */}
+        <div className="mt-8 pt-6 border-t border-border/50">
+          <div className="text-center">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Popular</h3>
+            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-sm">
+              <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/50">
+                Krixum AI Pricing
+              </Link>
+              <span className="text-muted-foreground/30">•</span>
+              <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/50">
+                AI Features
+              </Link>
+              <span className="text-muted-foreground/30">•</span>
+              <Link to="/models" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/50">
+                AI Models
+              </Link>
+              <span className="text-muted-foreground/30">•</span>
+              <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/50">
+                Contact Us
+              </Link>
+              <span className="text-muted-foreground/30">•</span>
+              <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded hover:bg-muted/50">
+                FAQ
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-8 pt-6 border-t border-border">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
               © 2025 Krixum AI. All rights reserved.

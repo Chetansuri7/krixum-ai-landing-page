@@ -7,6 +7,7 @@ import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
 import { SectionHeader } from "~/components/ui/section-header";
+import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 
 const pageDetails = marketingSections.find((section) => section.id === "contact");
 
@@ -15,34 +16,6 @@ const pageTitle = pageDetails ? `${pageDetails.title} – ${siteMeta.name}` : `C
 const pageDescription =
   "Talk with the Krixum AI team. Request a demo, discuss enterprise pricing, or get hands-on support for your upcoming launch.";
 
-export function meta({}: Route.MetaArgs) {
-  const canonicalUrl = new URL("/contact", siteMeta.siteUrl).toString();
-
-  return [
-    { title: pageTitle },
-    { name: "description", content: pageDescription },
-    { name: "robots", content: "index, follow" },
-    { name: "keywords", content: "krixum contact, ai platform demo, ai sales" },
-    { property: "og:title", content: pageTitle },
-    { property: "og:description", content: pageDescription },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: canonicalUrl },
-    { property: "og:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: pageTitle },
-    { name: "twitter:description", content: pageDescription },
-    { name: "twitter:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-  ];
-}
-
-export const links: Route.LinksFunction = () => {
-  const canonicalUrl = new URL("/contact", siteMeta.siteUrl).toString();
-
-  return [
-    { rel: "canonical", href: canonicalUrl },
-    { rel: "alternate", href: canonicalUrl, hrefLang: "x-default" },
-  ];
-};
 
 const queryTypes = [
   "Sales",
@@ -67,6 +40,38 @@ export default function ContactPage() {
 
   return (
     <ContentProvider>
+      <EnhancedSEO
+        title={pageTitle}
+        description={pageDescription}
+        canonical={new URL("/contact", siteMeta.siteUrl).toString()}
+        keywords={["krixum contact", "ai platform demo", "ai sales", "enterprise ai support"]}
+        pageType="contact"
+        breadcrumbs={[
+          { name: "Home", url: siteMeta.siteUrl },
+          { name: "Contact", url: `${siteMeta.siteUrl}/contact` }
+        ]}
+        openGraph={{
+          title: pageTitle,
+          description: pageDescription,
+          type: "website",
+        }}
+        additionalJsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            mainEntity: {
+              "@type": "Organization",
+              name: siteMeta.name,
+              url: siteMeta.siteUrl,
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                availableLanguage: "English"
+              }
+            }
+          }
+        ]}
+      />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
         <main className="flex-1 bg-primary-foreground">

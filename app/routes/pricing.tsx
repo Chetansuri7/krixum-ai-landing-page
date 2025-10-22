@@ -16,34 +16,7 @@ const pageTitle = pageDetails
 const pageDescription =
   "Flexible pricing for teams of every size. Compare Free, Hobby, Standard, and Enterprise plans, including AI credits, security controls, and collaboration seats.";
 
-export function meta({}: Route.MetaArgs) {
-  const canonicalUrl = new URL("/pricing", siteMeta.siteUrl).toString();
-
-  return [
-    { title: pageTitle },
-    { name: "description", content: pageDescription },
-    { name: "robots", content: "index, follow" },
-    { name: "keywords", content: "krixum pricing, ai platform pricing, chatgpt claude pricing" },
-    { property: "og:title", content: pageTitle },
-    { property: "og:description", content: pageDescription },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: canonicalUrl },
-    { property: "og:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: pageTitle },
-    { name: "twitter:description", content: pageDescription },
-    { name: "twitter:image", content: new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString() },
-  ];
-}
-
-export const links: Route.LinksFunction = () => {
-  const canonicalUrl = new URL("/pricing", siteMeta.siteUrl).toString();
-
-  return [
-    { rel: "canonical", href: canonicalUrl },
-    { rel: "alternate", href: canonicalUrl, hrefLang: "x-default" },
-  ];
-};
+// SEO now handled by EnhancedSEO component
 
 export default function PricingPage() {
   return (

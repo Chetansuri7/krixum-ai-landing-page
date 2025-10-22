@@ -16,44 +16,6 @@ import { useScrollToSection } from "~/hooks/use-scroll-to-section";
 import { siteMeta } from "~/lib/site-metadata";
 import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 
-export function meta(args: Route.MetaArgs) {
-  const pathname = args.location?.pathname ?? "/";
-  const canonicalUrl = new URL(pathname || "/", siteMeta.siteUrl).toString();
-  const socialImage = new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString();
-
-  return [
-    { title: siteMeta.title },
-    { name: "description", content: siteMeta.description },
-    { name: "keywords", content: siteMeta.keywords.join(", ") },
-    { name: "author", content: siteMeta.name },
-    {
-      name: "robots",
-      content:
-        "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-    },
-    { name: "application-name", content: siteMeta.name },
-    { property: "og:title", content: siteMeta.title },
-    { property: "og:description", content: siteMeta.description },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: canonicalUrl },
-    { property: "og:image", content: socialImage },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: siteMeta.title },
-    { name: "twitter:description", content: siteMeta.description },
-    { name: "twitter:image", content: socialImage },
-    { name: "twitter:creator", content: siteMeta.twitterHandle },
-    { name: "theme-color", content: "#050816" },
-  ];
-}
-
-export const links: Route.LinksFunction = () => {
-  const canonicalUrl = new URL("/", siteMeta.siteUrl).toString();
-
-  return [
-    { rel: "canonical", href: canonicalUrl },
-    { rel: "alternate", href: canonicalUrl, hrefLang: "x-default" },
-  ];
-};
 
 type HomePageProps = {
   focusSectionId?: string;
