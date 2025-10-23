@@ -68,34 +68,6 @@ const graph = [
     url: siteMeta.siteUrl,
     publisher: { "@id": `${siteMeta.siteUrl}/#organization` },
   },
-  {
-    "@type": "FAQPage",
-    mainEntity: faqData.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteMeta.siteUrl,
-      },
-      ...marketingSections.map((section, index) => ({
-        "@type": "ListItem",
-        position: index + 2,
-        name: section.title,
-        item: absoluteUrl(section.path),
-      })),
-    ],
-  },
 ] as const;
 
 const structuredData = {

@@ -3,12 +3,12 @@ import type { LoaderFunctionArgs } from "react-router";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
 
 const priorityBySection: Record<string, { priority: string; changefreq: string }> = {
-  features: { priority: "0.9", changefreq: "weekly" },
+  features: { priority: "0.95", changefreq: "weekly" },
+  pricing: { priority: "0.95", changefreq: "weekly" },
+  models: { priority: "0.90", changefreq: "weekly" },
+  faq: { priority: "0.85", changefreq: "weekly" },
+  contact: { priority: "0.80", changefreq: "monthly" },
   advantages: { priority: "0.75", changefreq: "monthly" },
-  models: { priority: "0.85", changefreq: "weekly" },
-  pricing: { priority: "0.9", changefreq: "weekly" },
-  faq: { priority: "0.7", changefreq: "weekly" },
-  contact: { priority: "0.6", changefreq: "monthly" },
 };
 
 export async function loader({}: LoaderFunctionArgs) {

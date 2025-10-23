@@ -52,29 +52,6 @@ const supportChannels = [
   },
 ];
 
-function FaqStructuredData() {
-  const entries = faqData.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  }));
-
-  const payload = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: entries,
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(payload) }}
-    />
-  );
-}
 
 export default function FAQPage() {
   const faqStructuredData = faqData.map((item) => ({

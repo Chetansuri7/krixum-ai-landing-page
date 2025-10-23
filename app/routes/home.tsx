@@ -50,30 +50,7 @@ export function HomePage({ focusSectionId }: HomePageProps) {
             },
           ],
         }}
-        additionalJsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What AI models does Krixum support?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Krixum supports ChatGPT, Claude, Google Gemini, Llama, and other leading AI models in one unified platform."
-                }
-              },
-              {
-                "@type": "Question", 
-                name: "Is Krixum free to use?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes, Krixum offers a free plan with basic features. We also have paid plans for teams and enterprises with advanced features."
-                }
-              }
-            ]
-          }
-        ]}
+        additionalJsonLd={[]}
       />
       <div className="relative flex min-h-[86.1vh] flex-col justify-between overflow-x-hidden scroll-smooth bg-background md:overflow-y-visible">
         <Header />

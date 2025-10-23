@@ -79,7 +79,7 @@ export function EnhancedSEO({
     ],
   };
 
-  // Website Schema with Search Action
+  // Website Schema with Search Action and Navigation
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -98,6 +98,48 @@ export function EnhancedSEO({
         urlTemplate: `${siteMeta.siteUrl}/search?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
+    },
+    // Add main navigation for sitelinks
+    mainEntity: {
+      '@type': 'SiteNavigationElement',
+      name: 'Main Navigation',
+      hasPart: [
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/features`,
+          name: 'Features',
+          description: 'Explore AI workflows and collaboration tools in Krixum AI',
+          url: `${siteMeta.siteUrl}/features`,
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/pricing`,
+          name: 'Pricing',
+          description: 'Review plans to find the right fit for your team',
+          url: `${siteMeta.siteUrl}/pricing`,
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/models`,
+          name: 'AI Models',
+          description: 'See all AI models you can mix and match in real time',
+          url: `${siteMeta.siteUrl}/models`,
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/faq`,
+          name: 'FAQ',
+          description: 'Get answers to the questions we hear most often',
+          url: `${siteMeta.siteUrl}/faq`,
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/contact`,
+          name: 'Contact',
+          description: 'Reach out for demos, partnerships, or support',
+          url: `${siteMeta.siteUrl}/contact`,
+        },
+      ],
     },
   };
 
@@ -136,8 +178,8 @@ export function EnhancedSEO({
     ],
   };
 
-  // Breadcrumb Schema
-  const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  // Breadcrumb Schema - Only show on non-home pages
+  const breadcrumbSchema = breadcrumbs.length > 0 && pageType !== 'home' ? {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: breadcrumbs.map((crumb, index) => ({
@@ -146,6 +188,51 @@ export function EnhancedSEO({
       name: crumb.name,
       item: crumb.url,
     })),
+  } : null;
+
+  // Sitelinks Schema - Only for homepage
+  const sitelinksSchema = pageType === 'home' ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Krixum AI Site Navigation',
+    description: 'Main navigation pages for Krixum AI platform',
+    itemListElement: [
+      {
+        '@type': 'SiteNavigationElement',
+        position: 1,
+        name: 'Features',
+        description: 'AI workflows and collaboration tools',
+        url: `${siteMeta.siteUrl}/features`,
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 2,
+        name: 'Pricing',
+        description: 'Plans and pricing options',
+        url: `${siteMeta.siteUrl}/pricing`,
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 3,
+        name: 'AI Models',
+        description: 'Supported AI models and capabilities',
+        url: `${siteMeta.siteUrl}/models`,
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 4,
+        name: 'FAQ',
+        description: 'Frequently asked questions',
+        url: `${siteMeta.siteUrl}/faq`,
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 5,
+        name: 'Contact',
+        description: 'Get in touch with our team',
+        url: `${siteMeta.siteUrl}/contact`,
+      },
+    ],
   } : null;
 
   return (
@@ -209,6 +296,15 @@ export function EnhancedSEO({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+      )}
+
+      {sitelinksSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(sitelinksSchema),
           }}
         />
       )}

@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_*
+Disallow: /tmp*
+
+# Important pages for crawling
+Crawl-delay: 1
 
 Sitemap: https://krixum.com/sitemap.xml
