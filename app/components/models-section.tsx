@@ -104,11 +104,11 @@ export function ModelsSection() {
   return (
     <section
       id="models"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:py-24"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 sm:py-7 lg:py-8"
     >
       {/* White Card Container */}
       <div className="bg-card border border-border rounded-3xl p-8 lg:p-12 w-full shadow-lg">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+        <div className="grid lg:grid-cols-2 gap-7 lg:gap-8 items-center w-full">
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
             <div className="space-y-6">
@@ -219,7 +219,7 @@ export function ModelsSection() {
             </div>
             
             {/* Additional Info */}
-            <div className="mt-6 text-center">
+            <div className="mt-4 text-center">
               <p className="text-sm text-muted-foreground">
                 <span className="font-semibold text-foreground">25+ AI models</span> from leading providers
               </p>

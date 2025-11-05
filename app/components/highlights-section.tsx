@@ -2,7 +2,7 @@ import { SectionHeader } from "~/components/ui/section-header";
 
 export function HighlightsSection() {
   return (
-    <section id="highlights" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
+    <section id="highlights" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8">
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
           badge="Highlights"
@@ -10,7 +10,7 @@ export function HighlightsSection() {
           description="Krixum is designed for building AI support agents that solve your customers' hardest problems while improving business outcomes."
         />
         
-        <div className="grid gap-6 pt-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 pt-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {/* Purpose-built for LLMs */}
           <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card transition-all duration-300 hover:border-primary/20 hover:shadow-xl hover:-translate-y-1">
             <div className="aspect-square w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-950/20 flex items-center justify-center relative overflow-hidden">

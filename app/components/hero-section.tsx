@@ -34,8 +34,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-12 lg:py-14">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
             {/* Main Headline */}

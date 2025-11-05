@@ -6,14 +6,14 @@ import { faqData } from "~/lib/faq-data";
 
 export function FAQSection() {
   return (
-    <section id="faq" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-8">
+    <section id="faq" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8">
         <SectionHeader
           badge="FAQ"
           title="Frequently Asked Questions"
           description="Everything you need to know about Krixum AI"
         />
 
-      <div className="flex flex-col sm:flex-row gap-3 pt-6">
+      <div className="flex flex-col sm:flex-row gap-3 pt-5">
         <Link
           to="/faq"
           className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
@@ -29,7 +29,7 @@ export function FAQSection() {
       </div>
 
       {/* FAQ Grid */}
-      <div className="grid gap-6 pt-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 pt-6 md:grid-cols-2 lg:grid-cols-3">
         {faqData.map((faq) => (
           <Card
             key={faq.id}

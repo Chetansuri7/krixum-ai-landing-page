@@ -42,7 +42,7 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8"
     >
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
@@ -52,7 +52,7 @@ export function PricingSection() {
         />
 
         {/* Billing Toggle */}
-        <div className="my-4 flex w-full flex-col items-center justify-center gap-3">
+        <div className="my-3 flex w-full flex-col items-center justify-center gap-3">
           <AnimatedTabs
             tabs={[
               { id: "monthly", label: "Monthly" },
@@ -67,7 +67,7 @@ export function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="pt-8 flex w-full flex-col gap-6 rounded-3xl lg:flex-row lg:items-stretch lg:gap-0 lg:border lg:bg-background">
+        <div className="pt-6 flex w-full flex-col gap-6 rounded-3xl lg:flex-row lg:items-stretch lg:gap-0 lg:border lg:bg-background">
           {plans.map((plan, index) => (
             <React.Fragment key={plan.name}>
               <Card

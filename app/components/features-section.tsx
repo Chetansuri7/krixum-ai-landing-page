@@ -66,9 +66,9 @@ export function FeaturesSection() {
   return (
     <section
       id="features"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8"
     >
-      <div className="flex flex-col gap-12 w-full">
+      <div className="flex flex-col gap-6 w-full">
         <SectionHeader
           badge="Features"
           title="Everything you need in one place"
@@ -76,7 +76,7 @@ export function FeaturesSection() {
         />
 
         {/* Main Features - Hero Cards */}
-        <div className="grid gap-8 grid-cols-1 lg:grid-cols-3">
+        <div className="grid gap-5 grid-cols-1 lg:grid-cols-3">
           {mainFeatures.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
@@ -135,7 +135,7 @@ export function FeaturesSection() {
         </div>
 
         {/* Additional Features - Compact Cards */}
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
           {additionalFeatures.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
@@ -168,7 +168,7 @@ export function FeaturesSection() {
           })}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 pt-6">
+        <div className="flex flex-col sm:flex-row gap-3 pt-4">
           <Link
             to="/features"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"

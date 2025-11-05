@@ -117,7 +117,7 @@ export function AdvantagesSection() {
   return (
     <section
       id="advantages"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8"
     >
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
@@ -127,7 +127,7 @@ export function AdvantagesSection() {
         />
 
         {/* Main Advantages Grid - 4 in a row for web */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6">
           {advantages.map((advantage, index) => (
             <div
               key={advantage.title}

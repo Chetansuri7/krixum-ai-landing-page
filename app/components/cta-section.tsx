@@ -4,7 +4,7 @@ export function CtaSection() {
   return (
     <section
       id="contact"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8"
     >
       <div className="flex flex-col gap-4 w-full">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#FB923C] via-[#F472B6] to-[#E879F9] p-6 sm:p-8 lg:p-12">
