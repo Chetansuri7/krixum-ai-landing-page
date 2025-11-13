@@ -14,7 +14,7 @@ const pageTitle = pageDetails
   : `Advantages – ${siteMeta.name}`;
 
 const pageDescription =
-  "Understand the ROI of giving every team access to a unified AI workspace. Learn how organizations reduce costs, ship faster, and protect their data with Krixum AI.";
+  "Understand why Krixum reduces app juggling, speeds up bookings, and protects every transaction with escrow.";
 
 
 const outcomes = [
@@ -75,7 +75,7 @@ export default function AdvantagesPage() {
         title={pageTitle}
         description={pageDescription}
         canonical={new URL("/advantages", siteMeta.siteUrl).toString()}
-        keywords={["krixum advantages", "ai workspace roi", "ai governance", "enterprise ai benefits"]}
+        keywords={["krixum advantages", "save time", "app fatigue", "escrow protection", "local services"]}
         pageType="service"
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },

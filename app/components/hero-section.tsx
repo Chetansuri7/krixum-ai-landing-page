@@ -1,402 +1,250 @@
+import { Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating gradient orbs */}
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
 
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <svg className="w-full h-full" viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <pattern
-                id="hero-grid"
-                width="4"
-                height="4"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M 4 0 L 0 0 0 4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.5"
-                />
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#hero-grid)" />
-          </svg>
-        </div>
+        {/* Subtle grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-12 lg:py-14">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="text-center lg:text-left">
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-8">
-              The Future of
-              <br />
-              <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                AI Conversations
-              </span>
-            </h1>
+          <div className="text-center lg:text-left space-y-8">
+            {/* Badge removed per request */}
 
-            {/* Subtitle */}
-            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed mb-12">
-              Access ChatGPT, Claude, Gemini, and Llama in one unified interface.
-              <br className="hidden sm:block" />
-              Switch models instantly, preserve context, and maintain complete
-              privacy.
-            </p>
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
+                <span className="block">AI‑powered comparison across apps.</span>
+                <span className="block">Book instantly.</span>
+              </h1>
+              {/* AI emphasis under headline removed per request */}
+              <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Tell Krixum what you need. It finds options and prices across apps, shows them side‑by‑side, and books with payment protection — or browse and compare yourself in one place.
+              </p>
+            </div>
+
+            {/* Stats Row */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-4">
+              <div className="text-center lg:text-left">
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">30 sec</div>
+                <div className="text-sm text-muted-foreground">Average booking time</div>
+              </div>
+              <div className="h-12 w-px bg-border"></div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">1 app</div>
+                <div className="text-sm text-muted-foreground">All services in one place</div>
+              </div>
+              <div className="h-12 w-px bg-border"></div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">100%</div>
+                <div className="text-sm text-muted-foreground">Payment protected</div>
+              </div>
+            </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <a
                 href="https://chat.krixum.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary to-purple-600 rounded-xl hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105 group cursor-pointer"
+                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-primary/90"
               >
-                Start Free Trial
-                <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
+                <span className="flex items-center gap-2">
+                  Start Searching Free
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
               </a>
+
               <button
                 onClick={() => {
-                  const element = document.getElementById('pricing');
+                  const element = document.getElementById('how-it-works');
                   if (element) {
-                    element.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                    });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className="inline-flex items-center px-8 py-4 text-lg font-semibold text-foreground bg-background/50 backdrop-blur-sm border border-border rounded-xl hover:bg-background/80 transition-all duration-200 shadow-lg hover:shadow-xl group cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-foreground bg-background border-2 border-border rounded-2xl hover:border-primary hover:bg-accent transition-all duration-300"
               >
-                View Pricing
-                <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
+                See How It Works
               </button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-8 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground pt-4">
               <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-green-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
+                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>No credit card required</span>
+                <span>No subscription needed</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-green-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
+                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                <span>Enterprise-grade security</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full border-2 border-background"></div>
-                  <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-2 border-background"></div>
-                  <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full border-2 border-background"></div>
-                </div>
-                <span>50,000+ users worldwide</span>
+                <span>Escrow protected</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Product Preview */}
+          {/* Right Column - Mobile App Mockup */}
           <div className="relative">
-            <div className="relative mx-auto max-w-lg lg:max-w-none">
-            {/* Browser Window */}
-            <div className="bg-card border border-border rounded-2xl shadow-2xl overflow-hidden">
-              {/* Browser Header */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="flex-1 mx-4">
-                  <div className="bg-background/50 rounded-lg px-3 py-1 text-xs text-muted-foreground">
-                    krixum.com
+            <div className="relative mx-auto max-w-sm lg:max-w-none">
+              {/* Floating card - All Options */}
+              <div className="absolute -top-4 -left-4 z-20 bg-green-600 text-white rounded-2xl p-4 shadow-2xl animate-float hidden sm:block">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xs font-medium opacity-90">Options found</div>
+                    <div className="text-2xl font-bold">4 apps</div>
                   </div>
                 </div>
               </div>
 
-              {/* Chat Interface Preview */}
-              <div className="w-full aspect-auto sm:aspect-[5/4] lg:aspect-[3/3] bg-gradient-to-br from-background to-muted/20 p-4 sm:p-6 flex flex-col justify-start lg:justify-center items-center min-h-[500px] sm:min-h-[600px]">
-                {/* Title */}
-                <div className="text-center space-y-1 mb-4">
-                  <h3 className="text-base sm:text-lg font-semibold text-foreground">
-                    Choose your AI model
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">
-                    Select from 25+ leading AI models
-                  </p>
+              {/* Floating card - Fast Booking */}
+              <div className="absolute -bottom-4 -right-4 z-20 bg-blue-600 text-white rounded-2xl p-4 shadow-2xl animate-float hidden sm:block" style={{ animationDelay: '1s' }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xs font-medium opacity-90">Booking time</div>
+                    <div className="text-2xl font-bold">30 sec</div>
+                  </div>
                 </div>
+              </div>
 
-                {/* Model Selector Interface */}
-                <div className="w-full max-w-xs sm:max-w-sm space-y-3 px-2 sm:px-0">
-                  {/* Input Field */}
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder="Type your message..."
-                      className="w-full p-2.5 sm:p-3 pr-9 sm:pr-10 bg-background border border-border rounded-lg sm:rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-xs sm:text-sm"
-                      disabled
-                    />
-                    <div className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2">
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary rounded-md flex items-center justify-center">
-                        <svg
-                          className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary-foreground"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                          />
+              {/* Main Phone Mockup */}
+              <div className="relative z-10">
+                {/* Phone Frame */}
+                <div className="relative mx-auto w-full max-w-[320px] aspect-[9/19.5] bg-black rounded-[3rem] p-3 shadow-2xl">
+                  {/* Screen */}
+                  <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden">
+                    {/* Status Bar */}
+                    <div className="bg-background px-6 py-3 flex items-center justify-between text-xs">
+                      <span className="font-semibold">9:41</span>
+                      <div className="flex items-center gap-1">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" />
+                        </svg>
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M1 18v3h3c0-1.66-1.34-3-3-3zm0-4v2c2.76 0 5 2.24 5 5h2c0-3.87-3.13-7-7-7zm18-7H5v1.63c3.96 1.28 7.09 4.41 8.37 8.37H19V7zM1 10v2c4.97 0 9 4.03 9 9h2c0-6.08-4.93-11-11-11zm20-7H3c-1.1 0-2 .9-2 2v3h2V5h18v14h-7v2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
                         </svg>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Model Dropdown */}
-                  <div className="relative">
-                    <button className="w-full flex items-center justify-between p-2.5 sm:p-3 bg-background border border-border rounded-lg sm:rounded-xl hover:bg-accent/50 transition-colors cursor-pointer">
-                      <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary rounded-full flex items-center justify-center">
-                          <svg
-                            className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary-foreground"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M13 10V3L4 14h7v7l9-11h-7z"
-                            />
-                          </svg>
-                        </div>
-                        <span className="text-xs sm:text-sm font-medium text-foreground">
-                          GPT-5
-                        </span>
+                    {/* App Header */}
+                    <div className="px-4 py-3 border-b border-border bg-background">
+                      <div className="flex items-center justify-between mb-3">
+                        <h2 className="text-lg font-bold">Krixum</h2>
+                        <div className="w-8 h-8 rounded-full bg-primary"></div>
                       </div>
-                      <svg
-                        className="w-3 h-3 sm:w-4 sm:h-4 text-muted-foreground"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
+                      {/* Search Bar */}
+                      <div className="relative">
+                        <input
+                          type="text"
+                          value="Taxi to airport"
+                          className="w-full pl-10 pr-4 py-2.5 bg-muted/50 border border-border rounded-xl text-sm font-medium"
+                          readOnly
                         />
-                      </svg>
-                    </button>
+                        <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </div>
+                    </div>
 
-                    {/* Dropdown Menu */}
-                    <div
-                      className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-xl shadow-xl z-10 overflow-hidden max-h-[60vh] sm:max-h-[calc(100vh-200px)] overflow-y-auto"
-                      role="listbox"
-                    >
-                      {/* GPT-5 */}
-                      <div className="flex items-center gap-3 p-2.5 hover:bg-accent transition-colors cursor-pointer border-l-2 border-primary">
-                        <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                          <svg
-                            className="w-3 h-3 text-primary-foreground"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M13 10V3L4 14h7v7l9-11h-7z"
-                            />
-                          </svg>
+                    {/* Results List */}
+                    <div className="p-4 space-y-3 overflow-y-auto" style={{ maxHeight: 'calc(100% - 120px)' }}>
+                      {/* Result 1 - Best Price */}
+                      <div className="relative p-4 bg-green-50 dark:bg-green-950/20 border-2 border-green-500 rounded-2xl shadow-sm">
+                        <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                          FASTEST
                         </div>
-                        <div className="flex-1">
-                          <div className="font-medium text-foreground text-sm">
-                            GPT-5
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                              <span className="text-white font-bold text-sm">R</span>
+                            </div>
+                            <div>
+                              <div className="font-bold text-sm">Rapido</div>
+                              <div className="text-xs text-muted-foreground">Bike • 2 min away</div>
+                            </div>
                           </div>
-                          <div className="text-xs text-muted-foreground">
-                            OpenAI's latest model
+                          <div className="text-right">
+                            <div className="text-xl font-bold text-green-600">₹180</div>
+                            <div className="text-xs text-green-600 font-medium">Arrives fastest</div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Claude Sonnet 4.0 */}
-                      <div className="flex items-center gap-3 p-2.5 hover:bg-accent transition-colors cursor-pointer">
-                        <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                          <svg
-                            className="w-3 h-3 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium text-foreground text-sm">
-                            Claude Sonnet 4.0
+                      {/* Result 2 */}
+                      <div className="p-4 bg-card border border-border rounded-2xl">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
+                              <span className="text-white font-bold text-sm">N</span>
+                            </div>
+                            <div>
+                              <div className="font-bold text-sm">Namma Yatri</div>
+                              <div className="text-xs text-muted-foreground">Auto • 4 min away</div>
+                            </div>
                           </div>
-                          <div className="text-xs text-muted-foreground">
-                            Anthropic's reasoning model
-                          </div>
+                          <div className="text-xl font-bold">₹420</div>
                         </div>
                       </div>
 
-                      {/* Gemini Pro 2.5 */}
-                      <div className="flex items-center gap-3 p-2.5 hover:bg-accent transition-colors cursor-pointer">
-                        <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                          <svg
-                            className="w-3 h-3 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M13 7l5 5m0 0l-5 5m5-5H6"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium text-foreground text-sm">
-                            Gemini Pro 2.5
+                      {/* Result 3 */}
+                      <div className="p-4 bg-card border border-border rounded-2xl">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center">
+                              <span className="text-white font-bold text-sm">O</span>
+                            </div>
+                            <div>
+                              <div className="font-bold text-sm">Ola</div>
+                              <div className="text-xs text-muted-foreground">Cab • 5 min away</div>
+                            </div>
                           </div>
-                          <div className="text-xs text-muted-foreground">
-                            Google's multimodal AI
-                          </div>
+                          <div className="text-xl font-bold">₹450</div>
                         </div>
                       </div>
 
-                      {/* DeepSeek V3 */}
-                      <div className="flex items-center gap-3 p-2.5 hover:bg-accent transition-colors cursor-pointer">
-                        <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
-                          <svg
-                            className="w-3 h-3 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium text-foreground text-sm">
-                            DeepSeek V3
+                      {/* Result 4 */}
+                      <div className="p-4 bg-card border border-border rounded-2xl opacity-75">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center">
+                              <span className="text-white font-bold text-sm">U</span>
+                            </div>
+                            <div>
+                              <div className="font-bold text-sm">Uber</div>
+                              <div className="text-xs text-muted-foreground">Cab • 3 min away</div>
+                            </div>
                           </div>
-                          <div className="text-xs text-muted-foreground">
-                            Advanced reasoning model
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* More Models */}
-                      <div className="border-t border-border p-2.5 bg-muted/20">
-                        <div className="text-center">
-                          <span className="text-xs text-muted-foreground">
-                            + 21 more models available
-                          </span>
+                          <div className="text-xl font-bold">₹480</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Quick Actions */}
-                <div className="mt-4 space-y-1">
-                  <p className="text-xs text-muted-foreground text-center">
-                    Quick start:
-                  </p>
-                  <div className="flex gap-2 justify-center">
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors cursor-pointer" aria-label="Quick start: Write code">
-                      Write code
-                    </button>
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors cursor-pointer" aria-label="Quick start: Analyze data">
-                      Analyze data
-                    </button>
-                    <button className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary/20 transition-colors cursor-pointer" aria-label="Quick start: Creative writing">
-                      Creative writing
-                    </button>
-                  </div>
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-3xl"></div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

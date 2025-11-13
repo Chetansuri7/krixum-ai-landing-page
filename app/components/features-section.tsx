@@ -1,186 +1,151 @@
 import { Link } from "react-router";
-
 import { SectionHeader } from "~/components/ui/section-header";
-import {
-  MessageSquare,
-  FileText,
-  Shield,
-  Lightbulb,
-  Users,
-  BarChart3,
-  CheckCircle,
-} from "lucide-react";
 
 export function FeaturesSection() {
-  const mainFeatures = [
+  const pillars = [
     {
-      title: "Unified Chat Interface",
-      description:
-        "Access all AI models through one clean, intuitive interface. No need to switch between different platforms.",
-      icon: MessageSquare,
-      color: "from-blue-500 to-cyan-500",
-      benefits: ["Single login", "Consistent UI", "No context switching"],
+      label: "Search",
+      title: "One search. All options.",
+      body:
+        "See big brands and verified local providers together with real‑time availability.",
+      bullets: [
+        "All providers in one place",
+        "Live ETAs and availability",
+        "Ratings and reviews at a glance",
+      ],
     },
     {
-      title: "Context Preservation",
-      description:
-        "Switch between models without losing your conversation context. Your chat history stays intact.",
-      icon: FileText,
-      color: "from-purple-500 to-pink-500",
-      benefits: ["Seamless switching", "History intact", "No data loss"],
+      label: "Compare",
+      title: "Clear, side‑by‑side choices.",
+      body:
+        "Decide faster with transparent information — no juggling between multiple apps.",
+      bullets: [
+        "Side‑by‑side options",
+        "Coverage across categories",
+        "No app switching",
+      ],
     },
     {
-      title: "Privacy First",
-      description:
-        "Your conversations are private and secure. We don't store or analyze your personal data.",
-      icon: Shield,
-      color: "from-green-500 to-emerald-500",
-      benefits: ["End-to-end encryption", "No data mining", "GDPR compliant"],
+      label: "Book",
+      title: "Protected from start to finish.",
+      body:
+        "Payments held in escrow until you confirm service completion. Help when you need it.",
+      bullets: [
+        "Escrow‑backed payments",
+        "Verified providers",
+        "Issue resolution support",
+      ],
     },
   ];
 
-  const additionalFeatures = [
+  const capabilities = [
     {
-      title: "Smart Model Selection",
-      description:
-        "Get AI-powered recommendations on which model to use for your specific task.",
-      icon: Lightbulb,
-      stats: "95% accuracy",
+      title: "Big brands + local pros",
+      description: "Find Ola, Uber, Urban Company and trusted local providers together.",
     },
     {
-      title: "Real-time Collaboration",
-      description:
-        "Share conversations and collaborate with your team across different AI models.",
-      icon: Users,
-      stats: "Team sync",
+      title: "Real‑time ETAs",
+      description: "Stay informed with up‑to‑date provider availability.",
     },
     {
-      title: "Advanced Analytics",
-      description:
-        "Track usage, costs, and performance to optimize your AI workflow.",
-      icon: BarChart3,
-      stats: "Deep insights",
+      title: "Escrow protection",
+      description: "Payment released only after you confirm service completion.",
+    },
+    {
+      title: "One profile, one history",
+      description: "All your bookings in one place across categories.",
+    },
+    {
+      title: "Use app or ask AI",
+      description: "Browse traditionally or book via AI (MCP‑compatible).",
+    },
+    {
+      title: "Fast support",
+      description: "Help when you need it and simple issue resolution.",
     },
   ];
 
   return (
     <section
       id="features"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-12 lg:py-16"
     >
-      <div className="flex flex-col gap-6 w-full">
+      <div className="flex flex-col gap-12 w-full">
         <SectionHeader
           badge="Features"
-          title="Everything you need in one place"
-          description="Powerful features designed to enhance your AI experience, streamline workflows, and boost productivity — all in a beautifully unified interface."
+          title="What Krixum does for you"
+          description="Search once, compare clearly, and book with protection — without app juggling."
         />
 
-        {/* Main Features - Hero Cards */}
-        <div className="grid gap-5 grid-cols-1 lg:grid-cols-3">
-          {mainFeatures.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="group relative bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                {/* Background Gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-3 rounded-3xl transition-opacity duration-300`}
-                ></div>
-
-                {/* Content */}
-                <div className="relative space-y-4">
-                  {/* Title with inline icon */}
-                  <div className="flex items-center gap-3">
-                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
-                      <IconComponent className="w-4 h-4 text-white" aria-hidden="true" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {feature.title}
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-
-                  {/* Benefits List */}
-                  <div className="space-y-2 pt-2">
-                    {feature.benefits.map((benefit) => (
-                      <div
-                        key={benefit}
-                        className="flex items-center gap-2"
-                      >
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">
-                          {benefit}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Learn More (Optional)
-                  <div className="pt-4">
-                    <button className="group/btn flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium cursor-pointer">
-                      Learn more
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-                  */}
-                </div>
+        {/* Three Pillars */}
+        <div className="grid gap-6 grid-cols-1 lg:grid-cols-3">
+          {pillars.map((item, index) => (
+            <div
+              key={item.title}
+              className="relative bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+                {item.label}
               </div>
-            );
-          })}
+              <h3 className="text-2xl font-bold text-foreground mb-2">{item.title}</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">{item.body}</p>
+              <ul className="space-y-2">
+                {item.bullets.map((b) => (
+                  <li key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        {/* Additional Features - Compact Cards */}
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
-          {additionalFeatures.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="group relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                style={{ animationDelay: `${(index + 3) * 150}ms` }}
-              >
-                <div className="space-y-3">
-                  {/* Title with inline icon and stats */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <IconComponent className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                      </div>
-                      <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {feature.title}
-                      </h4>
-                    </div>
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
-                      {feature.stats}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+        {/* What You Can Do */}
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+          {capabilities.map((cap, index) => (
+            <div
+              key={cap.title}
+              className="group relative bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              style={{ animationDelay: `${(index + 3) * 100}ms` }}
+            >
+              <h4 className="font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">{cap.title}</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{cap.description}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 pt-4">
-          <Link
-            to="/features"
-            className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-          >
-            Explore all platform features
-          </Link>
-          <Link
-            to="/advantages"
-            className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
-          >
-            See business outcomes
-          </Link>
+        {/* CTA Section */}
+        <div className="relative mt-8">
+          <div className="relative bg-muted/50 border border-border rounded-3xl p-8 sm:p-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+                  Ready to stop wasting time on multiple apps?
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  Join thousands who've already switched to smarter booking.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                <Link
+                  to="/features"
+                  className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary/90 transition-all"
+                >
+                  Explore Features
+                </Link>
+                <Link
+                  to="/advantages"
+                  className="inline-flex items-center justify-center rounded-xl border-2 border-border px-6 py-3 text-sm font-semibold text-foreground bg-background hover:bg-accent transition-all"
+                >
+                  See Benefits
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

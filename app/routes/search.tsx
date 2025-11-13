@@ -12,7 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/com
 
 export function meta({}: Route.MetaArgs) {
   const title = `Search – ${siteMeta.name}`;
-  const description = "Search Krixum AI pages and content.";
+  const description = "Search Krixum pages and content - Find information about booking services, features, and more.";
   const canonicalUrl = new URL("/search", siteMeta.siteUrl).toString();
 
   return [
@@ -53,43 +53,67 @@ export default function SearchPage() {
   const searchableContent: SearchResult[] = [
     {
       title: "Home",
-      description: "Unify ChatGPT, Claude, Gemini in One App - Access top AI models in one private workspace",
+      description: "Search once. Book anything. Compare and book local services in one place with payment protection.",
       url: "/",
       type: "page"
     },
     {
+      title: "Overview",
+      description: "What Krixum does and where it works - Search once, compare clearly, and book with protection",
+      url: "/#overview",
+      type: "section"
+    },
+    {
+      title: "Smart Booking",
+      description: "Stop juggling apps. Start booking smarter. Compare all providers in one place",
+      url: "/#smart-booking",
+      type: "section"
+    },
+    {
+      title: "Real Examples",
+      description: "See how Krixum compares old vs new flows - Stop wasting time, start booking smarter",
+      url: "/#highlights",
+      type: "section"
+    },
+    {
+      title: "How It Works",
+      description: "From search to booking with protection - Search, compare, book, all protected",
+      url: "/#how-it-works",
+      type: "section"
+    },
+    {
+      title: "Advantages",
+      description: "Why Krixum saves time and reduces hassle across categories",
+      url: "/#advantages",
+      type: "section"
+    },
+    {
+      title: "FAQ",
+      description: "Get answers to common questions about searching, comparing, and booking services with Krixum",
+      url: "/#faq",
+      type: "section"
+    },
+    {
       title: "Features",
-      description: "Explore the workflows and collaboration tools available in Krixum AI",
+      description: "Explore Krixum features for simpler, faster booking across taxis, home services, and more",
       url: "/features",
       type: "page"
     },
     {
       title: "Pricing",
-      description: "Flexible pricing for teams of every size. Compare Free, Hobby, Standard, and Enterprise plans",
+      description: "Provider partnerships and platform options - Learn how we work with service providers",
       url: "/pricing",
       type: "page"
     },
     {
-      title: "AI Models",
-      description: "See all of the AI models you can mix and match in real time - ChatGPT, Claude, Gemini, Llama",
+      title: "Categories",
+      description: "See the service categories supported today and what's next - Taxis, home services, and more",
       url: "/models",
       type: "page"
     },
     {
-      title: "Advantages",
-      description: "Understand the ROI of consolidating every AI workflow inside one secure workspace",
-      url: "/advantages",
-      type: "page"
-    },
-    {
-      title: "FAQ",
-      description: "Get answers to the questions we hear most often about our AI platform",
-      url: "/faq",
-      type: "page"
-    },
-    {
       title: "Contact",
-      description: "Reach out to our team for demos, partnerships, or support",
+      description: "Reach out for demos, partnerships, provider integrations, or customer support",
       url: "/contact",
       type: "page"
     },
@@ -119,7 +143,7 @@ export default function SearchPage() {
     <ContentProvider>
       <EnhancedSEO
         title={q ? `Search results for "${q}"` : "Search"}
-        description={`Search ${siteMeta.name} for AI tools, features, pricing, and more.`}
+        description={`Search ${siteMeta.name} for booking features, pricing, service categories, and more.`}
         canonical={`${siteMeta.siteUrl}/search${q ? `?q=${encodeURIComponent(q)}` : ''}`}
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },
@@ -137,7 +161,7 @@ export default function SearchPage() {
               <form onSubmit={handleSearch} className="flex gap-2 mb-8">
                 <Input
                   type="search"
-                  placeholder="Search Krixum AI..."
+                  placeholder="Search Krixum..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   className="flex-1"
@@ -184,7 +208,7 @@ export default function SearchPage() {
 
                 {!q && (
                   <div className="text-center text-muted-foreground">
-                    <p>Enter a query to search our content including Features, Pricing, AI Models, and FAQ.</p>
+                    <p>Enter a query to search our content including Features, Pricing, Categories, and FAQ.</p>
                   </div>
                 )}
               </div>

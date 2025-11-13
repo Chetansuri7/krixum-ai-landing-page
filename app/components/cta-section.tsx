@@ -7,7 +7,7 @@ export function CtaSection() {
       className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8"
     >
       <div className="flex flex-col gap-4 w-full">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#FB923C] via-[#F472B6] to-[#E879F9] p-6 sm:p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-6 sm:p-8 lg:p-12">
           {/* Enhanced Background Pattern */}
           <div className="absolute inset-0 opacity-20" aria-hidden="true">
             <svg className="w-full h-full" viewBox="0 0 100 100">
@@ -36,18 +36,18 @@ export function CtaSection() {
             <div className="mb-6">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-white text-sm font-medium">Start Your AI Journey</span>
+                <span className="text-white text-sm font-medium">Join Early Access</span>
               </div>
             </div>
-            
+
             <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">
-              Ready to unify your AI experience?
+              Ready to stop wasting time?
             </h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl leading-relaxed">
-              Join thousands of users who have already discovered the power of
-              having all AI models in one place. Start your free trial today.
+              Join thousands of Bangalore residents who search, compare, and book
+              local services in seconds. Save time and energy, and book with confidence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center mb-6">
@@ -55,24 +55,33 @@ export function CtaSection() {
                 href="https://chat.krixum.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#FB923C] hover:bg-white/90 font-semibold px-8 py-3 text-lg h-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3 text-lg h-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
               >
-                Start Free Trial
+                Start Searching
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </a>
             </div>
 
-            <div className="flex items-center gap-4 text-white/80 text-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-white/80 text-sm">
               <div className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>No credit card required</span>
+                <span>100% free for users</span>
               </div>
               <div className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Cancel anytime</span>
+                <span>Payment protection on every booking</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>No app switching</span>
               </div>
             </div>
           </div>

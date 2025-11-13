@@ -4,52 +4,35 @@ import { Play, Pause } from "lucide-react";
 const steps = [
   {
     id: 1,
-    title: "Build & deploy your agent",
+    title: "Search once, see all options",
     description:
-      "Train an agent on your business data, configure the actions it can take, then deploy it for your customers.",
-    videoSrc:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/how-it-works/build-and-deploy.webm",
-    poster:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/how-it-works/build-and-deploy-thumbnail.png",
+      "Enter what you need - a taxi, plumber, or groceries. We instantly show you all available providers with real-time pricing, ratings, and availability.",
+    icon: "🔍",
+    color: "from-blue-400 to-cyan-500"
   },
   {
     id: 2,
-    title: "Agent solves your customers' problems",
+    title: "Compare and choose",
     description:
-      "The agent will answer questions and access external systems to gather data and take actions.",
-    videoSrc:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/how-it-works/agent-responds.webm",
-    poster:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/video-thumbnail.png",
+      "See side-by-side comparisons of all providers - big brands like Ola, Uber AND local verified providers. Transparent pricing, no surprises.",
+    icon: "⚖️",
+    color: "from-purple-400 to-pink-500"
   },
   {
     id: 3,
-    title: "Refine & optimize",
-    description: "This ensures your agent is improving over time.",
-    videoSrc:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/how-it-works/refine-and-optimize.webm",
-    poster:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/video-thumbnail.png",
+    title: "Book with protection",
+    description:
+      "For platform bookings, your payment is held in escrow until service is confirmed. For partner bookings, we facilitate and protect your transaction.",
+    icon: "🛡️",
+    color: "from-green-400 to-emerald-500"
   },
   {
     id: 4,
-    title: "Route complex issues to a human",
+    title: "Service delivered, you confirm",
     description:
-      "Seamlessly escalate certain queries to human agents when the AI agent is unable to solve the problem or when issues require human review.",
-    videoSrc:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/how-it-works/route-complex-issues.webm",
-    poster:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/video-thumbnail.png",
-  },
-  {
-    id: 5,
-    title: "Review analytics & insights",
-    description:
-      "Since the agent is talking with customers all day, it's able to gather important insights and analytics about your customers & business.",
-    videoSrc:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/how-it-works/review-analytics.webm",
-    poster:
-      "https://backend.chatbase.co/storage/v1/object/public/chatbase/landing/video-thumbnail.png",
+      "Provider completes the service. You confirm completion through the app. Only then is payment released. Bad service? Full refund or free replacement.",
+    icon: "✅",
+    color: "from-orange-400 to-red-500"
   },
 ];
 
@@ -60,12 +43,12 @@ export function HowItWorksSection() {
   const [isPlaying, setIsPlaying] = useState(true);
 
   return (
-    <section className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
+    <section id="how-it-works" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
           badge="How it works"
-          title="An end-to-end solution for conversational AI"
-          description="With Krixum, your customers can effortlessly find answers, resolve issues, and take meaningful actions through seamless and engaging AI-driven conversations."
+          title="Search, compare, book - all protected"
+          description="From search to service completion, every step is designed to save you time and protect your money."
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -84,15 +67,7 @@ export function HowItWorksSection() {
                     }`}
                   >
                     <div className="flex items-start gap-3 lg:gap-4">
-                      <span
-                        className={`font-medium text-base lg:text-lg transition-colors duration-300 ${
-                          activeStep === step.id
-                            ? "bg-gradient-to-r from-[#FB923C] to-[#F472B6] bg-clip-text text-transparent"
-                            : "text-zinc-400"
-                        }`}
-                      >
-                        {step.id.toString().padStart(2, "0")}.
-                      </span>
+                      <span className="text-2xl">{step.icon}</span>
                       <div className="flex-1">
                         <h3
                           className={`font-medium text-base lg:text-lg transition-colors duration-300 ${
@@ -116,79 +91,41 @@ export function HowItWorksSection() {
             </div>
           </div>
 
-          {/* Desktop Video */}
+          {/* Desktop Visual */}
           <div className="hidden lg:block">
             <div className="relative my-8 lg:my-12 aspect-[0.939] w-full">
               <div className="absolute inset-0 flex aspect-[0.939] w-full items-center justify-center">
                 <div className="aspect-[0.939] w-full rounded-2xl p-3">
                   <div className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">
-                    <div className="aspect-[0.939] w-full rounded-3xl bg-gradient-to-br from-orange-400 via-pink-400 to-fuchsia-400 flex items-center justify-center relative overflow-hidden">
+                    <div className={`aspect-[0.939] w-full rounded-3xl bg-gradient-to-br ${steps.find(s => s.id === activeStep)?.color || 'from-orange-400 to-pink-500'} flex items-center justify-center relative overflow-hidden transition-all duration-500`}>
                       {/* Background Pattern */}
                       <div className="absolute inset-0 opacity-20">
                         <svg className="w-full h-full" viewBox="0 0 100 100">
                           <defs>
-                            <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <pattern id="dots-hiw" width="10" height="10" patternUnits="userSpaceOnUse">
                               <circle cx="5" cy="5" r="1" fill="white" opacity="0.3"/>
                             </pattern>
                           </defs>
-                          <rect width="100" height="100" fill="url(#dots)" />
+                          <rect width="100" height="100" fill="url(#dots-hiw)" />
                         </svg>
                       </div>
-                      {/* Mock Interface */}
-                      <div className="relative z-10 w-full h-full p-8 flex flex-col">
-                        <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-4">
-                          <div className="flex items-center gap-2 mb-3">
-                            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
-                            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
-                            <div className="w-3 h-3 bg-white/60 rounded-full"></div>
+                      {/* Icon Display */}
+                      <div className="relative z-10 w-full h-full flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="text-9xl mb-6 animate-float">
+                            {steps.find(s => s.id === activeStep)?.icon}
                           </div>
-                          <div className="space-y-2">
-                            <div className="h-2 bg-white/40 rounded w-3/4"></div>
-                            <div className="h-2 bg-white/40 rounded w-1/2"></div>
-                          </div>
-                        </div>
-                        <div className="flex-1 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mb-3 mx-auto">
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                              </svg>
-                            </div>
-                            <span className="text-white font-semibold text-sm">Step {activeStep} Demo</span>
+                          <div className="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 max-w-md mx-auto">
+                            <span className="text-white font-semibold text-lg block mb-2">
+                              Step {activeStep}
+                            </span>
+                            <span className="text-white/90 text-sm">
+                              {steps.find(s => s.id === activeStep)?.title}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => setIsPlaying(!isPlaying)}
-                      className="absolute bottom-4 left-4 rounded-full bg-black/25 p-2 opacity-90 transition-opacity lg:p-3 group-hover:opacity-100"
-                      aria-label={isPlaying ? "Pause video" : "Play video"}
-                    >
-                      <svg
-                        aria-label="video progress"
-                        role="img"
-                        className="-rotate-90 absolute top-0 left-0 h-full w-full"
-                        viewBox="0 0 32 32"
-                      >
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="14.8"
-                          fill="none"
-                          stroke="white"
-                          strokeWidth="2.3"
-                          strokeDasharray="94.2"
-                          strokeDashoffset="42.7197"
-                          className="opacity-90"
-                        />
-                      </svg>
-                      {isPlaying ? (
-                        <Pause className="relative h-4 w-4 lg:h-6 lg:w-6 text-white fill-white" />
-                      ) : (
-                        <Play className="relative h-4 w-4 lg:h-6 lg:w-6 text-white fill-white" />
-                      )}
-                    </button>
                   </div>
                 </div>
               </div>
@@ -201,82 +138,43 @@ export function HowItWorksSection() {
               {steps.map((step) => (
                 <div
                   key={step.id}
-                  className="w-full rounded-3xl border bg-background shadow-sm"
+                  className="w-full rounded-3xl border bg-background shadow-sm hover:shadow-lg transition-shadow"
                 >
                   <div className="aspect-[0.939] w-full rounded-3xl bg-background p-3 sm:p-4">
                     <div className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">
-                      <div className="aspect-[0.939] w-full rounded-3xl bg-gradient-to-br from-orange-400 via-pink-400 to-fuchsia-400 flex items-center justify-center relative overflow-hidden">
+                      <div className={`aspect-[0.939] w-full rounded-3xl bg-gradient-to-br ${step.color} flex items-center justify-center relative overflow-hidden`}>
                         {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-20">
                           <svg className="w-full h-full" viewBox="0 0 100 100">
                             <defs>
-                              <pattern id={`dots-${step.id}`} width="8" height="8" patternUnits="userSpaceOnUse">
+                              <pattern id={`dots-mobile-${step.id}`} width="8" height="8" patternUnits="userSpaceOnUse">
                                 <circle cx="4" cy="4" r="0.8" fill="white" opacity="0.4"/>
                               </pattern>
                             </defs>
-                            <rect width="100" height="100" fill={`url(#dots-${step.id})`} />
+                            <rect width="100" height="100" fill={`url(#dots-mobile-${step.id})`} />
                           </svg>
                         </div>
-                        {/* Mock Interface */}
-                        <div className="relative z-10 w-full h-full p-4 sm:p-6 flex flex-col">
-                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 mb-3">
-                            <div className="flex items-center gap-1.5 mb-2">
-                              <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                              <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                              <div className="w-2 h-2 bg-white/60 rounded-full"></div>
+                        {/* Icon Display */}
+                        <div className="relative z-10 w-full h-full flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="text-7xl mb-4">
+                              {step.icon}
                             </div>
-                            <div className="space-y-1.5">
-                              <div className="h-1.5 bg-white/40 rounded w-3/4"></div>
-                              <div className="h-1.5 bg-white/40 rounded w-1/2"></div>
-                            </div>
-                          </div>
-                          <div className="flex-1 flex items-center justify-center">
-                            <div className="text-center">
-                              <div className="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mb-2 mx-auto">
-                                <span className="text-white font-bold text-lg">{step.id}</span>
-                              </div>
-                              <span className="text-white font-medium text-xs sm:text-sm">Demo Video</span>
+                            <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2">
+                              <span className="text-white font-medium text-sm">
+                                Step {step.id}
+                              </span>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button
-                        type="button"
-                        className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 rounded-full bg-black/25 p-2 opacity-90 transition-opacity group-hover:opacity-100"
-                        aria-label="Play video"
-                      >
-                        <svg
-                          aria-label="video progress"
-                          role="img"
-                          className="-rotate-90 absolute top-0 left-0 h-full w-full"
-                          viewBox="0 0 32 32"
-                        >
-                          <circle
-                            cx="16"
-                            cy="16"
-                            r="14.8"
-                            fill="none"
-                            stroke="white"
-                            strokeWidth="2.3"
-                            strokeDasharray="94.2"
-                            strokeDashoffset="94.2"
-                            className="opacity-90"
-                          />
-                        </svg>
-                        <Play className="relative h-4 w-4 text-white fill-white" />
-                      </button>
                     </div>
                   </div>
                   <div className="flex flex-col gap-3 p-6">
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-semibold text-xl sm:text-2xl bg-gradient-to-r from-[#FB923C] to-[#F472B6] bg-clip-text text-transparent">
-                        {step.id.toString().padStart(2, "0")}.
-                      </span>
-                      <h3 className="font-semibold text-lg text-foreground leading-tight">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h3 className="font-semibold text-lg text-foreground leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
                       {step.description}
                     </p>
                   </div>

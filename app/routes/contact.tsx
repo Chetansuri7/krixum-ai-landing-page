@@ -14,7 +14,7 @@ const pageDetails = marketingSections.find((section) => section.id === "contact"
 const pageTitle = pageDetails ? `${pageDetails.title} – ${siteMeta.name}` : `Contact – ${siteMeta.name}`;
 
 const pageDescription =
-  "Talk with the Krixum AI team. Request a demo, discuss enterprise pricing, or get hands-on support for your upcoming launch.";
+  "Get in touch with the Krixum team. Reach out for demos, partnerships, provider integrations, or customer support.";
 
 
 const queryTypes = [
@@ -44,7 +44,7 @@ export default function ContactPage() {
         title={pageTitle}
         description={pageDescription}
         canonical={new URL("/contact", siteMeta.siteUrl).toString()}
-        keywords={["krixum contact", "ai platform demo", "ai sales", "enterprise ai support"]}
+        keywords={["krixum contact", "provider partnerships", "booking platform demo", "service integration", "customer support"]}
         pageType="contact"
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },

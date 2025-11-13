@@ -7,50 +7,62 @@ export type FaqItem = {
 export const faqData: FaqItem[] = [
   {
     id: "q1",
-    question: "What is Krixum AI?",
+    question: "What is Krixum?",
     answer:
-      "A unified chat interface to interact with multiple top AI models like OpenAI GPT, Google Gemini, and Anthropic Claude — all in one place.",
+      "Krixum is a search, compare, and book platform for local services. One search shows options from big brands and verified local providers, and you can book with payment protection where available.",
   },
   {
     id: "q2",
-    question: "How is Krixum AI different from using ChatGPT or Gemini directly?",
+    question: "How does booking work on Krixum?",
     answer:
-      "Unlike using ChatGPT or Gemini directly, Krixum AI lets you switch models instantly, compare responses side-by-side, and keep all chats in one unified history.",
+      "We support three integration models: Discovery (we redirect you to the partner app), Booking (you book through Krixum with partner fulfillment), and Platform (full listing + payments + escrow for local providers).",
   },
   {
     id: "q3",
-    question: "Which AI models can I access through Krixum AI?",
+    question: "Is Krixum free for users?",
     answer:
-      "Access leading models like GPT-4o, GPT-4 Turbo, Gemini 1.5 Pro, Claude 3 Opus & Sonnet — with more added regularly.",
+      "Yes. You pay providers directly or via their app. We earn through provider partnerships, placements, or small booking fees in some categories — not by charging you more.",
   },
   {
     id: "q4",
-    question: "How do I choose or switch between models in Krixum AI?",
+    question: "How are my payments protected?",
     answer:
-      "Use the model selector in the chat interface to choose or switch AI models anytime during a conversation.",
+      "For Platform and Booking partners, your payment is held in escrow until you confirm service completion. If there's an issue, we provide a refund or a replacement provider.",
   },
   {
     id: "q5",
-    question: "Is Krixum AI free to use?",
+    question: "Do I need multiple apps installed?",
     answer:
-      "Yes. We offer a free tier with limited usage, plus paid plans for higher limits and premium models. See our Pricing page for details.",
+      "No. You can compare and manage everything in Krixum. For Discovery partners you finish checkout in their app or website — we’ll deep-link you there.",
   },
   {
     id: "q6",
-    question: "How is my conversation data handled by Krixum AI? Is it private?",
+    question: "Which categories and cities are supported?",
     answer:
-      "Your prompts are sent securely to the AI provider you choose. We store your chat history only for your account and never use it to train models.",
+      "We’re live with Taxis & Rides and Home Services in Bangalore. Quick Commerce and Food Delivery are next. More cities roll out based on demand.",
   },
   {
     id: "q7",
-    question: "Can I compare responses from different models in Krixum AI?",
+    question: "Can I use AI to search and book?",
     answer:
-      "Yes. You can send a prompt to multiple models at once and compare their responses side-by-side.",
+      "Yes. Krixum is API-first and MCP-compatible, so assistants like ChatGPT or Claude can search, compare, and book through Krixum on your behalf.",
   },
   {
     id: "q8",
-    question: "What should I do if I encounter an error with Krixum AI?",
+    question: "What if the provider doesn’t show up or quality is poor?",
     answer:
-      "Refresh the page or try another model. If issues persist, check our status page or contact support with details.",
+      "For Platform/Booking partners we mediate, and your escrow is refunded if service fails. For Discovery partners, we help coordinate with the partner’s support and policies.",
+  },
+  {
+    id: "q9",
+    question: "Are prices the same as provider apps?",
+    answer:
+      "You typically pay the same price you’d see on the provider’s app. Our goal is transparent comparison, not adding hidden markups for users.",
+  },
+  {
+    id: "q10",
+    question: "I’m a service provider — how do I partner?",
+    answer:
+      "We offer Discovery, Booking, and Platform integrations depending on your category and scale. Contact us to discuss APIs and onboarding.",
   },
 ];

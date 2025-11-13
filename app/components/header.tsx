@@ -11,10 +11,11 @@ export function Header() {
   // Check if we're on the homepage
   const isHomepage = location.pathname === "/";
   const navOrder = [
-    "features",
+    "overview",
+    "smart-booking",
+    "highlights",
+    "how-it-works",
     "advantages",
-    "models",
-    "pricing",
     "faq",
   ] as const;
   const navigation = navOrder
@@ -43,13 +44,14 @@ export function Header() {
             navigate({ hash: targetHash }, { preventScrollReset: true });
           }
 
-          requestAnimationFrame(() => {
+          setTimeout(() => {
             const element = document.getElementById(sectionId);
 
             if (element) {
+              // The CSS scroll-padding-top will handle the offset automatically
               element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
-          });
+          }, 100);
         },
       };
     } else {
@@ -67,9 +69,10 @@ export function Header() {
         };
       } else {
         // Navigate to dedicated page if it exists, otherwise homepage section
-        return {
-          to: item.path
-        };
+        if (item.path === "/" && item.sectionId) {
+          return { to: { pathname: "/", hash: `#${item.sectionId}` } };
+        }
+        return { to: item.path };
       }
     }
   };
@@ -86,14 +89,13 @@ export function Header() {
               <div className="relative">
                 <img
                   src="/logo.svg"
-                  alt="Krixum AI"
+                  alt="Krixum"
                   className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
                   aria-hidden="true"
                 />
-                <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <span className="text-xl font-bold tracking-tight text-foreground">
-                Krixum AI
+                Krixum
               </span>
             </Link>
 
@@ -127,9 +129,9 @@ export function Header() {
                 href="https://chat.krixum.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary to-purple-600 rounded-lg hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer"
               >
-                Start Free Trial
+                Start Searching Free
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -206,9 +208,9 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full px-4 py-3 text-center text-base font-medium text-white bg-gradient-to-r from-primary to-purple-600 rounded-lg hover:from-primary/90 hover:to-purple-600/90 transition-all duration-200 shadow-lg cursor-pointer"
+                  className="block w-full px-4 py-3 text-center text-base font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-all duration-200 shadow-lg cursor-pointer"
                 >
-                  Start Free Trial
+                  Start Searching Free
                 </a>
               </div>
             </div>

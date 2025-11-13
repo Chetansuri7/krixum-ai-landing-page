@@ -196,6 +196,22 @@ body {
   body {
     @apply bg-background text-foreground overflow-x-hidden;
   }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Scroll padding to account for fixed header */
+  html {
+    scroll-padding-top: 4rem; /* 64px for mobile (h-14) */
+  }
+  
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 5rem; /* 80px for desktop (lg:h-16) */
+    }
+  }
 }
 
 /* Cursor styles for interactive elements */

@@ -14,7 +14,7 @@ const pageTitle = pageDetails
   : `Models – ${siteMeta.name}`;
 
 const pageDescription =
-  "Switch between ChatGPT, Claude, Gemini, and Llama without losing context. Learn how Krixum AI keeps conversations grounded while giving teams access to the best model for every task.";
+  "Browse Krixum's supported service categories like taxis, home services, and quick commerce. See what's live today and what's coming next.";
 
 
 const evaluationMetrics = [
@@ -65,11 +65,11 @@ export default function ModelsPage() {
         title={pageTitle}
         description={pageDescription}
         canonical={new URL("/models", siteMeta.siteUrl).toString()}
-        keywords={["multi model ai", "chatgpt claude gemini", "llama workspace", "ai model switching"]}
+        keywords={["krixum categories", "service categories", "taxis rides", "home services", "quick commerce"]}
         pageType="service"
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },
-          { name: "AI Models", url: `${siteMeta.siteUrl}/models` }
+          { name: "Categories", url: `${siteMeta.siteUrl}/models` }
         ]}
         openGraph={{
           title: pageTitle,

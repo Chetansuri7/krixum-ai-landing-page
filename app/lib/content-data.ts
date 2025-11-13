@@ -2,221 +2,223 @@ import type { SiteContent } from './content-types';
 
 export const siteContent: SiteContent = {
   hero: {
-    title: "The Future of AI Conversations",
-    subtitle: "All AI Models. One Platform.",
-    headline: "The Future of AI Conversations",
-    description: "Access ChatGPT, Claude, Gemini, and Llama in one unified interface. Switch models instantly, preserve context, and maintain complete privacy.",
-    primaryCTA: "Start Free Trial",
-    secondaryCTA: "Watch Demo",
-    trustCount: "50,000+",
-    trustMessage: "users worldwide"
+    title: "Search once. Book anything.",
+    subtitle: "All Services. One Platform. Guaranteed.",
+    headline: "Search once. Book anything.",
+    description: "Compare taxis, home services, quick commerce, and local providers in one place. Book with payment protection. AI-powered or traditional search.",
+    primaryCTA: "Start Searching",
+    secondaryCTA: "See How It Works",
+    trustCount: "100,000+",
+    trustMessage: "successful bookings"
   },
   models: [
     {
-      name: "GPT-4",
-      provider: "OpenAI",
-      description: "Most capable GPT model, great for complex reasoning tasks",
-      icon: "🤖",
-      color: "from-green-400 to-blue-500"
+      name: "Taxis & Rides",
+      provider: "4+ Providers",
+      description: "Compare Ola, Uber, Rapido, Namma Yatri in real time and book with protection.",
+      icon: "🚗",
+      color: "from-blue-400 to-cyan-500"
     },
     {
-      name: "Claude 3.5",
-      provider: "Anthropic", 
-      description: "Excellent for analysis, writing, and coding tasks",
-      icon: "🧠",
+      name: "Home Services",
+      provider: "100+ Providers",
+      description: "Plumbers, electricians, cleaners - verified local providers with platform guarantee.",
+      icon: "🔧",
       color: "from-purple-400 to-pink-500"
     },
     {
-      name: "Gemini Pro",
-      provider: "Google",
-      description: "Powerful multimodal AI with strong reasoning capabilities",
-      icon: "✨",
-      color: "from-yellow-400 to-orange-500"
+      name: "Quick Commerce",
+      provider: "5+ Apps",
+      description: "Compare delivery times and availability across Blinkit, Zepto, Swiggy Instamart, and more.",
+      icon: "🛒",
+      color: "from-orange-400 to-red-500"
     },
     {
-      name: "Llama 3",
-      provider: "Meta",
-      description: "Open-source model with strong performance across tasks",
-      icon: "🦙",
-      color: "from-blue-400 to-indigo-500"
+      name: "Food Delivery",
+      provider: "3+ Apps",
+      description: "Find restaurants, compare delivery times and offers across Zomato, Swiggy, and more.",
+      icon: "🍕",
+      color: "from-green-400 to-emerald-500"
     }
   ],
   features: [
     {
-      title: "Unified Chat Interface",
-      description: "Access all AI models through one clean, intuitive interface. No need to switch between different platforms.",
-      icon: "💬"
+      title: "Compare All Options Instantly",
+      description: "Search once and see prices, ratings, and availability from all providers - big brands and local heroes - side by side.",
+      icon: "🔍"
     },
     {
-      title: "Context Preservation",
-      description: "Switch between models without losing your conversation context. Your chat history stays intact.",
-      icon: "📝"
+      title: "Book with Confidence",
+      description: "Escrow payments, service guarantees, and full recourse. Your money is held until service is confirmed complete.",
+      icon: "🛡️"
     },
     {
-      title: "Privacy First",
-      description: "Your conversations are private and secure. We don't store or analyze your personal data.",
-      icon: "🔒"
+      title: "Traditional or Conversational",
+      description: "Use our app to browse and book, OR just tell AI what you need. Same platform, your choice of interface.",
+      icon: "🤖"
     }
   ],
   pricing: [
     {
-      name: "Free",
-      price: "$0",
+      name: "For Users",
+      price: "₹0",
       period: "forever",
-      description: "Perfect for trying out Krixum AI",
+      description: "Free to search and book. Always.",
       features: [
-        "Access to GPT-3.5",
-        "10 conversations per day",
-        "Basic chat interface",
-        "Community support"
+        "Unlimited searches",
+        "Compare all providers",
+        "Booking protection",
+        "No hidden fees",
+        "No subscription needed"
       ],
-      cta: "Get Started",
-      popular: false
-    },
-    {
-      name: "Pro",
-      price: "$19",
-      period: "per month",
-      description: "For individuals and small teams",
-      features: [
-        "Access to all AI models",
-        "Unlimited conversations",
-        "Context preservation",
-        "Priority support",
-        "Advanced analytics",
-        "Team collaboration"
-      ],
-      cta: "Start Free Trial",
+      cta: "Start Searching",
       popular: true
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: "For Large Brands",
+      price: "Placement-based",
       period: "contact us",
-      description: "For large organizations",
+      description: "Discovery partnership model",
       features: [
-        "Everything in Pro",
-        "Custom model fine-tuning",
-        "Dedicated support",
-        "SSO integration",
-        "Advanced security",
-        "Custom integrations"
+        "Featured listings",
+        "Performance ads",
+        "Analytics dashboard",
+        "No transaction fees",
+        "Reach qualified users",
+        "Pay per click/redirect"
       ],
-      cta: "Contact Sales",
+      cta: "Partner with Us",
+      popular: false
+    },
+    {
+      name: "For Local Providers",
+      price: "Pay per booking",
+      period: "or subscription",
+      description: "Full platform infrastructure",
+      features: [
+        "Full booking infrastructure",
+        "Payment processing",
+        "Customer protection",
+        "10-20% commission or ₹50-200/day",
+        "Verified provider badge",
+        "Get discovered by thousands"
+      ],
+      cta: "Join Platform",
       popular: false
     }
   ],
   dataTools: {
-    title: "Powerful Data Tools",
-    description: "Enhance your AI experience with built-in tools for data analysis and visualization.",
+    title: "How Krixum Works",
+    description: "Three ways we connect you with service providers — all with one goal: save you time and effort.",
     tools: [
       {
-        name: "Data Analysis",
-        description: "Analyze datasets with AI-powered insights",
-        icon: "📊"
+        name: "Discovery Partners",
+        description: "Browse products on partner apps like Blinkit, Zepto. We show results, you order through their app.",
+        icon: "🔗"
       },
       {
-        name: "Code Generation",
-        description: "Generate and debug code across multiple languages",
-        icon: "💻"
+        name: "Booking Partners",
+        description: "Compare options from Ola, Uber, Rapido and more. Book through us with escrow protection.",
+        icon: "🎯"
       },
       {
-        name: "Document Processing",
-        description: "Extract insights from PDFs, documents, and images",
-        icon: "📄"
+        name: "Platform Providers",
+        description: "Local plumbers, electricians, tutors get full support - listing, booking, payments, guarantees.",
+        icon: "🏆"
       }
     ]
   },
   faq: [
     {
-      question: "How does Krixum AI work?",
-      answer: "Krixum AI provides a unified interface to access multiple AI models from different providers. You can switch between models seamlessly while maintaining your conversation context."
+      question: "How does Krixum work?",
+      answer: "Krixum connects you with local service providers through three models: Discovery (redirect to brand apps like Blinkit), Booking (book taxis with escrow protection), and Platform (full infrastructure for local providers like plumbers). You search once, compare all options, and book with guarantee."
     },
     {
-      question: "Is my data secure?",
-      answer: "Yes, we prioritize your privacy and security. Your conversations are encrypted and we don't store or analyze your personal data."
+      question: "Is booking through Krixum safe?",
+      answer: "Yes. For Platform and Booking partners, we hold your payment in escrow until service is confirmed complete. If there's an issue, you get a full refund or free replacement. For Discovery partners, you book through their secure apps."
     },
     {
-      question: "Can I cancel anytime?",
-      answer: "Absolutely! You can cancel your subscription at any time with no questions asked. Your data remains accessible during your billing period."
+      question: "Do I pay extra fees to use Krixum?",
+      answer: "No. Krixum is free for users. You pay providers directly or via their app. We earn through provider partnerships or small booking fees — not by charging you more."
+    },
+    {
+      question: "What cities is Krixum available in?",
+      answer: "We're launching in Bangalore with taxis and home services. More categories and cities coming soon based on user demand. Join the waitlist to be notified when we launch in your city."
+    },
+    {
+      question: "How is this different from JustDial or Urban Company?",
+      answer: "Unlike JustDial (just phone numbers with no booking), we handle full transactions. Unlike Urban Company (single category with high commissions), we cover all local services with fair pricing. We're the only platform with escrow protection across categories."
+    },
+    {
+      question: "Can I use AI to search and book?",
+      answer: "Yes! Krixum is built API-first with MCP compatibility. You can use our app OR integrate with AI assistants like ChatGPT and Claude to search and book conversationally. Just ask AI what you need, and it handles the rest."
+    },
+    {
+      question: "What if the provider doesn't show up or does bad work?",
+      answer: "For Platform bookings, your payment is held until you confirm service completion. Bad service = instant refund or free replacement. For partner bookings, we mediate disputes and ensure resolution. You're always protected."
+    },
+    {
+      question: "How do you make money if it's free for users?",
+      answer: "We earn through: (1) Placement fees and ads from large brands, (2) Small booking fees (₹10-50) or commissions (2-5%) from partner bookings, (3) Subscriptions or commissions (10-20%) from local providers using our full platform. Fair for everyone."
     }
   ]
 };
 export const pricingPlans = [
   {
-    name: "Free",
-    price: "$0",
-    yearlyPrice: "$0",
+    name: "For Users",
+    price: "₹0",
+    yearlyPrice: "₹0",
     period: "forever",
-    description: "Perfect for trying out Krixum AI",
-    icon: "🤖",
+    description: "Free to search and book. Always.",
+    icon: "🎉",
     features: [
-      "Access to fast models",
-      "100 message credits/month",
-      "400 KB per AI agent",
-      "1 seat",
-      "1 AI agent",
-      "Limit of 10 links to train on",
-      "Embed on unlimited websites"
+      "Unlimited searches",
+      "Compare all providers",
+      "Booking protection",
+      "No hidden fees",
+      "No subscription needed",
+      "No app switching",
+      "AI-powered search available"
     ],
-    cta: "Get Started",
-    popular: false,
-    badge: null
-  },
-  {
-    name: "Hobby",
-    price: "$40",
-    yearlyPrice: "$32",
-    period: "month",
-    description: "For individuals getting started",
-    icon: "🧠",
-    features: [
-      "Access to advanced models",
-      "2,000 message credits/month",
-      "1 AI agent",
-      "5 AI Actions per AI agent",
-      "33 MB per AI agent",
-      "Unlimited links to train on",
-      "API access",
-      "Integrations",
-      "Basic analytics"
-    ],
-    cta: "Subscribe",
-    popular: false,
-    badge: null
-  },
-  {
-    name: "Standard",
-    price: "$150",
-    yearlyPrice: "$120",
-    period: "month",
-    description: "For individuals and small teams",
-    icon: "✨",
-    features: [
-      "12,000 message credits/month",
-      "10 AI Actions per AI agent",
-      "3 seats",
-      "2 AI agents"
-    ],
-    cta: "Subscribe",
+    cta: "Start Searching",
     popular: true,
-    badge: "Popular"
+    badge: "Always Free"
   },
   {
-    name: "Pro",
-    price: "$500",
-    yearlyPrice: "$400",
-    period: "month",
-    description: "For growing teams",
-    icon: "🦙",
+    name: "For Large Brands",
+    price: "Placement-based",
+    yearlyPrice: "Custom",
+    period: "contact us",
+    description: "Discovery partnership model",
+    icon: "🔗",
     features: [
-      "40,000 message credits/month",
-      "15 AI Actions per AI agent",
-      "5+ seats",
-      "3 AI agents",
-      "Advanced analytics"
+      "Featured listings",
+      "Performance ads",
+      "Analytics dashboard",
+      "No transaction fees",
+      "Reach qualified users",
+      "Pay per click/redirect"
     ],
-    cta: "Subscribe",
+    cta: "Partner with Us",
+    popular: false,
+    badge: null
+  },
+  {
+    name: "For Local Providers",
+    price: "Pay per booking",
+    yearlyPrice: "₹50-200/day",
+    period: "or subscription",
+    description: "Full platform infrastructure",
+    icon: "🏆",
+    features: [
+      "Full booking infrastructure",
+      "Payment processing",
+      "Customer protection",
+      "10-20% commission or daily sub",
+      "Verified provider badge",
+      "Get discovered by thousands"
+    ],
+    cta: "Join Platform",
     popular: false,
     badge: null
   },

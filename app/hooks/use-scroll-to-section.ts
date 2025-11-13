@@ -9,16 +9,18 @@ export function useScrollToSection(sectionId?: string) {
       return;
     }
 
-    const frame = window.requestAnimationFrame(() => {
+    // Small delay to ensure DOM is ready
+    const timeout = setTimeout(() => {
       const element = document.getElementById(sectionId);
 
       if (element) {
+        // The CSS scroll-padding-top will handle the offset automatically
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
-    });
+    }, 100);
 
-    return () => window.cancelAnimationFrame(frame);
+    return () => clearTimeout(timeout);
   }, [sectionId, location.key]);
 }

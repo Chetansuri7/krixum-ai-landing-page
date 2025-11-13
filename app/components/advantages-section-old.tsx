@@ -5,40 +5,15 @@ import { SectionHeader } from "~/components/ui/section-header";
 export function AdvantagesSection() {
   const advantages = [
     {
-      title: "Less App Switching",
-      subtitle: "One place for everything",
+      title: "Time Savings",
+      subtitle: "Stop App-Hopping",
       description:
-        "Search once and compare all providers without juggling between apps.",
-      metric: "1",
-      metricLabel: "App to manage",
-      color: "from-primary to-primary/80",
-      bgColor: "from-primary/10 to-primary/10",
-      icon: (
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Faster Booking",
-      subtitle: "30 seconds on average",
-      description:
-        "From search to confirm in under a minute with clear choices.",
-      metric: "30 sec",
-      metricLabel: "Avg. booking",
-      color: "from-primary to-primary/80",
-      bgColor: "from-primary/10 to-primary/10",
+        "Average user wastes 15 minutes comparing services across apps. With Krixum, compare everything in under 30 seconds.",
+      metric: "15 min",
+      metricLabel: "Time Saved",
+      color: "from-blue-500 to-cyan-500",
+      bgColor:
+        "from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20",
       icon: (
         <svg
           className="w-4 h-4"
@@ -57,14 +32,42 @@ export function AdvantagesSection() {
       ),
     },
     {
-      title: "Protected Payments",
-      subtitle: "Escrow-backed",
+      title: "Cost Savings",
+      subtitle: "Always Find Best Price",
       description:
-        "Payment held in escrow until service confirmed. Bad service? Refund or replacement.",
+        "Never overpay again. We show all options with transparent pricing. Users save ₹200-500 per booking on average.",
+      metric: "₹400",
+      metricLabel: "Avg. Saved",
+      color: "from-emerald-500 to-teal-500",
+      bgColor:
+        "from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20",
+      icon: (
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Trust & Safety",
+      subtitle: "Guaranteed Service",
+      description:
+        "Payment held in escrow until service confirmed. Bad service? Full refund or free replacement. Every booking protected.",
       metric: "100%",
       metricLabel: "Protected",
-      color: "from-primary to-primary/80",
-      bgColor: "from-primary/10 to-primary/10",
+      color: "from-purple-500 to-pink-500",
+      bgColor:
+        "from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20",
       icon: (
         <svg
           className="w-4 h-4"
@@ -83,14 +86,15 @@ export function AdvantagesSection() {
       ),
     },
     {
-      title: "Unified History",
-      subtitle: "All bookings together",
+      title: "Unified Experience",
+      subtitle: "One App, Everything",
       description:
-        "One profile, one payment method, one support — across categories.",
-      metric: "1",
-      metricLabel: "Timeline",
-      color: "from-primary to-primary/80",
-      bgColor: "from-primary/10 to-primary/10",
+        "From taxis to plumbers to groceries - manage all your local services in one place. Single payment method, one history.",
+      metric: "10+",
+      metricLabel: "Categories",
+      color: "from-orange-500 to-red-500",
+      bgColor:
+        "from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20",
       icon: (
         <svg
           className="w-4 h-4"
@@ -119,7 +123,7 @@ export function AdvantagesSection() {
         <SectionHeader
           badge="Advantages"
           title="Why choose Krixum?"
-          description="Search once, compare easily, and book with protection — all in one platform."
+          description="Save time, save money, and book with confidence - all in one platform."
         />
 
         {/* Main Advantages Grid - 4 in a row for web */}
@@ -156,7 +160,9 @@ export function AdvantagesSection() {
 
                   {/* Metric */}
                   <div className="flex items-baseline gap-2 pt-2">
-                    <span className={`text-xl font-bold text-primary`}>
+                    <span
+                      className={`text-xl font-bold bg-gradient-to-r ${advantage.color} bg-clip-text text-transparent`}
+                    >
                       {advantage.metric}
                     </span>
                     <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">

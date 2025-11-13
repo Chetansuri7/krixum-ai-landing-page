@@ -14,7 +14,7 @@ const pageTitle = pageDetails
   : `Pricing – ${siteMeta.name}`;
 
 const pageDescription =
-  "Flexible pricing for teams of every size. Compare Free, Hobby, Standard, and Enterprise plans, including AI credits, security controls, and collaboration seats.";
+  "Krixum pricing for providers and partners. Learn about booking partnerships, platform provider models, and how we work with service providers.";
 
 // SEO now handled by EnhancedSEO component
 
@@ -25,7 +25,7 @@ export default function PricingPage() {
         title={pageTitle}
         description={pageDescription}
         canonical={new URL("/pricing", siteMeta.siteUrl).toString()}
-        keywords={["krixum pricing", "ai platform pricing", "chatgpt claude pricing", "ai workspace pricing", "enterprise ai pricing"]}
+        keywords={["krixum pricing", "provider partnerships", "booking platform pricing", "service provider fees", "platform commission"]}
         pageType="pricing"
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },
@@ -40,43 +40,19 @@ export default function PricingPage() {
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Krixum AI Platform",
+            name: "Krixum Booking Platform",
             description: pageDescription,
             provider: {
               "@type": "Organization",
               name: siteMeta.name,
               url: siteMeta.siteUrl
             },
-            offers: [
-              {
-                "@type": "Offer",
-                name: "Free Plan",
-                price: "0",
-                priceCurrency: "USD",
-                description: "Basic AI access with limited credits"
-              },
-              {
-                "@type": "Offer", 
-                name: "Hobby Plan",
-                price: "9",
-                priceCurrency: "USD",
-                description: "Enhanced AI access for individual users"
-              },
-              {
-                "@type": "Offer",
-                name: "Standard Plan", 
-                price: "29",
-                priceCurrency: "USD",
-                description: "Professional AI workspace for teams"
-              },
-              {
-                "@type": "Offer",
-                name: "Enterprise Plan",
-                price: "99",
-                priceCurrency: "USD", 
-                description: "Advanced AI platform with enterprise features"
-              }
-            ]
+            serviceType: "Service Aggregation Platform",
+            areaServed: {
+              "@type": "City",
+              name: "Bangalore",
+              addressCountry: "IN"
+            }
           }
         ]}
       />

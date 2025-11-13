@@ -14,7 +14,7 @@ const pageTitle = pageDetails
   : `Features – ${siteMeta.name}`;
 
 const pageDescription =
-  "Explore every workflow that Krixum AI unlocks: collaborative chat workspaces, reusable prompt libraries, and governance controls that let enterprises move fast without sacrificing safety.";
+  "Explore how Krixum helps you search once, compare all options, and book with payment protection — across taxis, home services, and more.";
 
 // SEO now handled by EnhancedSEO component
 
@@ -25,7 +25,7 @@ export default function FeaturesPage() {
         title={pageTitle}
         description={pageDescription}
         canonical={new URL("/features", siteMeta.siteUrl).toString()}
-        keywords={["AI platform features", "AI workspace capabilities", "Krixum features", "multi-model AI features", "ChatGPT Claude features"]}
+        keywords={["krixum features", "search and book", "compare providers", "escrow protection", "local services"]}
         pageType="features"
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },
@@ -39,18 +39,18 @@ export default function FeaturesPage() {
         additionalJsonLd={[
           {
             "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Krixum AI Features",
+            "@type": "WebApplication",
+            name: "Krixum Features",
             description: pageDescription,
             featureList: [
-              "Multi-model AI access",
-              "Collaborative chat workspaces", 
-              "Reusable prompt libraries",
-              "Enterprise governance controls",
-              "Real-time model switching",
-              "Secure data handling"
+              "Search once, compare all",
+              "Side-by-side providers",
+              "Escrow payment protection",
+              "Verified local providers",
+              "Partner integrations",
+              "AI or traditional booking"
             ],
-            applicationCategory: "BusinessApplication"
+            applicationCategory: "TravelReservationPlatform"
           }
         ]}
       />

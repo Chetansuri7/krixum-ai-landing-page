@@ -13,7 +13,7 @@ const pageDetails = marketingSections.find((section) => section.id === "faq");
 const pageTitle = pageDetails ? `${pageDetails.title} – ${siteMeta.name}` : `FAQ – ${siteMeta.name}`;
 
 const pageDescription =
-  "Answers to the most common questions about Krixum AI. Learn how data is handled, which models we support, how pricing works, and how to onboard your team.";
+  "Answers to common questions about searching, comparing, and booking services with Krixum — integration models, payment protection, categories, cities, and partnerships.";
 
 
 const onboardingSteps = [
@@ -69,7 +69,7 @@ export default function FAQPage() {
         title={pageTitle}
         description={pageDescription}
         canonical={new URL("/faq", siteMeta.siteUrl).toString()}
-        keywords={["krixum faq", "ai platform questions", "ai chat privacy", "ai workspace support"]}
+        keywords={["krixum faq", "local services booking", "escrow protection", "compare providers", "partner integrations"]}
         pageType="about"
         breadcrumbs={[
           { name: "Home", url: siteMeta.siteUrl },
