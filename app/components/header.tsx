@@ -11,8 +11,8 @@ export function Header() {
   // Check if we're on the homepage
   const isHomepage = location.pathname === "/";
   const navOrder = [
-    "overview",
     "smart-booking",
+    "overview",
     "highlights",
     "how-it-works",
     "advantages",

@@ -21,12 +21,12 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
                 <span className="block">AI‑powered comparison across apps.</span>
                 <span className="block">Book instantly.</span>
               </h1>
               {/* AI emphasis under headline removed per request */}
-              <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Tell Krixum what you need. It finds options and prices across apps, shows them side‑by‑side, and books with payment protection — or browse and compare yourself in one place.
               </p>
             </div>
@@ -37,12 +37,12 @@ export function HeroSection() {
                 <div className="text-3xl sm:text-4xl font-bold text-foreground">30 sec</div>
                 <div className="text-sm text-muted-foreground">Average booking time</div>
               </div>
-              <div className="h-12 w-px bg-border"></div>
+              <div className="hidden sm:block h-12 w-px bg-border"></div>
               <div className="text-center lg:text-left">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground">1 app</div>
                 <div className="text-sm text-muted-foreground">All services in one place</div>
               </div>
-              <div className="h-12 w-px bg-border"></div>
+              <div className="hidden sm:block h-12 w-px bg-border"></div>
               <div className="text-center lg:text-left">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground">100%</div>
                 <div className="text-sm text-muted-foreground">Payment protected</div>

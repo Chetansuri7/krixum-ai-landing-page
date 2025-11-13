@@ -58,15 +58,15 @@ export default function SearchPage() {
       type: "page"
     },
     {
-      title: "Overview",
-      description: "What Krixum does and where it works - Search once, compare clearly, and book with protection",
-      url: "/#overview",
-      type: "section"
-    },
-    {
       title: "Smart Booking",
       description: "Stop juggling apps. Start booking smarter. Compare all providers in one place",
       url: "/#smart-booking",
+      type: "section"
+    },
+    {
+      title: "Overview",
+      description: "What Krixum does and where it works - Search once, compare clearly, and book with protection",
+      url: "/#overview",
       type: "section"
     },
     {
@@ -158,7 +158,7 @@ export default function SearchPage() {
             <div className="max-w-2xl mx-auto">
               <h1 className="text-3xl font-bold mb-8">Search</h1>
               
-              <form onSubmit={handleSearch} className="flex gap-2 mb-8">
+              <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2 mb-8">
                 <Input
                   type="search"
                   placeholder="Search Krixum..."

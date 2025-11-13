@@ -107,17 +107,17 @@ export function EnhancedSEO({
       hasPart: [
         {
           '@type': 'WebPage',
-          '@id': `${siteMeta.siteUrl}/#overview`,
-          name: 'Overview',
-          description: 'What Krixum does and where it works',
-          url: `${siteMeta.siteUrl}/#overview`,
-        },
-        {
-          '@type': 'WebPage',
           '@id': `${siteMeta.siteUrl}/#smart-booking`,
           name: 'Smart Booking',
           description: 'Stop juggling apps. Start booking smarter.',
           url: `${siteMeta.siteUrl}/#smart-booking`,
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/#overview`,
+          name: 'Overview',
+          description: 'What Krixum does and where it works',
+          url: `${siteMeta.siteUrl}/#overview`,
         },
         {
           '@type': 'WebPage',
@@ -236,16 +236,16 @@ export function EnhancedSEO({
       {
         '@type': 'SiteNavigationElement',
         position: 1,
-        name: 'Overview',
-        description: 'What Krixum does and where it works',
-        url: `${siteMeta.siteUrl}/#overview`,
+        name: 'Smart Booking',
+        description: 'Stop juggling apps. Start booking smarter.',
+        url: `${siteMeta.siteUrl}/#smart-booking`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 2,
-        name: 'Smart Booking',
-        description: 'Stop juggling apps. Start booking smarter.',
-        url: `${siteMeta.siteUrl}/#smart-booking`,
+        name: 'Overview',
+        description: 'What Krixum does and where it works',
+        url: `${siteMeta.siteUrl}/#overview`,
       },
       {
         '@type': 'SiteNavigationElement',
