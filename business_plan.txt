@@ -1,0 +1,457 @@
+Perfect. We're aligned.
+
+Final Model Summary:
+What You're Building:
+"Search, compare, and book platform for local services and products - accessible via traditional UI or conversational AI"
+Three Partnership Models:
+
+Model A (Discovery): Redirect to brand apps (quick commerce, some services)
+Model B (Booking): Handle booking + escrow, brand fulfills (taxis, aggregators)
+Model C (Platform): Full control - listing, booking, payments, guarantees (local providers)
+
+Two Marketplace Modes:
+
+Instant Search & Book: Pre-listed services, compare and book now
+Post Requirement: Custom needs, get quotes from providers (Phase 2)
+
+Phased Launch:
+
+Start with categories where you can get APIs/partnerships (taxis first)
+Go deep in each category before adding next (not 1-2 services in each)
+Add demand marketplace later once core booking proven
+
+AI Layer Positioning:
+"Built API-first (MCP-compatible) so AI apps can integrate once and access all local services through conversational interface"
+
+Problem → Current UX → Your Solution Framework:
+You can structure each query/use case as a slide:
+Slide format:
+
+Query/Need
+Current UX (pain)
+Your Solution
+
+
+Example Slides:
+Query 1: "I need a taxi to the airport"
+Current UX:
+
+Open Ola → check price (₹450)
+Open Uber → check price (₹480)
+Open Rapido → check price (₹180)
+Open Namma Yatri → check price (₹420)
+Remember prices, compare mentally, go back to cheapest app
+
+Your Solution:
+
+Search once → see all 4 options with prices and ETAs side-by-side
+Book directly through platform with payment protection
+Service guaranteed or money back
+
+
+Query 2: "I want paper clips delivered fast"
+Current UX:
+
+Open Blinkit → search "paper clips" (₹45, 12 min)
+Open Zepto → search "paper clips" (₹40, 15 min)
+Open Swiggy Instamart → search (₹48, 10 min)
+Open BBNow → search (not available)
+Compare in head, order from one
+
+Your Solution:
+
+Search once → see all quick commerce results with price and delivery time
+Click to order on preferred app
+Saved 5 minutes of app-hopping
+
+
+Query 3: "I need a plumber today"
+Current UX:
+
+Open Urban Company → not available in my area
+Google "plumber near me" → random listings, unclear who's genuine
+Call 3-4 numbers → some don't pick up, some overpriced, unsure about quality
+Hope for the best
+
+Your Solution:
+
+Search once → see both Urban Company AND local verified plumbers
+See ratings, pricing, availability
+Book with platform guarantee - payment held until work confirmed
+Bad service? Full refund or replacement guaranteed
+
+
+Query 4: "I need 500 custom printed t-shirts for company event" (Phase 2)
+Current UX:
+
+Google vendors, get random listings
+Call 5-6 places individually
+Wait for quotes over email/phone
+Hard to compare proposals
+No accountability after order
+
+Your Solution:
+
+Post requirement once with details
+Multiple vendors send quotes
+Compare proposals in one place
+Book with escrow - pay only when delivered and verified
+Platform mediates any issues
+
+
+Query 5: "Find me the cheapest taxi" (AI conversational)
+Current UX:
+
+Can't ask ChatGPT/Claude to book a taxi
+They can't access real-time pricing
+User still has to open apps manually
+
+Your Solution:
+
+Ask AI app integrated with your MCP
+AI queries your API → returns live prices from all providers
+User confirms → booking flows through your platform
+AI completes the task, not just provides information
+
+
+The AI Layer Angle:
+The Gap You're Filling:
+"AI apps can answer questions but can't complete actions. We provide the infrastructure layer - one MCP integration gives AI apps the ability to search, compare, and book local services on behalf of users."
+Your positioning:
+
+To consumers: "Search and book services - use traditional UI or just tell AI what you need"
+To AI apps: "One API integration, infinite local services - from search to transaction"
+To investors: "We're the action layer for AI - connecting conversational interfaces to real-world services"
+
+
+You're Done Defining. Next Steps Would Be:
+(Not doing now, but when you're ready):
+
+MVP scope: Which 2-3 categories to launch with (probably taxis + one more)
+Tech implementation: Flutter app + backend architecture + API integrations
+Go-to-market: Bangalore launch plan, first 100 users strategy
+Partnership outreach: Which APIs to prioritize (Ola? Rapido?)
+Pitch deck: For fundraising when you have early traction
+
+
+But for now, the model is crystal clear:
+✅ What: Comparison and booking platform
+✅ How: Three partnership models, two marketplace modes
+✅ Why: Saves time, guarantees service, protects payment
+✅ Differentiation: AI-native infrastructure + escrow model
+✅ Expansion: Category by category, then demand marketplace
+Does this feel complete? Anything else to refine in the model definition?RetryCwell we seem to have decided on all plan related and problem and solution. for revenue, we aim to generate via placement, ads, booking fee, commission fee , marketplace fee and ads related in the app wherever what fee can be applicable. now we will need some data searches to be free like how google has organic search system and show ads to make money. we need to get as much as data even if organic and then show searches and ads as placement, even amazon does similar. we can do sort of say depending on booking, redirect or marketplace . we will charge as per category. with main focus would be to max out on ads from redirect and booking based and commission or Rapido like subscription per month to small per order fee sort of... issue with 20% commission like zomato, ola, uber is high chances of people trying to scam or abuse system to call them directly, rapido and namma yatri fixed this by taking daily fees so no matter what they pay and need not avoid it sort of. can you now make a detailed presentation slides. our brand name is Krixum. you can use kri or krix as some word to solve problem or leave it as is. 
+give a awesome tagline which is clear and is small enough . and then 1st slide ideally would be sort of queries and so we decided to fix.. and then do the remaining .. because looking at initial thing investor would be hooked and know what we are trying to do.Show moreKrixum Pitch Deck
+
+Slide 1: Cover
+Krixum
+Search once. Book anything.
+The comparison and booking platform for local services and products
+
+Slide 2: The Problem - App Fatigue
+Real queries. Real friction. Every day.
+"I need a taxi to the airport"
+→ Open 4 apps, check prices, remember mentally, book
+"Paper clips, delivered fast"
+→ Check Blinkit, Zepto, Swiggy, BBNow... which is cheapest?
+"Need a plumber today"
+→ Urban Company unavailable. Google gives random numbers. Who's reliable?
+"500 custom t-shirts for company event"
+→ Call vendors individually, wait for quotes, hard to compare
+"Find me the cheapest option"
+→ AI can't help - it can't search real-time or complete bookings
+
+Slide 3: Why This Happens
+India's local services market is fragmented
+₹10+ Lakh Crore market split across:
+
+Aggregators (Ola, Urban Company, Zomato)
+Quick commerce (Blinkit, Zepto, Swiggy)
+Individual providers (10M+ plumbers, electricians, tutors)
+
+The result:
+
+Users waste time checking multiple apps
+No single place to compare options
+Small providers are invisible
+AI can answer questions but can't complete tasks
+
+Opportunity: Be the layer that connects everything
+
+Slide 4: The Krixum Solution
+One platform. All options. Guaranteed service.
+Search & Compare:
+See all providers (big brands + local) with pricing, ratings, availability
+Book with Protection:
+Escrow payments, service guarantees, full recourse if issues
+Traditional UI or AI:
+Use the app directly OR let AI complete tasks via our API
+Three ways we work with providers:
+
+Discovery Partners: Redirect to their app (quick commerce)
+Booking Partners: We handle booking, they fulfill (taxis, aggregators)
+Platform Providers: Full infrastructure for local individuals
+
+
+Slide 5: How It Works - Example 1
+Query: "I need a taxi to the airport"
+Today's Experience:
+4 apps × 2 min each = 8 minutes wasted
+Krixum Experience:
+One search, instant comparison:
+ProviderPriceETAActionRapido (bike)₹1802 minBook NowNamma Yatri₹4204 minBook NowOla₹4505 minBook NowUber₹4803 minBook Now
+User books → payment held → ride completed → money released
+Time saved: 7 minutes. Money saved: ₹300.
+
+Slide 6: How It Works - Example 2
+Query: "Need a plumber today"
+Today's Experience:
+
+Urban Company: Not available in area ❌
+Google: Random numbers, unclear credibility
+Call 5 plumbers: 2 don't answer, 3 quote different prices
+Hope for the best, no recourse if bad
+
+Krixum Experience:
+ProviderPriceRatingAvailabilityUrban Company₹4994.5★TomorrowRamesh Kumar ⭐₹3004.7★Today 2PMVijay Plumbing ⭐₹3504.2★Today 4PM
+⭐ = Platform Guaranteed (payment held, quality backed)
+No exposed phone numbers. No spam. Service guaranteed or money back.
+
+Slide 7: The Three Partnership Models
+Model A: Discovery Partners
+Who: Large brands with own infrastructure (Blinkit, Zepto)
+What we do: Show their products, redirect to their app
+Revenue: Placement fees, performance ads
+Model B: Booking Partners
+Who: Brands with APIs (Ola, Uber, Urban Company)
+What we do: Handle booking + escrow, they fulfill
+Revenue: Platform fee per booking, small commission
+Model C: Platform Providers
+Who: Individual local providers (plumbers, tutors, photographers)
+What we do: Full infrastructure - listing, booking, payments, guarantees
+Revenue: 10-20% commission, subscription tiers, verified listing fees
+
+Slide 8: Two Marketplace Modes
+Mode 1: Instant Search & Book (Launch)
+Pre-listed services with transparent pricing
+
+Taxis, home services, quick commerce
+Compare → Book → Done
+
+Mode 2: Post Requirement & Get Quotes (Phase 2)
+Custom needs, multiple providers bid
+
+Interior design, B2B orders, specialized work
+Post → Review proposals → Select provider
+
+Same infrastructure. Different discovery mechanisms.
+
+Slide 9: The AI Layer Advantage
+Built for the conversational future
+Today: AI can answer but can't act
+
+"Find me a plumber" → ChatGPT gives generic advice
+User still opens multiple apps manually
+
+With Krixum:
+
+AI apps integrate our MCP (Model Context Protocol)
+One API = access to all local services
+"Book cheapest taxi" → AI searches live, books, confirms
+
+We become the action layer for every AI app
+Distribution: Not just our app, but every AI assistant using our infrastructure
+
+Slide 10: Why We Win - The Moat
+Network Effects:
+More providers → better for users → more users → more providers
+Data Moat:
+Structured, verified, AI-optimized service data that compounds
+Escrow + Guarantee Model:
+Not just discovery (JustDial) or pure aggregation (UrbanClap)
+
+We hold payments
+We enforce service standards
+We have leverage
+
+API-First Architecture:
+Built for distribution through AI apps from day one
+Solving CAC for Providers:
+Providers pay us, not Google/Meta, because we deliver qualified customers
+
+Slide 11: Market Size
+₹10+ Lakh Crore Local Services Market
+Addressable segments:
+
+Home services: ₹50,000 Cr (Urban Company ₹2,800 Cr GMV)
+Taxis/mobility: ₹1,50,000 Cr (Ola, Uber, Rapido, auto market)
+Quick commerce: ₹10,000 Cr (growing 100%+ YoY)
+B2B services: ₹3,00,000 Cr+ (IndiaMART ₹1,000 Cr+ revenue)
+
+Current players:
+
+JustDial: ₹800 Cr revenue (phone-era model)
+Urban Company: ₹2,800 Cr GMV (single category)
+IndiaMART: ₹1,000 Cr+ (B2B only)
+
+Opportunity: Rebuild for mobile + AI era, across all categories
+
+Slide 12: Revenue Model
+Multiple Revenue Streams
+From Discovery Partners (Model A):
+
+Placement fees for featured listings
+Performance ads (pay per click/redirect)
+Sponsored search results
+
+From Booking Partners (Model B):
+
+Platform fee per transaction (₹10-50)
+Small commission (2-5%)
+Premium placement in search
+
+From Platform Providers (Model C):
+
+Transaction commission (10-20%)
+Subscription tiers (Basic/Pro/Premium)
+Verified badge fees
+
+Philosophy: Maximize ads from redirects, low fees on bookings (avoid Zomato's 20% problem that drives circumvention)
+Inspiration: Rapido/Namma Yatri model - daily subscription + small per-order fee = no incentive to bypass
+
+Slide 13: Go-to-Market Strategy
+Phase 1: Bangalore Launch (Months 1-6)
+Categories:
+
+Taxis (APIs available, proven demand)
+Home services (start with Platform Providers)
+Quick commerce (redirect model, easy to launch)
+
+Traction goals:
+
+10,000 downloads
+1,000 monthly active bookers
+50+ Platform Providers onboarded
+₹10L GMV/month
+
+
+Phase 2: Category Expansion (Months 7-12)
+Add:
+
+Food delivery
+Salons/beauty
+Tutors/education
+Health services
+
+Scale:
+
+50,000 users
+500+ Platform Providers
+₹1 Cr GMV/month
+
+
+Phase 3: Geographic + Demand Marketplace (Year 2)
+Expand to: Delhi, Mumbai, Hyderabad, Pune
+Add: Post Requirement feature for custom/B2B needs
+Target: ₹10 Cr+ monthly GMV
+
+Slide 14: Why Now?
+Three macro shifts converging:
+1. AI-first interfaces emerging
+
+ChatGPT hit 100M users in 2 months
+Every app adding AI chat
+Need action infrastructure, not just information
+
+2. Aggregator commission fatigue
+
+Zomato/Swiggy at 20-30% commissions
+Restaurants/providers seeking alternatives
+Consumers want transparency
+
+3. Mobile-first India at scale
+
+750M+ smartphone users
+Digital payments normalized
+Ready for unified service layer
+
+JustDial proved the market exists. We're rebuilding it for 2025.
+
+Slide 15: Competition & Differentiation
+PlayerModelWeaknessKrixum AdvantageJustDialDirectory, phone numbersNo booking, no guarantees, spamBooking + escrow + guaranteesUrban CompanySingle category aggregatorHigh commissions, limited scopeMulti-category, lower feesGoogle SearchInformation onlyNo comparison, no bookingStructured comparison + transactionIndiaMARTB2B leadsNo consumer focus, no bookingConsumer + B2B, full transactionIndividual appsWalled gardensFragmented, no comparisonUnified layer across all
+We're not replacing them. We're the layer above them.
+
+Slide 16: Team
+Founder: Chetan
+6 years product development experience
+
+Built and scaled products in fragmented markets
+Deep understanding of India's local services landscape
+Technical background (Flutter, API integrations, AI/ML)
+
+Conviction:
+Lived the problem daily. Believes in building first, iterating based on real user feedback.
+Approach:
+Asset-light aggregation model. Focus on network effects, not infrastructure ownership.
+
+Slide 17: Traction & Milestones
+Current Status:
+
+Product architecture defined
+Flutter app in development
+Initial API partnerships being pursued
+Revenue model validated
+
+Next 3 Months:
+
+MVP launch in Bangalore
+First 1,000 users
+3 categories live (taxis, home services, quick commerce)
+First revenue
+
+Next 12 Months:
+
+50,000 active users
+₹10 Cr+ GMV
+5 categories, 3 cities
+MCP integrations with AI apps
+
+
+Slide 18: The Ask
+Raising: ₹X Crore Seed Round
+Use of Funds:
+
+40% - Product development (team, tech stack)
+30% - User acquisition & marketing
+20% - Provider onboarding & partnerships
+10% - Operations & runway
+
+Milestones to achieve:
+
+Launch in Bangalore with 3 categories
+Reach 50,000 active users
+Prove unit economics
+Build foundation for Series A
+
+18-month runway to product-market fit
+
+Slide 19: Vision
+Krixum becomes the universal layer for local commerce
+Short-term (1-2 years):
+Every time someone needs a local service, they check Krixum first
+Mid-term (3-5 years):
+Every AI app integrates Krixum to complete tasks for users
+Long-term:
+The infrastructure layer powering India's ₹10 Lakh Crore local services economy
+We're not just building an app.
+We're building the operating system for local services.
+
+Slide 20: Closing
+Krixum
+Search once. Book anything.
+The Problem: Fragmentation wastes time and creates friction
+The Solution: Unified comparison and booking platform with service guarantees
+The Opportunity: ₹10+ Lakh Crore market, ready for consolidation
+The Moat: Network effects + escrow model + AI-native infrastructure
+The Team: Experienced founder with conviction and execution ability
+Join us in building the future of local commerce.
