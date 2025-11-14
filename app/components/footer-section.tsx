@@ -112,17 +112,17 @@ export function FooterSection() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center space-x-2 mb-4 group cursor-pointer">
-              <img 
+              <img
                 src="/logo.svg"
-                alt="Krixum AI" 
+                alt="Krixum"
                 className="w-8 h-8 transition-transform group-hover:scale-110 duration-200"
               />
               <span className="text-2xl font-bold tracking-tight text-foreground">
-                Krixum AI
+                Krixum
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-              Unify all AI models in one powerful platform. No vendor lock-in, complete privacy, and the freedom to choose.
+              Search once. Book anything. Compare local services in one place with payment protection.
             </p>
             <div className="flex space-x-4">
               <button className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">

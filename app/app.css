@@ -214,6 +214,16 @@ body {
   }
 }
 
+/* Text wrapping helpers for nicer ragged edges */
+@layer base {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
 /* Cursor styles for interactive elements */
 button,
 [role="button"],
@@ -345,4 +355,32 @@ button:disabled,
 
 .animate-scroll-down {
   animation: scroll-down 15s linear infinite;
+}
+
+/* Icon List with Connector Line */
+.form_list_style {
+  position: relative;
+  padding-left: 0;
+}
+
+.form_list_style::before {
+  content: '';
+  position: absolute;
+  left: 11.5px; /* Half of the icon width (23px / 2) */
+  top: 30px; /* Start after first icon */
+  bottom: 30px; /* End before last icon */
+  width: 2px;
+  background: linear-gradient(180deg, #8450F1 0%, #EB3C86 100%);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.form_list_style .elementor-icon-list-item {
+  position: relative;
+  z-index: 1;
+}
+
+.form_list_style .elementor-icon-list-icon {
+  position: relative;
+  z-index: 2;
 }

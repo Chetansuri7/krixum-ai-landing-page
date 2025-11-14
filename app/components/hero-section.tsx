@@ -2,13 +2,9 @@ import { Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
+    <section className="relative overflow-hidden bg-background">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating gradient orbs */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-
         {/* Subtle grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       </div>
@@ -20,32 +16,34 @@ export function HeroSection() {
             {/* Badge removed per request */}
 
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
-                <span className="block">AI‑powered comparison across apps.</span>
-                <span className="block">Book instantly.</span>
+            <div className="space-y-4 mx-auto lg:mx-0 max-w-[720px]">
+              <h1 className="text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
+                <span className="block bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                  AI‑powered comparison across apps.
+                </span>
+                <span className="block text-foreground">Book instantly.</span>
               </h1>
               {/* AI emphasis under headline removed per request */}
-              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Tell Krixum what you need. It finds options and prices across apps, shows them side‑by‑side, and books with payment protection — or browse and compare yourself in one place.
+              <p className="text-pretty text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[720px] mx-auto lg:mx-0">
+                Tell Krixum what you need. One AI agent surfaces options and prices across apps, compares them side-by-side, and books with payment protection—or browse and compare yourself in one place.
               </p>
             </div>
 
             {/* Stats Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 pt-4">
               <div className="text-center lg:text-left">
-                <div className="text-3xl sm:text-4xl font-bold text-foreground">30 sec</div>
-                <div className="text-sm text-muted-foreground">Average booking time</div>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">1 search</div>
+                <div className="text-sm text-muted-foreground">Find all options</div>
               </div>
               <div className="hidden sm:block h-12 w-px bg-border"></div>
               <div className="text-center lg:text-left">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground">1 app</div>
-                <div className="text-sm text-muted-foreground">All services in one place</div>
+                <div className="text-sm text-muted-foreground">No app switching</div>
               </div>
               <div className="hidden sm:block h-12 w-px bg-border"></div>
               <div className="text-center lg:text-left">
-                <div className="text-3xl sm:text-4xl font-bold text-foreground">100%</div>
-                <div className="text-sm text-muted-foreground">Payment protected</div>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">Protected</div>
+                <div className="text-sm text-muted-foreground">Escrow‑backed booking</div>
               </div>
             </div>
 
@@ -55,11 +53,11 @@ export function HeroSection() {
                 href="https://chat.krixum.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-primary/90"
+                className="inline-flex items-center justify-center h-12 px-6 text-base font-semibold text-white bg-primary rounded-xl shadow-sm hover:bg-primary/90"
               >
                 <span className="flex items-center gap-2">
                   Start Searching Free
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
@@ -72,7 +70,7 @@ export function HeroSection() {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-foreground bg-background border-2 border-border rounded-2xl hover:border-primary hover:bg-accent transition-all duration-300"
+                className="inline-flex items-center justify-center h-12 px-6 text-base font-semibold text-foreground bg-background border border-border rounded-xl hover:bg-muted"
               >
                 See How It Works
               </button>
@@ -95,8 +93,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column - Mobile App Mockup */}
-          <div className="relative">
+          {/* Right Column - Mobile App Mockup (desktop only) */}
+          <div className="relative hidden md:block">
             <div className="relative mx-auto max-w-sm lg:max-w-none">
               {/* Floating card - All Options */}
               <div className="absolute -top-4 -left-4 z-20 bg-green-600 text-white rounded-2xl p-4 shadow-2xl animate-float hidden sm:block">
@@ -113,17 +111,17 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating card - Fast Booking */}
-              <div className="absolute -bottom-4 -right-4 z-20 bg-blue-600 text-white rounded-2xl p-4 shadow-2xl animate-float hidden sm:block" style={{ animationDelay: '1s' }}>
+              {/* Floating card - One Search */}
+              <div className="absolute -bottom-4 -right-4 z-20 bg-primary text-primary-foreground rounded-2xl p-4 shadow-2xl animate-float hidden sm:block" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-xs font-medium opacity-90">Booking time</div>
-                    <div className="text-2xl font-bold">30 sec</div>
+                    <div className="text-xs font-medium opacity-90">One search</div>
+                    <div className="text-2xl font-bold">All options</div>
                   </div>
                 </div>
               </div>
@@ -169,10 +167,10 @@ export function HeroSection() {
 
                     {/* Results List */}
                     <div className="p-4 space-y-3 overflow-y-auto" style={{ maxHeight: 'calc(100% - 120px)' }}>
-                      {/* Result 1 - Best Price */}
-                      <div className="relative p-4 bg-green-50 dark:bg-green-950/20 border-2 border-green-500 rounded-2xl shadow-sm">
-                        <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                          FASTEST
+                      {/* Result 1 - Best Priced */}
+                      <div className="relative p-4 bg-primary/10 border-2 border-primary rounded-2xl shadow-sm">
+                        <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                          BEST PRICED
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
@@ -185,8 +183,8 @@ export function HeroSection() {
                             </div>
                           </div>
                           <div className="text-right">
-                            <div className="text-xl font-bold text-green-600">₹180</div>
-                            <div className="text-xs text-green-600 font-medium">Arrives fastest</div>
+                            <div className="text-xl font-bold text-primary">₹380</div>
+                            <div className="text-xs text-primary font-medium">Best priced</div>
                           </div>
                         </div>
                       </div>
@@ -211,7 +209,7 @@ export function HeroSection() {
                       <div className="p-4 bg-card border border-border rounded-2xl">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center">
+                            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                               <span className="text-white font-bold text-sm">O</span>
                             </div>
                             <div>

@@ -1,203 +1,137 @@
-import { Link } from "react-router";
 import { SectionHeader } from "~/components/ui/section-header";
 
-type Pillar = {
-  label: string;
-  title: string;
-  body: string;
-  bullets: string[];
-};
-
-type Category = {
-  name: string;
-  status: "Live" | "Soon" | "Phase 2";
-  model: "Booking Partner" | "Platform Provider" | "Discovery Partner";
-  description: string;
-  bullets: string[];
-  providers: string[];
-};
-
-function PillarCard({ item }: { item: Pillar }) {
-  return (
-    <div className="bg-card border border-border rounded-2xl p-6">
-      <div className="mb-2 inline-flex items-center gap-2 px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-        {item.label}
-      </div>
-      <h3 className="text-lg font-bold text-foreground mb-1.5">{item.title}</h3>
-      <p className="text-sm text-muted-foreground mb-3">{item.body}</p>
-      <ul className="space-y-1.5">
-        {item.bullets.map((b) => (
-          <li key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function CategoryCard({ item }: { item: Category }) {
-  return (
-    <div className="bg-card border border-border rounded-2xl p-6 h-full">
-      <div className="flex items-start justify-between">
-        <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-          {item.model}
-        </div>
-        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-foreground/80">
-          {item.status}
-        </span>
-      </div>
-      <h4 className="mt-2 text-base font-bold text-foreground">{item.name}</h4>
-      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-      <ul className="mt-3 space-y-1.5">
-        {item.bullets.map((b) => (
-          <li key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {item.providers.map((p) => (
-          <span key={p} className="text-xs px-2 py-1 rounded-full border border-border text-muted-foreground">
-            {p}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function OverviewSection() {
-  const pillars: Pillar[] = [
-    {
-      label: "Search",
-      title: "One search. All options.",
-      body: "See big brands and verified local providers together with real‑time availability.",
-      bullets: ["All providers in one place", "Live ETAs and availability"],
-    },
-    {
-      label: "Compare",
-      title: "Clear, side‑by‑side choices.",
-      body: "Decide faster with transparent information — no app switching.",
-      bullets: ["Side‑by‑side options", "Coverage across categories"],
-    },
-    {
-      label: "Book",
-      title: "Protected from start to finish.",
-      body: "Payments held in escrow until you confirm service completion.",
-      bullets: ["Escrow‑backed payments", "Verified providers"],
-    },
-  ];
-
-  const capabilities: string[] = [
-    "Side‑by‑side options",
-    "Real‑time ETAs",
-    "Escrow protection",
-    "Verified providers",
-    "Use app or ask AI",
-    "One profile & history",
-  ];
-
-  const categories: Category[] = [
-    {
-      name: "Rides & Taxis",
-      status: "Live",
-      model: "Booking Partner",
-      description:
-        "Compare ETAs and options from multiple ride apps in one view. Book instantly through the partner flow.",
-      bullets: ["See ETAs side‑by‑side", "Choose bike, auto, or cab"],
-      providers: ["Ola", "Uber", "Rapido", "Namma Yatri"],
-    },
-    {
-      name: "Home Services",
-      status: "Live",
-      model: "Platform Provider",
-      description:
-        "Verified local professionals with escrow protection. No exposed phone numbers, clear communication in‑app.",
-      bullets: ["Browse verified pros", "Escrow‑backed booking"],
-      providers: ["Urban Company", "Local verified"],
-    },
-  ];
-
   return (
-    <section id="overview" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
+    <section id="overview" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 lg:py-16">
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          badge="Overview"
-          title="What Krixum does — and where it works"
-          description="Search once, compare clearly, and book with protection. We go deep, category by category — starting in Bangalore."
+          title="See what one AI booking agent unlocks"
+          description="Krixum’s agentic platform orchestrates rides, deliveries, and local services end to end while you review the outcomes."
         />
 
-        {/* One Search — full row */}
-        <div className="bg-card border border-border rounded-2xl p-6">
-          <div className="mb-2 inline-flex items-center gap-2 px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-            Search
-          </div>
-          <h3 className="text-xl font-bold text-foreground mb-1.5">{pillars[0].title}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{pillars[0].body}</p>
-          <ul className="flex flex-wrap gap-x-4 gap-y-2">
-            {pillars[0].bullets.map((b) => (
-              <li key={b} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Two cards with images, inline within Overview */}
+        <div className="space-y-6">
+          {/* Card 1 */}
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <div className="flex flex-col md:flex-row items-stretch">
+              <div className="flex-1 p-8 md:p-10 lg:p-12">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                  Let the AI agent surface the best ride in seconds
+                </h3>
 
-        {/* Capabilities — single row on large screens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {capabilities.map((c) => (
-            <div key={c} className="bg-card border border-border rounded-2xl p-4">
-              <div className="flex items-center gap-2">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span className="text-sm font-medium text-foreground">{c}</span>
+                <div className="space-y-4">
+                  {[
+                    "One request triggers Uber, Ola, Rapido, and Namma Yatri at once.",
+                    "See fares, surge multipliers, ETAs, and safety scores update together.",
+                    "Use smart filters for payment type, comfort level, or provider reputation.",
+                    "Tap approve and the agent completes the booking in your chosen app.",
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" className="mt-1.5 flex-shrink-0" aria-hidden="true">
+                        <defs>
+                          <linearGradient id={`overview_bullet_1_${i}`} x1="0" y1="6" x2="12" y2="6" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="var(--primary)" />
+                            <stop offset="1" stopColor="var(--chart-1)" />
+                          </linearGradient>
+                        </defs>
+                        <circle cx="6" cy="6" r="6" fill={`url(#overview_bullet_1_${i})`} />
+                      </svg>
+                      <p className="text-base sm:text-lg text-foreground/80">{text}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6">
+                  <a
+                    href="https://chat.krixum.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-fit px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium shadow-sm"
+                  >
+                    <span>Launch the AI agent</span>
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M3 2.5a1 1 0 0 1 1.52-.85l12.5 9a1 1 0 0 1 0 1.7l-12.5 9A1 1 0 0 1 3 20.5z" />
+                      <path d="M20 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1z" />
+                    </svg>
+                  </a>
+                </div>
               </div>
+
+              <figure className="md:w-[40%] lg:w-[38%] flex items-center justify-center p-8 bg-muted/30">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto object-contain max-w-[520px] lg:max-w-[600px]"
+                  src="/booking-engine.svg"
+                  alt="Krixum comparison illustration"
+                  width={1510}
+                  height={1573}
+                  title="Booking Engine"
+                />
+              </figure>
             </div>
-          ))}
-        </div>
-
-        {/* Live Categories only */}
-        <div className="space-y-4">
-          <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Live today in Bangalore</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {categories.filter((c) => c.status === "Live").map((c) => (
-              <CategoryCard key={c.name} item={c} />
-            ))}
           </div>
-        </div>
 
-        {/* CTA row */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://chat.krixum.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-primary rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-sm"
-          >
-            Start searching
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-          <button
-            onClick={() => {
-              const el = document.getElementById('how-it-works');
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-            className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
-          >
-            See how it works
-          </button>
-        </div>
+          {/* Card 2 */}
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <div className="flex flex-col md:flex-row items-stretch">
+              <div className="flex-1 p-8 md:p-10 lg:p-12">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                  AI matchmaker for home-service providers
+                </h3>
 
-        <div className="text-sm text-muted-foreground">
-          <span className="font-semibold text-foreground">Starting in Bangalore</span> — more cities coming soon
+                <div className="space-y-4">
+                  {[
+                    "Describe the job once—your agent pulls quotes from every connected marketplace.",
+                    "Compare pricing, slots, and ratings in one AI-curated view.",
+                    "Approve and auto-fill the partner handoff without retyping details.",
+                    "Let the agent track follow-ups, visits, and completion in one timeline.",
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" className="mt-1.5 flex-shrink-0" aria-hidden="true">
+                        <defs>
+                          <linearGradient id={`overview_bullet_2_${i}`} x1="0" y1="6" x2="12" y2="6" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="var(--primary)" />
+                            <stop offset="1" stopColor="var(--chart-1)" />
+                          </linearGradient>
+                        </defs>
+                        <circle cx="6" cy="6" r="6" fill={`url(#overview_bullet_2_${i})`} />
+                      </svg>
+                      <p className="text-base sm:text-lg text-foreground/80">{text}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6">
+                  <a
+                    href="https://chat.krixum.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-fit px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium shadow-sm"
+                  >
+                    <span>Launch the AI agent</span>
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M3 2.5a1 1 0 0 1 1.52-.85l12.5 9a1 1 0 0 1 0 1.7l-12.5 9A1 1 0 0 1 3 20.5z" />
+                      <path d="M20 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <figure className="md:w-[40%] lg:w-[38%] flex items-center justify-center p-8 bg-muted/30">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto object-contain max-w-[520px] lg:max-w-[600px]"
+                  src="/booking-engine.svg"
+                  alt="Hotel suppliers illustration"
+                  width={1510}
+                  height={1573}
+                  title="Hotel Suppliers"
+                />
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>

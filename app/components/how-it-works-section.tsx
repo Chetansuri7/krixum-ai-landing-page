@@ -46,9 +46,8 @@ export function HowItWorksSection() {
     <section id="how-it-works" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
-          badge="How it works"
-          title="Search, compare, book - all protected"
-          description="From search to service completion, every step is designed to save you time and protect your money."
+          title="Every booking finishes in five focused steps"
+          description="From the first prompt to the final confirmation, Krixum handles comparison, handoff, and tracking in one flow."
         />
 
         <div className="grid gap-6 lg:grid-cols-2">

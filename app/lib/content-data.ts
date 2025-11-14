@@ -143,7 +143,7 @@ export const siteContent: SiteContent = {
     },
     {
       question: "What cities is Krixum available in?",
-      answer: "We're launching in Bangalore with taxis and home services. More categories and cities coming soon based on user demand. Join the waitlist to be notified when we launch in your city."
+      answer: "We’re rolling out categories like taxis and home services first. More categories and cities will expand based on demand — join the waitlist to be notified when we launch in your city."
     },
     {
       question: "How is this different from JustDial or Urban Company?",

@@ -53,7 +53,6 @@ export function TestimonialsSection() {
     <section id="testimonials" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8 bg-gradient-to-br from-white via-indigo-50 to-purple-50 rounded-3xl">
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
-          badge="Testimonials"
           title="What people say"
           description="With over 9000 clients served, here's what they have to say"
           centered

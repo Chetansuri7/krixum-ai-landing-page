@@ -4,10 +4,7 @@ import { useLocation } from "react-router";
 import { Header } from "~/components/header";
 import { HeroSection } from "~/components/hero-section";
 import { HighlightsSection } from "~/components/highlights-section";
-import { ModelsSection } from "~/components/models-section";
-import { FeaturesSection } from "~/components/features-section";
 import { OverviewSection } from "~/components/overview-section";
-import { SmartBookingSection } from "~/components/smart-booking-section";
 import { AdvantagesSection } from "~/components/advantages-section";
 import { CtaSection } from "~/components/cta-section";
 import { FooterSection } from "~/components/footer-section";
@@ -58,11 +55,10 @@ export function HomePage({ focusSectionId }: HomePageProps) {
         <Header />
         <main className="isolate flex flex-col gap-2 bg-primary-foreground">
           <HeroSection />
-          <SmartBookingSection />
+          <AdvantagesSection />
           <OverviewSection />
           <HighlightsSection />
           <HowItWorksSection />
-          <AdvantagesSection />
           <FAQSection />
           {/* <TestimonialsSection /> */}
           {/* <SecuritySection /> */}

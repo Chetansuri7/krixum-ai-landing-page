@@ -11,12 +11,12 @@ export function Header() {
   // Check if we're on the homepage
   const isHomepage = location.pathname === "/";
   const navOrder = [
-    "smart-booking",
     "overview",
+    "advantages",
     "highlights",
     "how-it-works",
-    "advantages",
     "faq",
+    "contact",
   ] as const;
   const navigation = navOrder
     .map((id) => marketingSections.find((section) => section.id === id))

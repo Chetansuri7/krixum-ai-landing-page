@@ -46,7 +46,6 @@ export function PricingSection() {
     >
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
-          badge="Pricing"
           title="Predictable pricing, scalable plans"
           description="Designed for every stage of your journey."
         />

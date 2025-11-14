@@ -121,7 +121,6 @@ export function AdvantagesSection() {
     >
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          badge="Advantages"
           title="Why choose Krixum?"
           description="Save time, save money, and book with confidence - all in one platform."
         />

@@ -5,7 +5,6 @@ export function HighlightsSection() {
     <section id="highlights" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8">
       <div className="flex flex-col gap-4 w-full">
         <SectionHeader
-          badge="Real Use Cases"
           title="See how Krixum saves time and money"
           description="Real queries. Real savings. Every day."
         />

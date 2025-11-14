@@ -47,12 +47,7 @@ export default function PricingPage() {
               name: siteMeta.name,
               url: siteMeta.siteUrl
             },
-            serviceType: "Service Aggregation Platform",
-            areaServed: {
-              "@type": "City",
-              name: "Bangalore",
-              addressCountry: "IN"
-            }
+            serviceType: "Service Aggregation Platform"
           }
         ]}
       />

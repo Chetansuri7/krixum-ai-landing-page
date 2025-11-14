@@ -21,9 +21,6 @@ function CategoryCard({ item }: { item: Category }) {
           </div>
           <h3 className="mt-2 text-xl font-bold text-foreground">{item.name}</h3>
         </div>
-        <span className="text-xs font-semibold px-2 py-1 rounded-full bg-muted text-foreground/80">
-          {item.status}
-        </span>
       </div>
 
       <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
@@ -111,14 +108,13 @@ export function ModelsSection() {
     <section id="categories" className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          badge="Service Categories"
           title="All your local needs in one place"
-          description="We go deep, category by category — starting in Bangalore. Compare options in one view and book with protection where available."
+          description="We go deep, category by category. Compare options in one view and book with protection where available."
         />
 
-        {/* Live Today */}
+        {/* Planned Categories */}
         <div className="space-y-4">
-          <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Live today</div>
+          <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Planned categories</div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {live.map((item) => (
               <CategoryCard key={item.name} item={item} />
@@ -162,12 +158,7 @@ export function ModelsSection() {
           </button>
         </div>
 
-        {/* City note */}
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Starting in Bangalore</span> — more cities coming soon
-          </p>
-        </div>
+        {/* City note removed until launch */}
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ export const faqData: FaqItem[] = [
     id: "q6",
     question: "Which categories and cities are supported?",
     answer:
-      "We’re live with Taxis & Rides and Home Services in Bangalore. Quick Commerce and Food Delivery are next. More cities roll out based on demand.",
+      "We’re rolling out categories like Taxis & Rides and Home Services first, with Quick Commerce and Food Delivery planned. Availability will expand based on demand — join the waitlist to be notified.",
   },
   {
     id: "q7",

@@ -46,7 +46,6 @@ export function SecuritySection() {
         <div className="flex flex-col items-start gap-6 lg:flex-row">
           <div className="flex w-full flex-1 flex-col items-start gap-4">
             <SectionHeader
-              badge="Security"
               title="Enterprise-grade security & privacy"
               description="We take security and compliance seriously. Krixum is SOC 2 Type II and GDPR compliant, trusted by thousands of businesses to build secure and compliant AI Agents."
             />

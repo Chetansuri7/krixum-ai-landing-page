@@ -3,7 +3,7 @@ export const SITE_URL = "https://krixum.com" as const;
 export const siteMeta = {
   name: "Krixum",
   tagline: "Search once. Book anything.",
-  title: "Krixum — Search once. Book anything.",
+  title: "Krixum - AI powered service booking app",
   description:
     "Search, compare, and book local services in one place. See all options side-by-side and book with payment protection — no more app hopping.",
   keywords: [
@@ -50,13 +50,6 @@ export const marketingSections: MarketingSection[] = [
     title: "Features",
     description: "Explore Krixum features for simpler, faster booking.",
     sectionId: "features",
-  },
-  {
-    id: "smart-booking",
-    path: "/",
-    title: "Smart Booking",
-    description: "Stop juggling apps. Start booking smarter.",
-    sectionId: "smart-booking",
   },
   {
     id: "highlights",

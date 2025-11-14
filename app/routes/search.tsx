@@ -58,12 +58,6 @@ export default function SearchPage() {
       type: "page"
     },
     {
-      title: "Smart Booking",
-      description: "Stop juggling apps. Start booking smarter. Compare all providers in one place",
-      url: "/#smart-booking",
-      type: "section"
-    },
-    {
       title: "Overview",
       description: "What Krixum does and where it works - Search once, compare clearly, and book with protection",
       url: "/#overview",

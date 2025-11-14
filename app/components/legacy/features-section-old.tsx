@@ -70,7 +70,6 @@ export function FeaturesSection() {
     >
       <div className="flex flex-col gap-6 w-full">
         <SectionHeader
-          badge="Features"
           title="Everything you need in one place"
           description="Powerful features designed to enhance your AI experience, streamline workflows, and boost productivity — all in a beautifully unified interface."
         />

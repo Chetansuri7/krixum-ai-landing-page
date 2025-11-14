@@ -72,7 +72,6 @@ export function FeaturesSection() {
     >
       <div className="flex flex-col gap-12 w-full">
         <SectionHeader
-          badge="Features"
           title="What Krixum does for you"
           description="Search once, compare clearly, and book with protection — without app juggling."
         />

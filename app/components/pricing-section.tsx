@@ -76,7 +76,6 @@ export function PricingSection() {
     >
       <div className="flex flex-col gap-12 w-full">
         <SectionHeader
-          badge="Pricing"
           title="Free for users. Fair for partners."
           description="Users never pay. Partners only pay when they get value."
         />
@@ -337,7 +336,7 @@ export function PricingSection() {
             View detailed pricing
           </Link>
           <Link
-            to="/partners"
+            to="/contact"
             className="inline-flex items-center justify-center rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted"
           >
             Become a partner

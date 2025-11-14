@@ -8,25 +8,9 @@ export function FAQSection() {
   return (
     <section id="faq" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8">
         <SectionHeader
-          badge="FAQ"
           title="Frequently Asked Questions"
-          description="Everything you need to know about searching and booking with Krixum"
+          description="Everything you need to know about letting Krixum’s agent handle the booking loop"
         />
-
-      <div className="flex flex-col sm:flex-row gap-3 pt-5">
-        <Link
-          to="/faq"
-          className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
-        >
-          Browse all FAQs
-        </Link>
-        <Link
-          to="/contact"
-          className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
-        >
-          Ask something else
-        </Link>
-      </div>
 
       {/* FAQ Accordion */}
       <div className="pt-6">
