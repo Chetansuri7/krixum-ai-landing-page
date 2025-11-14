@@ -36,7 +36,12 @@ export function EnhancedSEO({
   keywords = [...siteMeta.keywords],
   pageType = 'home'
 }: EnhancedSEOProps) {
-  
+  const now = new Date();
+  // Use UTC so the JSON-LD stays identical between server and client and avoids hydration warnings.
+  const priceValidUntil = new Date(Date.UTC(now.getUTCFullYear() + 1, 11, 31))
+    .toISOString()
+    .split('T')[0];
+
   const fullTitle = title.includes(siteMeta.name) ? title : `${title} | ${siteMeta.name}`;
   const ogImage = openGraph?.images?.[0]?.url || new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString();
 
@@ -185,7 +190,7 @@ export function EnhancedSEO({
       availability: 'https://schema.org/InStock',
       price: '0',
       priceCurrency: 'INR',
-      priceValidUntil: new Date(new Date().getFullYear() + 1, 11, 31).toISOString().split('T')[0],
+      priceValidUntil,
       seller: {
         '@id': `${siteMeta.siteUrl}/#organization`,
       },
