@@ -175,7 +175,7 @@ export function FeaturesSection() {
             Explore all platform features
           </Link>
           <Link
-            to="/advantages"
+            to="/benefits"
             className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/70"
           >
             See business outcomes

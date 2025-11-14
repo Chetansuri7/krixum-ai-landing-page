@@ -137,7 +137,7 @@ export function FeaturesSection() {
                   Explore Features
                 </Link>
                 <Link
-                  to="/advantages"
+                  to="/benefits"
                   className="inline-flex items-center justify-center rounded-xl border-2 border-border px-6 py-3 text-sm font-semibold text-foreground bg-background hover:bg-accent transition-all"
                 >
                   See Benefits

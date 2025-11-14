@@ -38,18 +38,18 @@ export type MarketingSection = {
 
 export const marketingSections: MarketingSection[] = [
   {
+    id: "advantages",
+    path: "/benefits",
+    title: "Benefits",
+    description: "Why Krixum saves time and reduces hassle across categories.",
+    sectionId: "benefits",
+  },
+  {
     id: "overview",
     path: "/",
     title: "Overview",
     description: "What Krixum does and where it works.",
     sectionId: "overview",
-  },
-  {
-    id: "features",
-    path: "/features",
-    title: "Features",
-    description: "Explore Krixum features for simpler, faster booking.",
-    sectionId: "features",
   },
   {
     id: "highlights",
@@ -66,11 +66,25 @@ export const marketingSections: MarketingSection[] = [
     sectionId: "how-it-works",
   },
   {
-    id: "advantages",
-    path: "/advantages",
-    title: "Advantages",
-    description: "Why Krixum saves time and reduces hassle across categories.",
-    sectionId: "advantages",
+    id: "faq",
+    path: "/faq",
+    title: "FAQ",
+    description: "Answers about booking, protection, and partnerships.",
+    sectionId: "faq",
+  },
+  {
+    id: "contact",
+    path: "/contact",
+    title: "Contact",
+    description: "Reach out for demos, partnerships, or support.",
+    sectionId: "contact",
+  },
+  {
+    id: "features",
+    path: "/features",
+    title: "Features",
+    description: "Explore Krixum features for simpler, faster booking.",
+    sectionId: "features",
   },
   {
     id: "models",
@@ -85,19 +99,5 @@ export const marketingSections: MarketingSection[] = [
     title: "Pricing",
     description: "Provider partnerships and platform options.",
     sectionId: "pricing",
-  },
-  {
-    id: "faq",
-    path: "/faq",
-    title: "FAQ",
-    description: "Answers about booking, protection, and partnerships.",
-    sectionId: "faq",
-  },
-  {
-    id: "contact",
-    path: "/contact",
-    title: "Contact",
-    description: "Reach out for demos, partnerships, or support.",
-    sectionId: "contact",
   },
 ];

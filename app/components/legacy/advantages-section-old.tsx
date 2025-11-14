@@ -206,7 +206,7 @@ export function AdvantagesSection() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <Link
-                to="/advantages"
+                to="/benefits"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
               >
                 View full advantage report

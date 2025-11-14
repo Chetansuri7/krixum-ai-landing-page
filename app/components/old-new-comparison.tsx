@@ -17,14 +17,10 @@ type ComparisonProps = {
     total?: string;
     result?: string;
   };
-  images?: {
-    old?: { src: string; alt?: string };
-    newer?: { src: string; alt?: string };
-  };
 };
 
 // Old vs New comparison cards styled to match the reference design
-export function OldNewComparison({ before, after, images }: ComparisonProps) {
+export function OldNewComparison({ before, after }: ComparisonProps) {
   return (
     <div className="grid lg:grid-cols-2 gap-4">
       {/* Old Way */}
@@ -45,16 +41,6 @@ export function OldNewComparison({ before, after, images }: ComparisonProps) {
           ))}
         </ul>
 
-        {images?.old?.src && (
-          <div className="px-3 pt-0 pb-3">
-            <img
-              src={images.old.src}
-              alt={images.old.alt || "Old journey illustration"}
-              className="block h-40 w-auto object-contain mx-auto"
-              loading="lazy"
-            />
-          </div>
-        )}
       </div>
 
       {/* New Way */}
@@ -74,17 +60,6 @@ export function OldNewComparison({ before, after, images }: ComparisonProps) {
             </li>
           ))}
         </ul>
-
-        {images?.newer?.src && (
-          <div className="px-3 pt-0 pb-3">
-            <img
-              src={images.newer.src}
-              alt={images.newer.alt || "New journey illustration"}
-              className="block h-40 w-auto object-contain mx-auto"
-              loading="lazy"
-            />
-          </div>
-        )}
 
         {/* (shape removed for cleaner, tighter layout) */}
       </div>

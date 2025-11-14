@@ -116,10 +116,6 @@ export function HighlightsSection() {
                   total: useCase.after.total,
                   result: useCase.after.result,
                 }}
-                images={{
-                  old: { src: "/booking-engine.svg", alt: "Comparison illustration" },
-                  newer: { src: "/booking-engine.svg", alt: "Comparison illustration" },
-                }}
               />
             </div>
           ))}

@@ -47,8 +47,6 @@ export function generateSEOMeta(data: SEOData & { pathname: string }) {
     
     // Additional SEO
     { name: "theme-color", content: "#050816" },
-    { name: "apple-mobile-web-app-title", content: siteMeta.name },
-    { name: "application-name", content: siteMeta.name },
   ];
 }
 

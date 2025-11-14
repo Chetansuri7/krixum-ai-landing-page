@@ -76,9 +76,10 @@ export default function SearchPage() {
       type: "section"
     },
     {
-      title: "Advantages",
+      title: "Benefits",
       description: "Why Krixum saves time and reduces hassle across categories",
-      url: "/#advantages",
+      url: "/#benefits",
+      label: "Benefits",
       type: "section"
     },
     {

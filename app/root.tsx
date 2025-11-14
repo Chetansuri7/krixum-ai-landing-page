@@ -27,14 +27,24 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:site_name" content={siteMeta.name} />
         <meta property="og:locale" content={siteMeta.locale} />
+        
+        {/* Twitter */}
         <meta name="twitter:site" content={siteMeta.twitterHandle} />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="twitter:creator" content={siteMeta.twitterHandle} />
+        
+        {/* Icons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+        
         <Meta />
         <Links />
       </head>

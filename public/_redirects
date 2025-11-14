@@ -1,2 +1,5 @@
+# Redirect old advantages URL to benefits
+/advantages /benefits 301
+
 # Remove trailing slashes
 /*/ /:splat 301

@@ -107,6 +107,13 @@ export function EnhancedSEO({
       hasPart: [
         {
           '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/#benefits`,
+          name: 'Benefits',
+          description: 'Why Krixum saves time and reduces hassle',
+          url: `${siteMeta.siteUrl}/#benefits`,
+        },
+        {
+          '@type': 'WebPage',
           '@id': `${siteMeta.siteUrl}/#overview`,
           name: 'Overview',
           description: 'What Krixum does and where it works',
@@ -128,17 +135,17 @@ export function EnhancedSEO({
         },
         {
           '@type': 'WebPage',
-          '@id': `${siteMeta.siteUrl}/#advantages`,
-          name: 'Advantages',
-          description: 'Why Krixum saves time and reduces hassle',
-          url: `${siteMeta.siteUrl}/#advantages`,
-        },
-        {
-          '@type': 'WebPage',
           '@id': `${siteMeta.siteUrl}/#faq`,
           name: 'FAQ',
           description: 'Frequently asked questions',
           url: `${siteMeta.siteUrl}/#faq`,
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${siteMeta.siteUrl}/contact`,
+          name: 'Contact',
+          description: 'Reach out for demos, partnerships, or support',
+          url: `${siteMeta.siteUrl}/contact`,
         },
         {
           '@type': 'WebPage',
@@ -149,13 +156,6 @@ export function EnhancedSEO({
         },
         {
           '@type': 'WebPage',
-          '@id': `${siteMeta.siteUrl}/pricing`,
-          name: 'Pricing',
-          description: 'Provider partnerships and platform options',
-          url: `${siteMeta.siteUrl}/pricing`,
-        },
-        {
-          '@type': 'WebPage',
           '@id': `${siteMeta.siteUrl}/models`,
           name: 'Categories',
           description: 'Service categories supported today and what\'s next',
@@ -163,10 +163,10 @@ export function EnhancedSEO({
         },
         {
           '@type': 'WebPage',
-          '@id': `${siteMeta.siteUrl}/contact`,
-          name: 'Contact',
-          description: 'Reach out for demos, partnerships, or support',
-          url: `${siteMeta.siteUrl}/contact`,
+          '@id': `${siteMeta.siteUrl}/pricing`,
+          name: 'Pricing',
+          description: 'Provider partnerships and platform options',
+          url: `${siteMeta.siteUrl}/pricing`,
         },
       ],
     },
@@ -229,30 +229,30 @@ export function EnhancedSEO({
       {
         '@type': 'SiteNavigationElement',
         position: 1,
+        name: 'Benefits',
+        description: 'Why Krixum saves time and reduces hassle',
+        url: `${siteMeta.siteUrl}/#benefits`,
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 2,
         name: 'Overview',
         description: 'What Krixum does and where it works',
         url: `${siteMeta.siteUrl}/#overview`,
       },
       {
         '@type': 'SiteNavigationElement',
-        position: 2,
+        position: 3,
         name: 'Real Examples',
         description: 'See how Krixum compares old vs new flows',
         url: `${siteMeta.siteUrl}/#highlights`,
       },
       {
         '@type': 'SiteNavigationElement',
-        position: 3,
+        position: 4,
         name: 'How It Works',
         description: 'From search to booking with protection',
         url: `${siteMeta.siteUrl}/#how-it-works`,
-      },
-      {
-        '@type': 'SiteNavigationElement',
-        position: 4,
-        name: 'Advantages',
-        description: 'Why Krixum saves time and reduces hassle',
-        url: `${siteMeta.siteUrl}/#advantages`,
       },
       {
         '@type': 'SiteNavigationElement',
@@ -264,16 +264,16 @@ export function EnhancedSEO({
       {
         '@type': 'SiteNavigationElement',
         position: 6,
-        name: 'Features',
-        description: 'Explore Krixum features for simpler, faster booking',
-        url: `${siteMeta.siteUrl}/features`,
+        name: 'Contact',
+        description: 'Reach out for demos, partnerships, or support',
+        url: `${siteMeta.siteUrl}/contact`,
       },
       {
         '@type': 'SiteNavigationElement',
         position: 7,
-        name: 'Pricing',
-        description: 'Provider partnerships and platform options',
-        url: `${siteMeta.siteUrl}/pricing`,
+        name: 'Features',
+        description: 'Explore Krixum features for simpler, faster booking',
+        url: `${siteMeta.siteUrl}/features`,
       },
       {
         '@type': 'SiteNavigationElement',
@@ -285,9 +285,9 @@ export function EnhancedSEO({
       {
         '@type': 'SiteNavigationElement',
         position: 9,
-        name: 'Contact',
-        description: 'Reach out for demos, partnerships, or support',
-        url: `${siteMeta.siteUrl}/contact`,
+        name: 'Pricing',
+        description: 'Provider partnerships and platform options',
+        url: `${siteMeta.siteUrl}/pricing`,
       },
     ],
   } : null;
@@ -301,7 +301,6 @@ export function EnhancedSEO({
       <meta name="author" content={siteMeta.name} />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="application-name" content={siteMeta.name} />
-      <meta name="apple-mobile-web-app-title" content={siteMeta.name} />
       <meta name="theme-color" content="#050816" />
       
       {/* Open Graph */}

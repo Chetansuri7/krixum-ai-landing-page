@@ -5,7 +5,7 @@ import { SectionHeader } from "~/components/ui/section-header";
 export function AdvantagesSection() {
   return (
     <section
-      id="advantages"
+      id="benefits"
       className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-12 lg:py-16"
     >
       <div className="flex flex-col gap-8 w-full">

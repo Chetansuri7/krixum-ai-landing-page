@@ -44,7 +44,7 @@ export function FooterSection() {
     ],
     resources: [
       { name: "Highlights", href: "highlights", available: true, kind: "section" },
-      { name: "Advantage report", href: "/advantages", available: true, kind: "page" },
+      { name: "Benefits", href: "/benefits", available: true, kind: "page" },
       { name: "Model catalog", href: "/models", available: true, kind: "page" },
       { name: "Documentation", href: "https://docs.krixum.com", available: false, kind: "external" },
     ],
@@ -55,8 +55,8 @@ export function FooterSection() {
       { name: "Press", href: "/press", available: false, kind: "page" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy", available: false, kind: "page" },
-      { name: "Terms of Service", href: "/terms", available: false, kind: "page" },
+      { name: "Privacy Policy", href: "/privacy", available: true, kind: "page" },
+      { name: "Terms of Service", href: "/terms", available: true, kind: "page" },
       { name: "Cookie Policy", href: "/cookies", available: false, kind: "page" },
       { name: "GDPR", href: "/gdpr", available: false, kind: "page" },
     ],

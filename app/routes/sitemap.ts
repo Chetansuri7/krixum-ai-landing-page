@@ -3,52 +3,74 @@ import type { LoaderFunctionArgs } from "react-router";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
 
 const priorityBySection: Record<string, { priority: string; changefreq: string }> = {
+  advantages: { priority: "0.95", changefreq: "weekly" },
+  overview: { priority: "0.90", changefreq: "weekly" },
+  highlights: { priority: "0.85", changefreq: "weekly" },
+  "how-it-works": { priority: "0.85", changefreq: "weekly" },
+  faq: { priority: "0.90", changefreq: "weekly" },
+  contact: { priority: "0.85", changefreq: "monthly" },
   features: { priority: "0.95", changefreq: "weekly" },
-  pricing: { priority: "0.95", changefreq: "weekly" },
   models: { priority: "0.90", changefreq: "weekly" },
-  faq: { priority: "0.85", changefreq: "weekly" },
-  contact: { priority: "0.80", changefreq: "monthly" },
-  advantages: { priority: "0.75", changefreq: "monthly" },
+  pricing: { priority: "0.95", changefreq: "weekly" },
 };
 
 export async function loader({}: LoaderFunctionArgs) {
   const lastmod = new Date().toISOString().split("T")[0];
   const socialImage = new URL(siteMeta.socialImagePath, siteMeta.siteUrl).toString();
 
-  const urlEntries = [
-    {
-      loc: siteMeta.siteUrl,
-      changefreq: "daily",
-      priority: "1.0",
-      image: socialImage,
-    },
-    // Legal pages: low priority but indexable
-    {
-      loc: new URL("/privacy", siteMeta.siteUrl).toString(),
-      changefreq: "monthly",
-      priority: "0.3",
-      image: socialImage,
-    },
-    {
-      loc: new URL("/terms", siteMeta.siteUrl).toString(),
-      changefreq: "monthly",
-      priority: "0.3",
-      image: socialImage,
-    },
-    ...marketingSections.map((section) => {
+  // Collect unique URLs (avoid duplicate homepage sections)
+  const uniqueUrls = new Map<string, { 
+    loc: string; 
+    changefreq: string; 
+    priority: string; 
+    image: string;
+  }>();
+
+  // Homepage
+  uniqueUrls.set(siteMeta.siteUrl, {
+    loc: siteMeta.siteUrl,
+    changefreq: "daily",
+    priority: "1.0",
+    image: socialImage,
+  });
+
+  // Marketing sections (only add unique page URLs, not hash sections)
+  marketingSections.forEach((section) => {
+    // Skip hash-only sections (they're part of homepage)
+    if (section.path !== "/") {
+      const url = new URL(section.path, siteMeta.siteUrl).toString();
       const meta = priorityBySection[section.id] ?? {
         priority: "0.6",
         changefreq: "monthly",
       };
+      
+      if (!uniqueUrls.has(url)) {
+        uniqueUrls.set(url, {
+          loc: url,
+          changefreq: meta.changefreq,
+          priority: meta.priority,
+          image: socialImage,
+        });
+      }
+    }
+  });
 
-      return {
-        loc: new URL(section.path, siteMeta.siteUrl).toString(),
-        changefreq: meta.changefreq,
-        priority: meta.priority,
-        image: socialImage,
-      };
-    }),
-  ];
+  // Legal pages: low priority but indexable
+  uniqueUrls.set(new URL("/privacy", siteMeta.siteUrl).toString(), {
+    loc: new URL("/privacy", siteMeta.siteUrl).toString(),
+    changefreq: "monthly",
+    priority: "0.3",
+    image: socialImage,
+  });
+
+  uniqueUrls.set(new URL("/terms", siteMeta.siteUrl).toString(), {
+    loc: new URL("/terms", siteMeta.siteUrl).toString(),
+    changefreq: "monthly",
+    priority: "0.3",
+    image: socialImage,
+  });
+
+  const urlEntries = Array.from(uniqueUrls.values());
 
   const urlset = urlEntries
     .map((entry) => {

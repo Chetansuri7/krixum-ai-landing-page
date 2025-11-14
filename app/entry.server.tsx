@@ -18,7 +18,7 @@ export default async function handleRequest(
       const normalized = section.toLowerCase();
       const sectionToPath: Record<string, string> = {
         features: "/features",
-        advantages: "/advantages",
+        benefits: "/benefits",
         models: "/models",
         pricing: "/pricing",
         faq: "/faq",
