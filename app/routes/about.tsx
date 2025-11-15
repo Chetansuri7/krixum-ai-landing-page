@@ -115,7 +115,6 @@ export default function AboutPage() {
         openGraph={{
           title: pageTitle,
           description: pageDescription,
-          url: canonicalUrl,
           type: "website",
           images: [
             {

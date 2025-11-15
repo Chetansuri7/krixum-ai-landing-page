@@ -1,9 +1,7 @@
-import type { Route } from "./+types/pricing";
-
 import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
-import { PricingSection } from "~/components/pricing-section";
+import { PricingSection } from "~/components/legacy/pricing-section";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
 import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 

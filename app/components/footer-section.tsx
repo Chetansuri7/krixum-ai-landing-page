@@ -37,25 +37,19 @@ export function FooterSection() {
 
   const footerLinks: Record<string, FooterLink[]> = {
     product: [
-      { name: "Features overview", href: "features", available: true, kind: "section" },
-      { name: "Service categories", href: "categories", available: true, kind: "section" },
-      { name: "Pricing & partners", href: "pricing", available: true, kind: "section" },
-      { name: "How it works", href: "how-it-works", available: true, kind: "section" },
-    ],
-    resources: [
+      { name: "Benefits", href: "benefits", available: true, kind: "section" },
       { name: "Overview", href: "overview", available: true, kind: "section" },
       { name: "Highlights", href: "highlights", available: true, kind: "section" },
-      { name: "Benefits", href: "/benefits", available: true, kind: "page" },
-      { name: "FAQ", href: "/faq", available: true, kind: "page" },
+      { name: "Workflow", href: "how-it-works", available: true, kind: "section" },
     ],
     company: [
-      { name: "Contact us", href: "/contact", available: true, kind: "page" },
+      { name: "Contact", href: "/contact", available: true, kind: "page" },
       { name: "About", href: "/about", available: true, kind: "page" },
       { name: "Careers", href: "/careers", available: true, kind: "page" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "/privacy", available: true, kind: "page" },
-      { name: "Terms of Service", href: "/terms", available: true, kind: "page" },
+      { name: "Privacy", href: "/privacy", available: true, kind: "page" },
+      { name: "Terms", href: "/terms", available: true, kind: "page" },
     ],
   };
 
@@ -105,7 +99,7 @@ export function FooterSection() {
   return (
     <footer id="footer" className="bg-background border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center space-x-2 mb-4 group cursor-pointer">
@@ -148,17 +142,6 @@ export function FooterSection() {
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
-                <li key={link.name}>
-                  {renderLink(link)}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Resources</h3>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   {renderLink(link)}
                 </li>

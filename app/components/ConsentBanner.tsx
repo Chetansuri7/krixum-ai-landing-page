@@ -147,7 +147,7 @@ export function ConsentBanner() {
             >
               Decline
             </button>
-            <a href="/cookies" style={{ fontSize: "13px", color: "#6b7280", textDecoration: "underline", marginLeft: isNarrow ? 0 : 6 }}>Cookie Policy</a>
+            <a href="/privacy" style={{ fontSize: "13px", color: "#6b7280", textDecoration: "underline", marginLeft: isNarrow ? 0 : 6 }}>Cookie Policy</a>
           </div>
         </div>
       </div>

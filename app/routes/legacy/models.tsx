@@ -1,9 +1,7 @@
-import type { Route } from "./+types/models";
-
 import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
-import { ModelsSection } from "~/components/models-section";
+import { ModelsSection } from "~/components/legacy/models-section";
 import { marketingSections, siteMeta } from "~/lib/site-metadata";
 import { EnhancedSEO } from "~/components/seo/enhanced-seo";
 

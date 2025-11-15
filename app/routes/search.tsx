@@ -5,7 +5,7 @@ import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
 import { EnhancedSEO } from "~/components/seo/enhanced-seo";
-import { siteMeta, marketingSections } from "~/lib/site-metadata";
+import { siteMeta } from "~/lib/site-metadata";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
@@ -86,24 +86,6 @@ export default function SearchPage() {
       description: "Get answers to common questions about searching, comparing, and booking services with Krixum",
       url: "/#faq",
       type: "section"
-    },
-    {
-      title: "Features",
-      description: "Explore Krixum features for simpler, faster booking across taxis, home services, and more",
-      url: "/features",
-      type: "page"
-    },
-    {
-      title: "Pricing",
-      description: "Provider partnerships and platform options - Learn how we work with service providers",
-      url: "/pricing",
-      type: "page"
-    },
-    {
-      title: "Categories",
-      description: "See the service categories supported today and what's next - Taxis, home services, and more",
-      url: "/models",
-      type: "page"
     },
     {
       title: "Contact",

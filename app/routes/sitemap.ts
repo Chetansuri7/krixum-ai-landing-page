@@ -55,6 +55,21 @@ export async function loader({}: LoaderFunctionArgs) {
     }
   });
 
+  // Important pages: about, careers
+  uniqueUrls.set(new URL("/about", siteMeta.siteUrl).toString(), {
+    loc: new URL("/about", siteMeta.siteUrl).toString(),
+    changefreq: "monthly",
+    priority: "0.8",
+    image: socialImage,
+  });
+
+  uniqueUrls.set(new URL("/careers", siteMeta.siteUrl).toString(), {
+    loc: new URL("/careers", siteMeta.siteUrl).toString(),
+    changefreq: "monthly",
+    priority: "0.7",
+    image: socialImage,
+  });
+
   // Legal pages: low priority but indexable
   uniqueUrls.set(new URL("/privacy", siteMeta.siteUrl).toString(), {
     loc: new URL("/privacy", siteMeta.siteUrl).toString(),

@@ -17,10 +17,7 @@ export default async function handleRequest(
     if (url.pathname === "/" && section) {
       const normalized = section.toLowerCase();
       const sectionToPath: Record<string, string> = {
-        features: "/features",
         benefits: "/benefits",
-        models: "/models",
-        pricing: "/pricing",
         faq: "/faq",
         contact: "/contact",
       };

@@ -84,25 +84,4 @@ export const marketingSections: MarketingSection[] = [
     description: "Reach out for demos, partnerships, or support.",
     sectionId: "contact",
   },
-  {
-    id: "features",
-    path: "/features",
-    title: "Features",
-    description: "Explore Krixum features for simpler, faster booking.",
-    sectionId: "features",
-  },
-  {
-    id: "models",
-    path: "/models",
-    title: "Categories",
-    description: "See the service categories supported today and what's next.",
-    sectionId: "categories",
-  },
-  {
-    id: "pricing",
-    path: "/pricing",
-    title: "Pricing",
-    description: "Provider partnerships and platform options.",
-    sectionId: "pricing",
-  },
 ];
