@@ -113,7 +113,7 @@ export function FooterSection() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-              Search once. Book anything. Compare local services in one place with payment protection.
+              One app to search, compare, and book — taxis, home services, delivery, whatever you need.
             </p>
             <div className="flex space-x-4">
               <button className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
@@ -180,6 +180,14 @@ export function FooterSection() {
             </p>
             <div className="flex items-center space-x-4 mt-4 sm:mt-0">
               <span className="text-sm text-muted-foreground">Made with ❤️ for AI enthusiasts</span>
+              <a
+                href="https://www.freepik.com/free-vector/real-estate-searching-illustration-with-smartphone_10182451.htm#fromView=keyword&page=5&position=28&uuid=5e75d9e4-c44c-4f77-a63a-e5d25860ef81&query=Local+seo+services"
+                className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-4"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Illustration by Freepik
+              </a>
             </div>
           </div>
         </div>

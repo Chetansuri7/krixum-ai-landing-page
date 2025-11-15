@@ -23,9 +23,12 @@ export function HeroSection() {
                 </span>
                 <span className="block text-foreground">Book instantly.</span>
               </h1>
-              {/* AI emphasis under headline removed per request */}
+              {/* Clarifying text */}
+              <p className="text-sm sm:text-base font-medium text-primary/90">
+                No apps needed. We check all providers for you in seconds.
+              </p>
               <p className="text-pretty text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[720px] mx-auto lg:mx-0">
-                Tell Krixum what you need. One AI agent surfaces options and prices across apps, compares them side-by-side, and books with payment protection—or browse and compare yourself in one place.
+                Tell Krixum what you need. Our AI surfaces options and prices across apps, compares them side-by-side, and books with payment protection—or browse and compare yourself in one place.
               </p>
             </div>
 
@@ -43,7 +46,7 @@ export function HeroSection() {
               <div className="hidden sm:block h-12 w-px bg-border"></div>
               <div className="text-center lg:text-left">
                 <div className="text-3xl sm:text-4xl font-bold text-foreground">Protected</div>
-                <div className="text-sm text-muted-foreground">Escrow‑backed booking</div>
+                <div className="text-sm text-muted-foreground">Payment protection</div>
               </div>
             </div>
 
@@ -77,18 +80,18 @@ export function HeroSection() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground pt-4">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm pt-4">
+              <div className="flex items-center gap-2 bg-green-50 dark:bg-green-950/30 px-3 py-2 rounded-full">
+                <svg className="w-5 h-5 text-green-600 dark:text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>No subscription needed</span>
+                <span className="font-medium text-green-700 dark:text-green-400">100% Free to use</span>
               </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-950/30 px-3 py-2 rounded-full">
+                <svg className="w-5 h-5 text-blue-600 dark:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
-                <span>Escrow protected</span>
+                <span className="font-medium text-blue-700 dark:text-blue-400">Payment protected</span>
               </div>
             </div>
           </div>

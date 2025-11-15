@@ -5,8 +5,8 @@ export function OverviewSection() {
     <section id="overview" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 lg:py-16">
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          title="See what one AI booking agent unlocks"
-          description="Krixum’s agentic platform orchestrates rides, deliveries, and local services end to end while you review the outcomes."
+          title="See what our AI unlocks"
+          description="Krixum's AI platform orchestrates rides, deliveries, and local services end to end while you review the outcomes."
         />
 
         {/* Two cards with images, inline within Overview */}
@@ -16,7 +16,7 @@ export function OverviewSection() {
             <div className="flex flex-col md:flex-row items-stretch">
               <div className="flex-1 p-8 md:p-10 lg:p-12">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                  Let the AI agent surface the best ride in seconds
+                  Let AI surface the best ride in seconds
                 </h3>
 
                 <div className="space-y-4">
@@ -48,7 +48,7 @@ export function OverviewSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 w-fit px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium shadow-sm"
                   >
-                    <span>Launch the AI agent</span>
+                    <span>Try Krixum</span>
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M3 2.5a1 1 0 0 1 1.52-.85l12.5 9a1 1 0 0 1 0 1.7l-12.5 9A1 1 0 0 1 3 20.5z" />
                       <path d="M20 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1z" />
@@ -109,7 +109,7 @@ export function OverviewSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 w-fit px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium shadow-sm"
                   >
-                    <span>Launch the AI agent</span>
+                    <span>Try Krixum</span>
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M3 2.5a1 1 0 0 1 1.52-.85l12.5 9a1 1 0 0 1 0 1.7l-12.5 9A1 1 0 0 1 3 20.5z" />
                       <path d="M20 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1z" />

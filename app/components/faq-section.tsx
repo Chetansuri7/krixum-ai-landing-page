@@ -9,12 +9,12 @@ export function FAQSection() {
     <section id="faq" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-6 lg:py-8">
         <SectionHeader
           title="Frequently Asked Questions"
-          description="Everything you need to know about letting Krixum’s agent handle the booking loop"
+          description="Everything you need to know about using Krixum to search, compare, and book services"
         />
 
       {/* FAQ Accordion */}
       <div className="pt-6">
-        <Accordion type="single" collapsible className="w-full rounded-2xl border border-border bg-card">
+        <Accordion type="multiple" defaultValue={["q3", "q4", "q6"]} className="w-full rounded-2xl border border-border bg-card">
           {faqData.map((faq) => (
             <AccordionItem key={faq.id} value={faq.id}>
               <AccordionTrigger className="px-4 sm:px-6">

@@ -10,8 +10,8 @@ export function AdvantagesSection() {
     >
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          title="Why choose Krixum's AI agents?"
-          description="Let an agentic platform plan, compare, and book every service while you stay focused on what matters."
+          title="Why choose Krixum?"
+          description="One app to search, compare, and book — taxis, home services, delivery, whatever you need."
         />
 
         {/* Main Feature Box */}
@@ -54,23 +54,23 @@ export function AdvantagesSection() {
             <div className="order-1 md:order-2 flex h-full flex-col gap-6 md:justify-between">
               <div className="md:hidden">
                 <h3 className="text-2xl font-bold text-foreground mb-2">
-                  One AI platform for every service booking
+                  One app for every service booking
                 </h3>
               </div>
 
               <div className="hidden md:block">
                 <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  One AI platform for every service booking
+                  One app for every service booking
                 </h3>
               </div>
 
               <ul className="space-y-5">
                 {[
-                  "One AI platform for every service.",
+                  "One app for every service.",
                   "One request, every provider surfaced instantly.",
-                  "AI compares prices, ETAs, and ratings side by side.",
+                  "Compare prices, ETAs, and ratings side by side.",
                   "Confirm the best option in seconds—no app juggling.",
-                  "Rides, deliveries, services—one agentic flow.",
+                  "Rides, deliveries, services—one simple workflow.",
                   "Every booking tracked automatically in one timeline.",
                 ].map((text, index) => (
                   <li key={text} className="flex items-start gap-3">
@@ -99,7 +99,7 @@ export function AdvantagesSection() {
                   to="https://chat.krixum.com/"
                   className="global_btn inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  <span>Try the AI Agent</span>
+                  <span>Try Krixum</span>
                   <svg
                     className="w-3 h-3"
                     fill="currentColor"
