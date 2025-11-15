@@ -1,0 +1,42 @@
+privacy policy
+  Last updated March, 2025
+
+Pixum Labs Private Limited (operating as Krixum AI) is committed to safeguarding the privacy and security of the personal information you share with us.
+This policy explains what we collect, why we collect it, and how you can exercise control over your data when you use our website, apps, chat experiences, or partner touchpoints.
+
+Scope
+This policy applies to all services offered directly by Krixum AI, including web browsing, mobile apps, the AI search agent, and any integrations where we act as the data controller.
+It does not cover third-party sites or services that maintain their own privacy notices—please review those providers’ policies before sharing information with them.
+
+Information We Collect
+- Personal identifiers such as your name, email, phone number, profile picture, and payment details when you create an account or book a service.
+- Booking data including search terms, itinerary choices, service categories, provider preferences, and ratings or reviews you submit.
+- Device, location, and usage metadata collected automatically through cookies, web beacons, analytics tools, and system logs to keep the experience fast, secure, and reliable.
+
+How We Use Your Data
+We use the information above to:
+- Deliver the services you request (search, compare, booking, notifications, escrow management).
+- Improve the platform by analyzing trends, customer feedback, and service performance.
+- Communicate with you via email, chat, or phone about confirmations, updates, and support requests.
+
+Sharing & Disclosure
+We share your information only in the following limited situations:
+- With trusted service partners (ride, delivery, and home-service providers) to fulfill your booking or reservation.
+- With analytics, security, and payment vendors who help operate the platform under strict confidentiality commitments.
+- When required to comply with legal obligations, respond to lawful requests, or enforce our terms.
+
+Data Retention and Security
+We retain your data for as long as necessary to provide our services and to comply with legal and regulatory obligations. We secure all personal data using industry-standard encryption and access controls, and we regularly monitor for unauthorized activity.
+
+Cookies and Tracking
+We use cookies and similar technologies to remember your preferences, accelerate page loads, personalize content, and analyze trends. You can control cookies through your browser settings, but disabling them may reduce functionality.
+
+Your Choices
+You can update your profile, manage communication preferences, or request deletion through the account settings inside the app.
+For other requests (data access, portability, correction, or objection), contact us at the details below and we will respond within a reasonable timeframe.
+
+Children
+Our services are intended for users who are at least 18 years old or the minimum age permitted in their jurisdiction. We do not knowingly collect personal data from children without parental consent.
+
+Contact
+Questions or requests? Email general support at support@krixum.com or call +91-73497-29317. For privacy- or policy-specific inquiries, please write to policy@krixum.com.

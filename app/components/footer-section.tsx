@@ -38,27 +38,24 @@ export function FooterSection() {
   const footerLinks: Record<string, FooterLink[]> = {
     product: [
       { name: "Features overview", href: "features", available: true, kind: "section" },
-      { name: "Model showcase", href: "models", available: true, kind: "section" },
-      { name: "Pricing overview", href: "pricing", available: true, kind: "section" },
-      { name: "Platform deep dive", href: "/features", available: true, kind: "page" },
+      { name: "Service categories", href: "categories", available: true, kind: "section" },
+      { name: "Pricing & partners", href: "pricing", available: true, kind: "section" },
+      { name: "How it works", href: "how-it-works", available: true, kind: "section" },
     ],
     resources: [
+      { name: "Overview", href: "overview", available: true, kind: "section" },
       { name: "Highlights", href: "highlights", available: true, kind: "section" },
       { name: "Benefits", href: "/benefits", available: true, kind: "page" },
-      { name: "Model catalog", href: "/models", available: true, kind: "page" },
-      { name: "Documentation", href: "https://docs.krixum.com", available: false, kind: "external" },
+      { name: "FAQ", href: "/faq", available: true, kind: "page" },
     ],
     company: [
-      { name: "About", href: "/about", available: false, kind: "page" },
-      { name: "Careers", href: "/careers", available: false, kind: "page" },
-      { name: "Contact", href: "/contact", available: true, kind: "page" },
-      { name: "Press", href: "/press", available: false, kind: "page" },
+      { name: "Contact us", href: "/contact", available: true, kind: "page" },
+      { name: "About", href: "/about", available: true, kind: "page" },
+      { name: "Careers", href: "/careers", available: true, kind: "page" },
     ],
     legal: [
       { name: "Privacy Policy", href: "/privacy", available: true, kind: "page" },
       { name: "Terms of Service", href: "/terms", available: true, kind: "page" },
-      { name: "Cookie Policy", href: "/cookies", available: false, kind: "page" },
-      { name: "GDPR", href: "/gdpr", available: false, kind: "page" },
     ],
   };
 

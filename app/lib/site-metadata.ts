@@ -1,7 +1,9 @@
+import { brandInfo } from "./brand-info";
+
 export const SITE_URL = "https://krixum.com" as const;
 
 export const siteMeta = {
-  name: "Krixum",
+  name: brandInfo.brandName,
   tagline: "Search once. Book anything.",
   title: "Krixum - AI powered service booking app",
   description:
@@ -21,7 +23,10 @@ export const siteMeta = {
   siteUrl: SITE_URL,
   locale: "en_US",
   twitterHandle: "@krixumai",
-  contactEmail: "hello@krixum.com",
+  contactEmail: brandInfo.supportEmail,
+  policyEmail: brandInfo.policyEmail,
+  supportPhone: brandInfo.supportPhone,
+  companyName: brandInfo.companyName,
   logoPath: "/logo.svg",
   socialImagePath: "/logo.svg", // Using existing logo until og-image.png is created
   // Used for Google Sitelinks Search Box; must accept a "q" param

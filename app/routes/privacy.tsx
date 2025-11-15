@@ -3,6 +3,7 @@ import { Header } from "~/components/header";
 import { FooterSection } from "~/components/footer-section";
 import { ContentProvider } from "~/lib/content-context";
 import { EnhancedSEO } from "~/components/seo/enhanced-seo";
+import { brandInfo } from "~/lib/brand-info";
 import { siteMeta } from "~/lib/site-metadata";
 
 const title = `Privacy Policy – ${siteMeta.name}`;
@@ -46,19 +47,68 @@ export default function PrivacyPage() {
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1 container mx-auto px-4 py-8 prose prose-slate dark:prose-invert max-w-4xl">
+        <main className="flex-1 container mx-auto px-4 py-8 prose prose-slate dark:prose-invert max-w-4xl space-y-6">
           <h1>Privacy Policy</h1>
-          <p>We respect your privacy and are committed to protecting your personal information. This policy describes what we collect, how we use it, and your rights.</p>
-          <h2>Information We Collect</h2>
-          <p>Account details you provide and technical information like device and usage metadata necessary to operate the service.</p>
-          <h2>How We Use Information</h2>
-          <p>To provide and improve the product, secure the platform, and communicate with you. We do not sell personal data.</p>
-          <h2>Contact</h2>
-          <p>Questions? Email {siteMeta.contactEmail}.</p>
+          <p>
+            {brandInfo.companyName} (operating as {brandInfo.brandName}) is committed to protecting your personal information.
+            This privacy policy explains how we collect, use, disclose, and safeguard the information you entrust to us when you use our website, apps, and services.
+          </p>
+
+          <section>
+            <h2>Scope</h2>
+            <p>
+              This policy applies to all interactions with {brandInfo.brandName} across web, mobile, chat, or partner touchpoints.
+              It does not cover the practices of third-party providers who have their own privacy notices.
+            </p>
+          </section>
+
+          <section>
+            <h2>Information We Collect</h2>
+            <ul>
+              <li>Personal identifiers (name, email, phone) you submit to create an account or place a booking.</li>
+              <li>Transactional data such as searches, bookings, preferences, and feedback you provide.</li>
+              <li>Device, usage, and location metadata collected automatically to keep the service secure and performant.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>How We Use Information</h2>
+            <p>
+              We use your information to search, compare, and reserve services on your behalf, to maintain your booking history, to improve the Krixum experience, and to communicate important updates.
+              We do not sell your personal data to third parties.
+            </p>
+          </section>
+
+          <section>
+            <h2>Sharing & Disclosure</h2>
+            <p>
+              We share information with trusted partners to fulfill bookings, with analytics providers to improve the product, and if required by law enforcement.
+              Any such sharing is limited to what is necessary for the intended purpose.
+            </p>
+          </section>
+
+          <section>
+            <h2>Your Choices</h2>
+            <p>
+              You can manage notifications, update your profile, and request deletion through the app or by contacting us. We retain data only as long as needed for operations or compliance.
+            </p>
+          </section>
+
+          <section>
+            <h2>Security</h2>
+            <p>We protect your data with industry-standard controls and monitor access to keep your information safe.</p>
+          </section>
+
+          <section>
+            <h2>Contact</h2>
+            <p>
+              For general support, email <a href={`mailto:${brandInfo.supportEmail}`}>{brandInfo.supportEmail}</a> or call <a href={`tel:${brandInfo.supportPhone}`}>{brandInfo.supportPhone}</a>.
+              For privacy-specific questions, please write to <a href={`mailto:${brandInfo.policyEmail}`}>{brandInfo.policyEmail}</a>.
+            </p>
+          </section>
         </main>
         <FooterSection />
       </div>
     </ContentProvider>
   );
 }
-

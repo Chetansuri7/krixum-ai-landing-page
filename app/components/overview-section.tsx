@@ -62,11 +62,11 @@ export function OverviewSection() {
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain max-w-[520px] lg:max-w-[600px]"
-                  src="/booking-engine.svg"
-                  alt="Krixum comparison illustration"
-                  width={1510}
-                  height={1573}
-                  title="Booking Engine"
+                  src="/ai-ride-agent.svg"
+                  alt="AI agent surfacing the best ride options"
+                  width={500}
+                  height={500}
+                  title="AI Ride Agent"
                 />
               </figure>
             </div>
@@ -123,11 +123,11 @@ export function OverviewSection() {
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain max-w-[520px] lg:max-w-[600px]"
-                  src="/booking-engine.svg"
-                  alt="Hotel suppliers illustration"
-                  width={1510}
-                  height={1573}
-                  title="Hotel Suppliers"
+                  src="/home-service-matchmaker.svg"
+                  alt="AI matchmaker for home-service providers"
+                  width={600}
+                  height={600}
+                  title="Home Service Matchmaker"
                 />
               </figure>
             </div>
