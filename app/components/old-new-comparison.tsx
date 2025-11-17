@@ -25,7 +25,7 @@ export function OldNewComparison({ before, after }: ComparisonProps) {
     <div className="grid lg:grid-cols-2 gap-6">
       {/* Old Way */}
       <div className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col">
-        <div className="p-3 bg-destructive/5 border-b border-destructive/20">
+        <div className="p-3 bg-destructive/10 border-b border-destructive/20">
           <h3 className="text-center text-base font-semibold leading-tight text-destructive">{before.title}</h3>
         </div>
 
@@ -43,8 +43,8 @@ export function OldNewComparison({ before, after }: ComparisonProps) {
 
       </div>
 
-      {/* New Way - Enhanced */}
-      <div className="relative bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 border-2 border-green-300 dark:border-green-700 rounded-2xl overflow-hidden flex flex-col shadow-lg">
+      {/* New Way */}
+      <div className="bg-card border-2 border-green-300 dark:border-green-700 rounded-2xl overflow-hidden flex flex-col">
         <div className="p-3 bg-green-100 dark:bg-green-900/50 border-b-2 border-green-300 dark:border-green-700">
           <h3 className="text-center text-base font-bold leading-tight text-green-700 dark:text-green-400">{after.title}</h3>
         </div>

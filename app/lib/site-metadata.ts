@@ -4,8 +4,8 @@ export const SITE_URL = "https://krixum.com" as const;
 
 export const siteMeta = {
   name: brandInfo.brandName,
-  tagline: "Search once. Book anything.",
-  title: "Krixum - AI powered service booking app",
+  tagline: "AI-Powered Search Engine That Completes Your Tasks",
+  title: "Krixum | AI-Powered Search Engine That Completes Your Tasks",
   description:
     "Search, compare, and book local services in one place. See all options side-by-side and book with payment protection — no more app hopping.",
   keywords: [
