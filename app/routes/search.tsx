@@ -10,7 +10,7 @@ import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   const title = `Search – ${siteMeta.name}`;
   const description = "Search Krixum pages and content - Find information about booking services, features, and more.";
   const canonicalUrl = new URL("/search", siteMeta.siteUrl).toString();
@@ -126,14 +126,14 @@ export default function SearchPage() {
           { name: "Search", url: `${siteMeta.siteUrl}/search` }
         ]}
       />
-      
+
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1 bg-primary-foreground py-8">
+        <main className="flex-1 bg-background py-8">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <h1 className="text-3xl font-bold mb-8">Search</h1>
-              
+
               <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2 mb-8">
                 <Input
                   type="search"
@@ -171,7 +171,7 @@ export default function SearchPage() {
                     </CardContent>
                   </Card>
                 ))}
-                
+
                 {q && results.length === 0 && (
                   <Card>
                     <CardContent className="pt-6">

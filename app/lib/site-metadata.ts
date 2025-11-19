@@ -4,21 +4,20 @@ export const SITE_URL = "https://krixum.com" as const;
 
 export const siteMeta = {
   name: brandInfo.brandName,
-  tagline: "AI-Powered Search Engine That Completes Your Tasks",
-  title: "Krixum | AI-Powered Search Engine That Completes Your Tasks",
+  tagline: "Consumer-Focused Search Engine That Completes Tasks",
+  title: "Krixum | Consumer-Focused Search Engine That Completes Tasks",
   description:
-    "Search, compare, and book local services in one place. See all options side-by-side and book with payment protection — no more app hopping.",
+    "Search once, find everything. Krixum connects you with local services, taxis, and providers in one place. Compare options and complete tasks without the app-hopping.",
   keywords: [
     "Krixum",
+    "task search engine",
     "local services",
     "compare and book",
     "service aggregator",
     "taxis and rides",
     "home services",
-    "quick commerce",
-    "unified booking",
-    "escrow protection",
-    "AI booking API",
+    "unified search",
+    "task completion",
   ],
   siteUrl: SITE_URL,
   locale: "en_US",

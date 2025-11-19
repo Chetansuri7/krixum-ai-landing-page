@@ -56,7 +56,7 @@ export default function CareersPage() {
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1 bg-primary-foreground">
+        <main className="flex-1 bg-background">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 space-y-10">
             <section className="space-y-4">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">

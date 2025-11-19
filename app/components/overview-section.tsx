@@ -1,30 +1,31 @@
 import { SectionHeader } from "~/components/ui/section-header";
+import { ArrowRight } from "lucide-react";
 
 export function OverviewSection() {
   return (
-    <section id="overview" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-12 lg:py-16">
+    <section id="overview" className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-10 lg:py-14">
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
-          title="See what our AI unlocks"
-          description="Krixum's AI platform orchestrates rides, deliveries, and local services end to end while you review the outcomes."
+          title="How Krixum Works"
+          description="We bridge the gap between searching for a service and actually getting it done."
         />
 
         {/* Two cards with images, inline within Overview */}
         <div className="space-y-6">
           {/* Card 1 */}
-          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+          <div className="ms-card">
             <div className="flex flex-col md:flex-row items-stretch">
               <div className="flex-1 p-8 md:p-10 lg:p-12">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                  Let AI surface the best ride in seconds
+                  Search once, see every ride option
                 </h3>
 
                 <div className="space-y-4">
                   {[
-                    "One request triggers Uber, Ola, Rapido, and Namma Yatri at once.",
-                    "See fares, surge multipliers, ETAs, and safety scores update together.",
-                    "Use smart filters for payment type, comfort level, or provider reputation.",
-                    "Tap approve and the agent completes the booking in your chosen app.",
+                    "Type 'ride to airport' and see results from Uber, Ola, Rapido, and more.",
+                    "Compare fares, surge pricing, and ETAs side-by-side in real time.",
+                    "Filter by price, comfort, or speed to find exactly what you need.",
+                    "Book directly or get deep-linked to the provider app to finish.",
                   ].map((text, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" className="mt-1.5 flex-shrink-0" aria-hidden="true">
@@ -48,44 +49,41 @@ export function OverviewSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 w-fit px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium shadow-sm"
                   >
-                    <span>Try Krixum</span>
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M3 2.5a1 1 0 0 1 1.52-.85l12.5 9a1 1 0 0 1 0 1.7l-12.5 9A1 1 0 0 1 3 20.5z" />
-                      <path d="M20 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1z" />
-                    </svg>
+                    <span>Start Searching</span>
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
 
-              <figure className="md:w-[40%] lg:w-[38%] flex items-center justify-center p-8 bg-muted/30">
+              <figure className="md:w-[40%] lg:w-[38%] flex items-center justify-center p-8 bg-muted/30 ms-card__media">
                 <img
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain max-w-[520px] lg:max-w-[600px]"
                   src="/ai-ride-agent.svg"
-                  alt="AI agent surfacing the best ride options"
+                  alt="Comparing ride options"
                   width={500}
                   height={500}
-                  title="AI Ride Agent"
+                  title="Ride Comparison"
                 />
               </figure>
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+          <div className="ms-card">
             <div className="flex flex-col md:flex-row items-stretch">
               <div className="flex-1 p-8 md:p-10 lg:p-12">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                  AI matchmaker for home-service providers
+                  Find and book trusted local pros
                 </h3>
 
                 <div className="space-y-4">
                   {[
-                    "Describe the job once—your agent pulls quotes from every connected marketplace.",
-                    "Compare pricing, slots, and ratings in one AI-curated view.",
-                    "Approve and auto-fill the partner handoff without retyping details.",
-                    "Let the agent track follow-ups, visits, and completion in one timeline.",
+                    "Search for 'plumber', 'cleaner', or 'electrician' in your area.",
+                    "See verified providers with real ratings and transparent pricing.",
+                    "Request quotes or book instantly with platform protection.",
+                    "We handle the details so you can get the job done without the hassle.",
                   ].map((text, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" className="mt-1.5 flex-shrink-0" aria-hidden="true">
@@ -109,25 +107,22 @@ export function OverviewSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 w-fit px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium shadow-sm"
                   >
-                    <span>Try Krixum</span>
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M3 2.5a1 1 0 0 1 1.52-.85l12.5 9a1 1 0 0 1 0 1.7l-12.5 9A1 1 0 0 1 3 20.5z" />
-                      <path d="M20 5a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1z" />
-                    </svg>
+                    <span>Start Searching</span>
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
 
-              <figure className="md:w-[40%] lg:w-[38%] flex items-center justify-center p-8 bg-muted/30">
+              <figure className="md:w-[40%] lg:w-[38%] flex items-center justify-center p-8 bg-muted/30 ms-card__media">
                 <img
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-contain max-w-[520px] lg:max-w-[600px]"
                   src="/home-service-matchmaker.svg"
-                  alt="AI matchmaker for home-service providers"
+                  alt="Finding local professionals"
                   width={600}
                   height={600}
-                  title="Home Service Matchmaker"
+                  title="Local Pros"
                 />
               </figure>
             </div>

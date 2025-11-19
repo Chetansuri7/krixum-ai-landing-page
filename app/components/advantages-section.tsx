@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { ArrowRight } from "lucide-react";
 
 import { SectionHeader } from "~/components/ui/section-header";
 
@@ -6,21 +7,21 @@ export function AdvantagesSection() {
   return (
     <section
       id="benefits"
-      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-12 lg:py-16"
+      className="mx-auto flex w-full max-w-7xl px-4 sm:px-6 py-10 lg:py-14"
     >
       <div className="flex flex-col gap-8 w-full">
         <SectionHeader
           title="Why choose Krixum?"
-          description="One app to search, compare, and book — taxis, home services, delivery, whatever you need."
+          description="The search engine that doesn't just show links—it helps you finish the job."
         />
 
         {/* Main Feature Box */}
-        <div className="bg-card border border-border rounded-3xl overflow-hidden">
+        <div className="ms-card overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 md:items-stretch p-8 md:p-12">
             {/* Image Side */}
             <div className="order-2 md:order-1">
               <div className="w-full h-full mx-auto md:max-w-sm lg:max-w-md">
-                <div className="rounded-2xl bg-card border border-foreground/20 overflow-hidden">
+                <div className="rounded-2xl bg-card border border-foreground/20 overflow-hidden shadow-sm">
                   {/* Mock browser header */}
                   <div className="flex items-center gap-3 px-4 py-2 border-b border-foreground/20 bg-muted/40">
                     <div className="flex items-center gap-1.5">
@@ -30,7 +31,7 @@ export function AdvantagesSection() {
                     </div>
                     <div className="flex-1">
                       <div className="h-8 rounded-md bg-background border border-foreground/15 px-3 flex items-center text-muted-foreground text-sm">
-                        krixum.com
+                        krixum.com/search
                       </div>
                     </div>
                   </div>
@@ -40,7 +41,7 @@ export function AdvantagesSection() {
                     <div className="relative h-[360px] md:h-[420px] w-full">
                       <img
                         src="/usability-testing-pana.svg"
-                        alt="Usability testing illustration"
+                        alt="Search engine interface illustration"
                         loading="lazy"
                         className="absolute inset-0 w-full h-full object-contain"
                       />
@@ -54,24 +55,24 @@ export function AdvantagesSection() {
             <div className="order-1 md:order-2 flex h-full flex-col gap-6 md:justify-between">
               <div className="md:hidden">
                 <h3 className="text-2xl font-bold text-foreground mb-2">
-                  One app for every service booking
+                  The Search Engine for Real World Tasks
                 </h3>
               </div>
 
               <div className="hidden md:block">
                 <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  One app for every service booking
+                  The Search Engine for Real World Tasks
                 </h3>
               </div>
 
               <ul className="space-y-5">
                 {[
-                  "One app for every service.",
-                  "One request, every provider surfaced instantly.",
-                  "Compare prices, ETAs, and ratings side by side.",
-                  "Confirm the best option in seconds—no app juggling.",
-                  "Rides, deliveries, services—one simple workflow.",
-                  "Every booking tracked automatically in one timeline.",
+                  "Search once, find every option.",
+                  "Compare providers, prices, and ratings instantly.",
+                  "No more opening 10 different apps.",
+                  "Book directly or get deep-linked to finish.",
+                  "From rides to repairs, it starts with a search.",
+                  "Trusted results, verified providers.",
                 ].map((text, index) => (
                   <li key={text} className="flex items-start gap-3">
                     <span className="flex-shrink-0 mt-0.5">
@@ -99,23 +100,15 @@ export function AdvantagesSection() {
                   to="https://chat.krixum.com/"
                   className="global_btn inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  <span>Try Krixum</span>
-                  <svg
-                    className="w-3 h-3"
-                    fill="currentColor"
-                    viewBox="0 0 320 512"
-                  >
-                    <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
-                  </svg>
+                  <span>Start Searching</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/contact"
                   className="global_btn_icon inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground hover:bg-muted transition-colors"
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 512 512">
-                    <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" />
-                  </svg>
-                  <span>Talk with an Expert</span>
+                  <ArrowRight className="w-4 h-4" />
+                  <span>Partner with Us</span>
                 </Link>
               </div>
             </div>

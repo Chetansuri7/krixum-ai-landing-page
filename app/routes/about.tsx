@@ -156,7 +156,7 @@ export default function AboutPage() {
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1 bg-primary-foreground">
+        <main className="flex-1 bg-background">
           <div className="mx-auto max-w-6xl px-4 py-16 space-y-16 sm:px-6 lg:px-8 text-foreground">
             <section id="about" className="space-y-6">
               <SectionHeader

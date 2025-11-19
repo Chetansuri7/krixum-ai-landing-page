@@ -38,7 +38,7 @@ export default function AdvantagesPage() {
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1 bg-primary-foreground">
+        <main className="flex-1 bg-background">
           <AdvantagesSection />
         </main>
         <FooterSection />

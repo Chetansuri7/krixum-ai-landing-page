@@ -19,7 +19,7 @@ const pageDescription =
 
 const queryTypes = [
   "Sales",
-  "Support", 
+  "Support",
   "Billing",
 ];
 
@@ -74,13 +74,13 @@ export default function ContactPage() {
       />
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
-        <main className="flex-1 bg-primary-foreground">
+        <main className="flex-1 bg-background">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 py-16">
             <header className="mb-8">
               <h1 className="text-3xl font-bold text-foreground mb-2">Contact our team</h1>
               <p className="text-muted-foreground">Get in touch and we'll get back to you within 24 hours.</p>
             </header>
-            
+
             <form className="space-y-6" onSubmit={handleSubmit} aria-label="Contact form">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">

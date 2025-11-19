@@ -2,243 +2,214 @@ import type { SiteContent } from './content-types';
 
 export const siteContent: SiteContent = {
   hero: {
-    title: "Search once. Book anything.",
-    subtitle: "All Services. One Platform. Guaranteed.",
-    headline: "Search once. Book anything.",
-    description: "Compare taxis, home services, quick commerce, and local providers in one place. Book with payment protection. AI-powered or traditional search.",
+    title: "Consumer-Focused Search Engine That Completes Tasks",
+    subtitle: "Search. Find. Done.",
+    headline: "Consumer-Focused Search Engine That Completes Tasks",
+    description: "Stop juggling apps. Krixum is the search engine that helps you find and finish tasks—from booking rides to hiring pros—all in one place.",
     primaryCTA: "Start Searching",
-    secondaryCTA: "See How It Works",
-    trustCount: "100,000+",
-    trustMessage: "successful bookings"
+    secondaryCTA: "How It Works",
+    trustCount: "Growing Fast",
+    trustMessage: "searches powered daily"
   },
   models: [
     {
       name: "Taxis & Rides",
-      provider: "4+ Providers",
-      description: "Compare Ola, Uber, Rapido, Namma Yatri in real time and book with protection.",
+      provider: "Compare All",
+      description: "See options from Uber, Ola, Rapido, and local providers in one search.",
       icon: "🚗",
       color: "from-blue-400 to-cyan-500"
     },
     {
       name: "Home Services",
-      provider: "100+ Providers",
-      description: "Plumbers, electricians, cleaners - verified local providers with platform guarantee.",
+      provider: "Local Pros",
+      description: "Find and connect with plumbers, electricians, and cleaners near you.",
       icon: "🔧",
       color: "from-purple-400 to-pink-500"
     },
     {
-      name: "Quick Commerce",
-      provider: "5+ Apps",
-      description: "Compare delivery times and availability across Blinkit, Zepto, Swiggy Instamart, and more.",
-      icon: "🛒",
+      name: "Professional Help",
+      provider: "Experts",
+      description: "Discover top-rated interior designers, financial advisors, and consultants.",
+      icon: "💼",
       color: "from-orange-400 to-red-500"
     },
     {
-      name: "Food Delivery",
-      provider: "3+ Apps",
-      description: "Find restaurants, compare delivery times and offers across Zomato, Swiggy, and more.",
-      icon: "🍕",
+      name: "Local Discovery",
+      provider: "City Wide",
+      description: "Search for anything you need in your city and get actionable results.",
+      icon: "📍",
       color: "from-green-400 to-emerald-500"
     }
   ],
   features: [
     {
-      title: "Compare All Options Instantly",
-      description: "Search once and see prices, ratings, and availability from all providers - big brands and local heroes - side by side.",
-      icon: "🔍"
+      title: "Search That Does More",
+      description: "Don't just find a link. Find a result you can act on. We show you options that help you complete your task, not just read about it.",
+      icon: "🚀"
     },
     {
-      title: "Book with Confidence",
-      description: "Escrow payments, service guarantees, and full recourse. Your money is held until service is confirmed complete.",
+      title: "One Interface, Many Solutions",
+      description: "Whether you need a ride, a repair, or a reservation, start here. We aggregate the best options so you don't have to open ten different apps.",
+      icon: "📱"
+    },
+    {
+      title: "Trust & Transparency",
+      description: "We prioritize quality results. See ratings, reviews, and clear details for every provider we list, helping you make informed decisions.",
       icon: "🛡️"
-    },
-    {
-      title: "Traditional or Conversational",
-      description: "Use our app to browse and book, OR just tell AI what you need. Same platform, your choice of interface.",
-      icon: "🤖"
     }
   ],
   pricing: [
     {
       name: "For Users",
-      price: "₹0",
+      price: "Free",
       period: "forever",
-      description: "Free to search and book. Always.",
+      description: "Search and find what you need without cost.",
       features: [
         "Unlimited searches",
-        "Compare all providers",
-        "Booking protection",
-        "No hidden fees",
-        "No subscription needed"
+        "Compare providers instantly",
+        "Access to local directory",
+        "Direct connection to pros",
+        "No hidden platform fees"
       ],
       cta: "Start Searching",
       popular: true
     },
     {
-      name: "For Large Brands",
-      price: "Placement-based",
-      period: "contact us",
-      description: "Discovery partnership model",
+      name: "For Providers",
+      price: "Get Listed",
+      period: "today",
+      description: "Reach customers searching for your service.",
       features: [
-        "Featured listings",
-        "Performance ads",
-        "Analytics dashboard",
-        "No transaction fees",
-        "Reach qualified users",
-        "Pay per click/redirect"
+        "Create your business profile",
+        "Get discovered by locals",
+        "Receive direct inquiries",
+        "Build your online reputation",
+        "Grow your customer base"
       ],
-      cta: "Partner with Us",
+      cta: "Join Krixum",
       popular: false
     },
     {
-      name: "For Local Providers",
-      price: "Pay per booking",
-      period: "or subscription",
-      description: "Full platform infrastructure",
+      name: "For Partners",
+      price: "Integrate",
+      period: "with us",
+      description: "Connect your inventory directly.",
       features: [
-        "Full booking infrastructure",
-        "Payment processing",
-        "Customer protection",
-        "10-20% commission or ₹50-200/day",
-        "Verified provider badge",
-        "Get discovered by thousands"
+        "API integration support",
+        "High-intent user traffic",
+        "Seamless booking flow",
+        "Enhanced brand visibility",
+        "Strategic partnership"
       ],
-      cta: "Join Platform",
+      cta: "Contact Us",
       popular: false
     }
   ],
   dataTools: {
     title: "How Krixum Works",
-    description: "Three ways we connect you with service providers — all with one goal: save you time and effort.",
+    description: "We bridge the gap between searching for a service and actually getting it done.",
     tools: [
       {
-        name: "Discovery Partners",
-        description: "Browse products on partner apps like Blinkit, Zepto. We show results, you order through their app.",
-        icon: "🔗"
+        name: "Search",
+        description: "Type what you need—'taxi to airport', 'plumber in Austin', 'best interior designer'.",
+        icon: "🔍"
       },
       {
-        name: "Booking Partners",
-        description: "Compare options from Ola, Uber, Rapido and more. Book through us with escrow protection.",
-        icon: "🎯"
+        name: "Compare",
+        description: "See curated results from various providers, apps, and local businesses side-by-side.",
+        icon: "⚖️"
       },
       {
-        name: "Platform Providers",
-        description: "Local plumbers, electricians, tutors get full support - listing, booking, payments, guarantees.",
-        icon: "🏆"
+        name: "Complete",
+        description: "Book directly, request a quote, or get redirected to the right app to finish the job.",
+        icon: "✅"
       }
     ]
   },
   faq: [
     {
-      question: "How does Krixum work?",
-      answer: "Krixum connects you with local service providers through three models: Discovery (redirect to brand apps like Blinkit), Booking (book taxis with escrow protection), and Platform (full infrastructure for local providers like plumbers). You search once, compare all options, and book with guarantee."
+      question: "What exactly is Krixum?",
+      answer: "Krixum is a consumer-focused search engine designed to help you complete tasks. Unlike traditional search engines that just give you links, we show you actionable options—like ride prices, service providers, and booking availability—so you can get things done faster."
     },
     {
-      question: "Is booking through Krixum safe?",
-      answer: "Yes. For Platform and Booking partners, we hold your payment in escrow until service is confirmed complete. If there's an issue, you get a full refund or free replacement. For Discovery partners, you book through their secure apps."
+      question: "Is it free to use?",
+      answer: "Yes, Krixum is completely free for users to search and compare options. You only pay for the actual service you book (like the taxi fare or the plumber's fee), directly to the provider."
     },
     {
-      question: "Do I pay extra fees to use Krixum?",
-      answer: "No. Krixum is free for users. You pay providers directly or via their app. We earn through provider partnerships or small booking fees — not by charging you more."
+      question: "Do you provide the services yourself?",
+      answer: "No, we are a search and discovery platform. We connect you with the best providers—whether they are large apps like Uber/Ola or trusted local businesses. We help you find them; they provide the service."
     },
     {
-      question: "What cities is Krixum available in?",
-      answer: "We’re rolling out categories like taxis and home services first. More categories and cities will expand based on demand — join the waitlist to be notified when we launch in your city."
+      question: "Can I book everything directly on Krixum?",
+      answer: "Our goal is to make every search actionable. For some services, you can book directly or request a quote within Krixum. For others, we'll seamlessly guide you to the provider's app or website to finish the transaction."
     },
     {
-      question: "How is this different from JustDial or Urban Company?",
-      answer: "Unlike JustDial (just phone numbers with no booking), we handle full transactions. Unlike Urban Company (single category with high commissions), we cover all local services with fair pricing. We're the only platform with escrow protection across categories."
+      question: "How do you ensure quality?",
+      answer: "We aim to surface the best options for your needs. We look for rated providers and established services. For direct partners, we work to ensure they meet quality standards, giving you peace of mind."
     },
     {
-      question: "Can I use AI to search and book?",
-      answer: "Yes! Krixum is built API-first with MCP compatibility. You can use our app OR integrate with AI assistants like ChatGPT and Claude to search and book conversationally. Just ask AI what you need, and it handles the rest."
-    },
-    {
-      question: "What if the provider doesn't show up or does bad work?",
-      answer: "For Platform bookings, your payment is held until you confirm service completion. Bad service = instant refund or free replacement. For partner bookings, we mediate disputes and ensure resolution. You're always protected."
-    },
-    {
-      question: "How do you make money if it's free for users?",
-      answer: "We earn through: (1) Placement fees and ads from large brands, (2) Small booking fees (₹10-50) or commissions (2-5%) from partner bookings, (3) Subscriptions or commissions (10-20%) from local providers using our full platform. Fair for everyone."
+      question: "I'm a business owner. How can I get listed?",
+      answer: "We'd love to have you! You can join our platform to get discovered by high-intent customers in your city. Visit our 'Contact' or 'Join' section to get started."
     }
   ]
 };
+
 export const pricingPlans = [
   {
     name: "For Users",
-    price: "₹0",
-    yearlyPrice: "₹0",
+    price: "Free",
+    yearlyPrice: "Free",
     period: "forever",
-    description: "Free to search and book. Always.",
+    description: "Search and find what you need without cost.",
     icon: "🎉",
     features: [
       "Unlimited searches",
-      "Compare all providers",
-      "Booking protection",
-      "No hidden fees",
-      "No subscription needed",
-      "No app switching",
-      "AI-powered search available"
+      "Compare providers instantly",
+      "Access to local directory",
+      "Direct connection to pros",
+      "No hidden platform fees",
+      "Save time and effort"
     ],
     cta: "Start Searching",
     popular: true,
     badge: "Always Free"
   },
   {
-    name: "For Large Brands",
-    price: "Placement-based",
-    yearlyPrice: "Custom",
-    period: "contact us",
-    description: "Discovery partnership model",
-    icon: "🔗",
+    name: "For Providers",
+    price: "Get Listed",
+    yearlyPrice: "Grow",
+    period: "today",
+    description: "Reach customers searching for your service.",
+    icon: "🚀",
     features: [
-      "Featured listings",
-      "Performance ads",
-      "Analytics dashboard",
-      "No transaction fees",
-      "Reach qualified users",
-      "Pay per click/redirect"
+      "Create your business profile",
+      "Get discovered by locals",
+      "Receive direct inquiries",
+      "Build your online reputation",
+      "Grow your customer base",
+      "Simple onboarding"
     ],
-    cta: "Partner with Us",
+    cta: "Join Krixum",
     popular: false,
     badge: null
   },
   {
-    name: "For Local Providers",
-    price: "Pay per booking",
-    yearlyPrice: "₹50-200/day",
-    period: "or subscription",
-    description: "Full platform infrastructure",
-    icon: "🏆",
+    name: "For Partners",
+    price: "Integrate",
+    yearlyPrice: "Scale",
+    period: "with us",
+    description: "Connect your inventory directly.",
+    icon: "🔗",
     features: [
-      "Full booking infrastructure",
-      "Payment processing",
-      "Customer protection",
-      "10-20% commission or daily sub",
-      "Verified provider badge",
-      "Get discovered by thousands"
+      "API integration support",
+      "High-intent user traffic",
+      "Seamless booking flow",
+      "Enhanced brand visibility",
+      "Strategic partnership",
+      "Data insights"
     ],
-    cta: "Join Platform",
+    cta: "Contact Us",
     popular: false,
     badge: null
-  },
-  // {
-  //   name: "Enterprise",
-  //   price: "Custom",
-  //   yearlyPrice: "Custom",
-  //   period: "contact us",
-  //   description: "For large organizations",
-  //   icon: "🚀",
-  //   features: [
-  //     "Higher limits",
-  //     "Priority support",
-  //     "SLAs",
-  //     "Success manager (CSM)",
-  //     "Custom integrations",
-  //     "Advanced security"
-  //   ],
-  //   cta: "Contact us",
-  //   popular: false,
-  //   badge: null
-  // }
+  }
 ];

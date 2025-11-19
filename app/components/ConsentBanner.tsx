@@ -30,7 +30,7 @@ export function ConsentBanner() {
   const handleAccept = () => {
     setIsAnimating(true);
     localStorage.setItem(CONSENT_KEY, "accepted");
-    
+
     if (typeof window.gtag === "function") {
       window.gtag('consent', 'update', {
         'ad_storage': 'granted',
@@ -39,7 +39,7 @@ export function ConsentBanner() {
         'analytics_storage': 'granted'
       });
     }
-    
+
     setTimeout(() => setVisible(false), 300);
   };
 
@@ -78,19 +78,19 @@ export function ConsentBanner() {
       <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
         <div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
           <div style={{ flex: "1 1 0", minWidth: 0 }}>
-            <h3 style={{ 
-              margin: "0 0 6px 0", 
-              fontSize: isNarrow ? "14px" : "15px", 
-              fontWeight: 600, 
+            <h3 style={{
+              margin: "0 0 6px 0",
+              fontSize: isNarrow ? "14px" : "15px",
+              fontWeight: 600,
               color: "#0f172a",
               lineHeight: "1.3"
             }}>
               We value your privacy
             </h3>
-            <p style={{ 
-              margin: isNarrow ? "0 0 8px 0" : "0 0 14px 0", 
-              fontSize: isNarrow ? "13px" : "14px", 
-              color: "#475569", 
+            <p style={{
+              margin: isNarrow ? "0 0 8px 0" : "0 0 14px 0",
+              fontSize: isNarrow ? "13px" : "14px",
+              color: "#475569",
               lineHeight: "1.4"
             }}>
               We use cookies to improve your experience and analyze site usage. Your data helps us make the site better for everyone.
@@ -101,7 +101,7 @@ export function ConsentBanner() {
             <button
               style={{
                 padding: isNarrow ? "8px 14px" : "8px 16px",
-                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                background: "linear-gradient(135deg, #FC8019 0%, #FDBA74 100%)",
                 color: "white",
                 border: "none",
                 borderRadius: "8px",
@@ -109,16 +109,16 @@ export function ConsentBanner() {
                 fontSize: "13px",
                 fontWeight: 600,
                 transition: "transform 0.18s, box-shadow 0.18s",
-                boxShadow: "0 4px 10px rgba(102,124,234,0.12)",
+                boxShadow: "0 4px 10px rgba(252,128,25,0.2)",
               }}
               onClick={handleAccept}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 8px 16px rgba(102,124,234,0.14)";
+                e.currentTarget.style.boxShadow = "0 8px 16px rgba(252,128,25,0.25)";
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 4px 10px rgba(102,124,234,0.12)";
+                e.currentTarget.style.boxShadow = "0 4px 10px rgba(252,128,25,0.2)";
               }}
             >
               Accept All
