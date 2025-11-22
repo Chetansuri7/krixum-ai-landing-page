@@ -38,10 +38,10 @@ export function FooterSection() {
 
   const footerLinks: Record<string, FooterLink[]> = {
     product: [
-      { name: "Benefits", href: "benefits", available: true, kind: "section" },
-      { name: "Overview", href: "overview", available: true, kind: "section" },
-      { name: "Highlights", href: "highlights", available: true, kind: "section" },
-      { name: "Workflow", href: "how-it-works", available: true, kind: "section" },
+      { name: "Benefits", href: "/benefits", available: true, kind: "page" },
+      { name: "Overview", href: "/overview", available: true, kind: "page" },
+      { name: "Highlights", href: "/highlights", available: true, kind: "page" },
+      { name: "Workflow", href: "/how-it-works", available: true, kind: "page" },
     ],
     company: [
       { name: "Contact", href: "/contact", available: true, kind: "page" },

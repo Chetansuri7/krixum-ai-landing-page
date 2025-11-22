@@ -60,32 +60,32 @@ export default function SearchPage() {
     {
       title: "Overview",
       description: "What Krixum does and where it works - Search once, compare clearly, and book with protection",
-      url: "/#overview",
-      type: "section"
+      url: "/overview",
+      type: "page"
     },
     {
       title: "Real Examples",
       description: "See how Krixum compares old vs new flows - Stop wasting time, start booking smarter",
-      url: "/#highlights",
-      type: "section"
+      url: "/highlights",
+      type: "page"
     },
     {
       title: "How It Works",
       description: "From search to booking with protection - Search, compare, book, all protected",
-      url: "/#how-it-works",
-      type: "section"
+      url: "/how-it-works",
+      type: "page"
     },
     {
       title: "Benefits",
       description: "Why Krixum saves time and reduces hassle across categories",
-      url: "/#benefits",
-      type: "section"
+      url: "/benefits",
+      type: "page"
     },
     {
       title: "FAQ",
       description: "Get answers to common questions about searching, comparing, and booking services with Krixum",
-      url: "/#faq",
-      type: "section"
+      url: "/faq",
+      type: "page"
     },
     {
       title: "Contact",

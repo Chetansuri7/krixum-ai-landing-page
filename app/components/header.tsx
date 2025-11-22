@@ -10,6 +10,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const headerSpacerHeight = scrolled ? 64 : 88;
 
   // Handle scroll effect
   useEffect(() => {
@@ -67,9 +68,9 @@ export function Header() {
         },
       };
     } else {
-      // On dedicated page: navigate to dedicated page or homepage section
-      const currentPageSection = location.pathname.replace("/", "");
-      if (currentPageSection === item.id) {
+      // On dedicated page: navigate to dedicated page
+      const currentPagePath = location.pathname;
+      if (currentPagePath === item.path) {
         // Already on this page, scroll to top
         return {
           to: location.pathname,
@@ -80,10 +81,7 @@ export function Header() {
           }
         };
       } else {
-        // Navigate to dedicated page if it exists, otherwise homepage section
-        if (item.path === "/" && item.sectionId) {
-          return { to: { pathname: "/", hash: `#${item.sectionId}` } };
-        }
+        // Navigate to dedicated page
         return { to: item.path };
       }
     }
@@ -231,6 +229,13 @@ export function Header() {
           </div>
         </div>
       </header>
+      {!isHomepage && (
+        <div
+          aria-hidden="true"
+          className="w-full"
+          style={{ height: `${headerSpacerHeight}px` }}
+        />
+      )}
     </>
   );
 }
